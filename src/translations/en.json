@@ -1,0 +1,124 @@
+{
+  "login": {
+    "welcome": "WELCOME {{name}}"
+  },
+  "buttons": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "sync": "Sync Now",
+    "view": "View",
+    "delete": "Delete",
+    "disable_sync": "Disable Sync",
+    "enable_sync": "Enable Sync",
+    "back": "Back",
+    "start": "Start",
+    "find_help": "Find Help",
+    "sign_in": "Sign In",
+    "facebook": "Login via Facebook",
+    "sign_up": "Sign Up",
+    "autosync": "Autosync",
+    "sync_frequency": "Sync Frequency",
+    "sync_server": "Sync to Server",
+    "language": "Language",
+    "skip": "SKIP",
+    "submit": "Submit"
+  },
+  "tabs": {
+    "home": "Home",
+    "history": "History",
+    "mct": "MCT",
+    "info": "Info"
+  },
+  "menu": {
+    "home": "Home",
+    "info": "Info",
+    "settings": "Settings"
+  },
+  "strings": {
+    "search": "Search",
+    "username": "Username",
+    "password": "Password",
+    "forgot_password": "Forgot Password",
+    "no_account": "Don't have an account?",
+    "question": "Question",
+    "benchmark": "Benchmark",
+    "sync": "Sync",
+    "language": "Language",
+    "task_description": "The test will consist of few questions. Each question will have a few options. Every option you choose will carry a score which will be added up to give you your final score.",
+    "swipe": "Swipe to Next Question"
+  },
+  "alert": {
+    "select_before_moving": "Please select an option before moving to next question",
+    "login_to_sync": "Please login to sync data",
+    "delete": "Are you sure you want to delete the task from your hisotry?",
+    "agreement": "I agree to the terms and condition and provide full consent to the health provider to use that for research and diagnosis purpose only.",
+    "exit": "Are you sure you want to exit the app?",
+    "back": "Are you sure you want to go back?",
+    "score_display": "{{score}} Score Indicates {{result}}"
+  },
+  "toast": {
+    "no_data": "No data to sync",
+    "sync_data": "Syncing data",
+    "enable_sync": "Please enable sync",
+    "sync_success": "Successfully synced",
+    "sync_fail": "Failed to sync"
+  },
+  "splash": {
+    "slide1_title": "Choose Language",
+    "slide2_title": "What is this?",
+    "slide2_description": "This is a powerful tool for assisting primary care clinicians in diagnosing depression as well as selecting and monitoring treatment.",
+    "slide3_title": "Have you been feeling nervous or worrying too much about something?",
+    "slide4_title": "Do you frequently interrupt people while talking?",
+    "slide5_title": "Do you have difficulty waiting your turn?",
+    "slide6_title": "Do you have difficulties to remember appointments, meetings or any obligations?",
+    "slide7_title": "Do you feel down yourself?"
+  },
+  "settings": {
+    "frequency_option1": "1 hr",
+    "frequency_option2": "1 day",
+    "frequency_option3": "1 week",
+    "frequency_option4": "1 month",
+    "language_option1": "English",
+    "language_option2": "Nepali",
+    "language_option3": "Norwegian",
+    "language_option4": "Swahili"
+  },
+  "info_menu": {
+    "title": {
+      "about": "About",
+      "credits": "Credits",
+      "feedback": "FeedBack",
+      "how_to_use": "How to use",
+      "message": "Message",
+      "privacy_policy": "Privacy Policy",
+      "sources": "Sources"
+    }
+  },
+  "home": {
+    "header": "Self-assessment",
+    "title": "GAD 7",
+    "caption": "This easy-to-use self-administered patient questionnaire is used as a screening tool and severity measure for generalised anxiety disorder (GAD)",
+    "btn": "Take a test"
+  },
+  "benchmarks": {
+    "healthy": "0-4: Healthy",
+    "mild-anxiety": "5-9: Mild anxiety",
+    "moderate-anxiety": "10-14: Moderate anxiety",
+    "severe-anxiety": "15-21: Severe anxiety"
+  },
+  "mct": {
+    "worry_postponement": "Worry Postponement",
+    "associations": "Associations",
+    "worry_title": "Title",
+    "worry_title_placeholder": "Write what are you worried about...",
+    "worry_date": "Schedule Date",
+    "worry_completed": "Completed status",
+    "worry_describe": "Describe what are you worrying about",
+    "worry_describe_placeholder": "Write what are you worrying about...",
+    "worry_schedule": "Schedule it",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  }
+}

@@ -1,0 +1,52 @@
+fastlane_version "1.86.1"
+
+default_platform :ios
+
+
+platform :ios do
+  # before_all do
+  #   ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+  # end
+
+  desc "Build and submit to Fabric"
+  lane :beta do
+    cert
+
+    build_app(
+      scheme: "anxietyCBT",
+      export_method: 'ad-hoc',
+      project: "./ios/anxietyCBT.xcodeproj",
+      export_xcargs: "-allowProvisioningUpdates"
+    )
+
+    crashlytics(
+      notifications: true,
+      # groups:['internal-dev'],
+      notes_path: "./fastlane/release-notes.beta.txt",
+      crashlytics_path: "./ios/Pods/Crashlytics/submit",
+      api_token: "45a03bb8659c090d2599b6cee63022c71a82c1c5",
+      build_secret: "88c0ba8f6a115d773a8b692fc79033690849773bcfa530768715025841d29e49"
+    )
+  end
+
+  # after_all do |lane|
+  #   slack(channel: "deploys", message: "Successfully deployed new anxietyCBT alpha update to TestFlight.")
+  # end
+end
+
+# platform :android do
+#   before_all do
+#     ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+#   end
+
+#   desc "Submit a new Alpha Build to Play Store"
+#   lane :alpha do
+#     gradle(task: 'clean', project_dir: "android/") # Clean the Gradle project
+#     gradle(task: "assemble", build_type: "Release", project_dir: "android/") # Build the Release APK
+#     supply(track: "alpha", apk: "android/app/build/outputs/apk/app-release.apk") # Upload the APK to the Play Store (alpha)
+#   end
+
+#   after_all do |lane|
+#     slack(channel: "deploys", message: "Successfully deployed new anxietyCBT alpha update to the Play Store.")
+#   end
+# end

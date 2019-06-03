@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "module:metro-react-native-babel-preset"
+  ],
+  "plugins": [
+    "react-require",
+    [
+      "module-resolver",
+      {
+        root: ["./src"],
+        alias: {
+          "@src": "./src",
+        },
+      },
+    ],
+    ["import", { libraryName: "@ant-design/react-native" }]
+  ],
+  "sourceMaps": true
+}

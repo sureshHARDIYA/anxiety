@@ -1,0 +1,100 @@
+{
+  "login": {
+    "welcome": "WELCOME --- {{name}}"
+  },
+  "buttons": {
+    "ok": "Ok",
+    "cancel": "Avbryt",
+    "yes": "Ja",
+    "no": "Nei",
+    "sync": "Synkroniser nå",
+    "view": "Utsikt",
+    "delete": "Slett",
+    "disable_sync": "Deaktiver synkronisering",
+    "enable_sync": "Aktiver synkronisering",
+    "back": "Back",
+    "start": "Start",
+    "find_help": "Finn hjelp",
+    "sign_in": "Logg inn",
+    "facebook": "Logg inn via Facebook",
+    "sign_up": "Melde deg på",
+    "autosync": "Automatisk synkronisering",
+    "sync_frequency": "Sync Frequency",
+    "sync_server": "Sync to Server",
+    "language": "Language",
+    "skip": "SKIP",
+    "submit": "Submit"
+  },
+  "tabs": {
+    "home": "Alle",
+    "history": "Historie",
+    "recent": "Nylig",
+    "info": "'Info",
+    "chat": "Chat"
+  },
+  "menu": {
+    "home": "Hjem",
+    "info": "'Info",
+    "settings": "innstillinger"
+  },
+  "strings": {
+    "search": "Søke",
+    "username": "Brukernavn",
+    "password": "Passord",
+    "forgot_password": "Forgot Password",
+    "no_account": "Don't have an account?",
+    "question": "Spørsmål",
+    "benchmark": "Benchmark",
+    "sync": "Sync",
+    "language": "Language",
+    "task_description": "The test will consist of few questions. Each question will have a few options. Every option you choose will carry a score which will be added up to give you your final score.",
+    "swipe": "Swipe to Next Question"
+  },
+  "alert": {
+    "select_before_moving": "Vennligst velg et alternativ før du går videre til neste spørsmål",
+    "login_to_sync": "Vennligst logg inn for å synkronisere data",
+    "delete": "Er du sikker på at du vil slette oppgaven fra din historie?",
+    "agreement": "Jeg aksepterer vilkårene og betingelsene og gir fullstendig samtykke til helsepersonellet om å bruke det bare for forskning og diagnosering.",
+    "exit": "Er du sikker på at du vil avslutte appen?",
+    "back": "Er du sikker på at du vil gå tilbake?",
+    "score_display": "{{score}} Resultatet indikerer {{result}}"
+  },
+  "toast": {
+    "no_data": "Ingen data å synkronisere",
+    "sync_data": "synkronisere data",
+    "enable_sync": "Aktiver synkronisering",
+    "sync_success": "Synkronisert suksessfullt",
+    "sync_fail": "Kan ikke synkroniseres"
+  },
+  "splash": {
+    "slide1_title": "'Velg språk",
+    "slide2_title": "Hva er dette?",
+    "slide2_description": "Dette er et kraftig verktøy for å hjelpe primærhelseklinikere til å diagnostisere depresjon, samt å velge og overvåke behandling.",
+    "slide3_title": "Har du følt deg nervøs eller bekymret for mye om noe?",
+    "slide4_title": "Bryter du ofte folk mens du snakker?",
+    "slide5_title": "Har du problemer med å vente på tur?",
+    "slide6_title": "Har du problemer med å huske avtaler, møter eller forpliktelser?",
+    "slide7_title": "Føler du deg selv?"
+  },
+  "settings": {
+    "frequency_option1": "1 time",
+    "frequency_option2": "1 dag",
+    "frequency_option3": "1 uke",
+    "frequency_option4": "1 måned",
+    "language_option1": "Engelsk",
+    "language_option2": "Nepali",
+    "language_option3": "norsk",
+    "language_option4": "Swahili"
+  },
+  "info_menu": {
+    "title": {
+      "about": "Handle om",
+      "credits": "studiepoeng",
+      "feedback": "Tilbakemeldinger",
+      "how_to_use": "Hvordan å bruke",
+      "message": "Budskap",
+      "privacy_policy": "Personvernregler",
+      "sources": "kilder"
+    }
+  }
+}
