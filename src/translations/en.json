@@ -109,7 +109,9 @@
     "severe-anxiety": "15-21: Severe anxiety"
   },
   "mct": {
+    "worry": "Worry",
     "worry_postponement": "Worry Postponement",
+    "association": "Association",
     "associations": "Associations",
     "worry_title": "Title",
     "worry_title_placeholder": "Write what are you worried about...",
@@ -119,6 +121,11 @@
     "worry_describe_placeholder": "Write what are you worrying about...",
     "worry_schedule": "Schedule it",
     "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "worry_updated_success": "{{title}} is updated successfully",
+    "worry_created_success": "{{title}} is created successfully"
+  },
+  "errors": {
+    "blank": "Can't blank"
   }
 }

@@ -3,15 +3,15 @@ import storage from 'redux-persist/lib/storage';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
-import immutableTransform from 'redux-persist-transform-immutable';
 
+import sagas from '@src/sagas';
 import reducers from '@src/reducers';
 
 const storeApp = () => {
   const persistConfig = {
     storage,
-    key: 'root',
-    transforms: [immutableTransform()],
+    key: 'root-app',
+    blacklist: ['form']
   };
 
   const sagaMiddleware = createSagaMiddleware();
@@ -34,6 +34,9 @@ const storeApp = () => {
         applyMiddleware(sagaMiddleware),
       )
     );
+
+  store.runSaga = sagaMiddleware.run;
+  store.runSaga(sagas);
 
   return store;
 };

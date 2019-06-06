@@ -35,7 +35,8 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-
+7SYMTUQ5BU.*
+anxietyCBT.*
 # BUCK
 buck-out/
 \.buckd/
@@ -48,9 +49,10 @@ buck-out/
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/
 
-*/fastlane/report.xml
-*/fastlane/Preview.html
-*/fastlane/screenshots
-
 # Bundle artifact
 *.jsbundle
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/release-notes.beta.txt

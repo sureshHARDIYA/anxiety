@@ -1,7 +1,7 @@
-import { reducer as formReducer } from 'redux-form/immutable';
-import question from './question';
+import { reducer as formReducer } from 'redux-form';
+import worry from './worry';
 
 export default {
-  question,
+  worry,
   form: formReducer,
 };

@@ -6,5 +6,7 @@ export default {
   inactive: '#a2a2a2',
   white: '#FFFFFF',
   black: '#000000',
+  error: 'red',
+  border: '#d4d5d8',
   transparent: 'transparent',
 };

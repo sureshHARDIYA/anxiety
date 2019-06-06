@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { Colors } from '@src/constants';
 
-const Container = ({ children, transparent, style, ...props }) => (
+const Container = ({ children, type, style, ...props }) => (
   <View
-    style={[Style.container, transparent && Style.transparent, style && style.length ? [...style] : style]}
+    style={[Style.container, type && Style[type], style && style.length ? [...style] : style]}
     {...props}
   >
     {children}
@@ -15,18 +15,17 @@ const Container = ({ children, transparent, style, ...props }) => (
 const Style = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  primary: {
     backgroundColor: Colors.primary,
   },
   transparent: {
     backgroundColor: Colors.transparent,
-  }
+  },
 });
 
 Container.propTypes = {
-  transparent: PropTypes.bool,
+  type: PropTypes.string,
   style: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,

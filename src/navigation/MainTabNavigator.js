@@ -4,6 +4,8 @@ import { Icon } from '@ant-design/react-native';
 import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
 import MCTScreen from '@src/screens/mct';
+import WorryScreen from '@src/screens/worry';
+
 import HomeScreen from '@src/screens/home';
 import InfoScreen from '@src/screens/info';
 import HistoryScreen from '@src/screens/history';
@@ -30,7 +32,7 @@ HomeStack.navigationOptions = {
 };
 
 const HistoryStack = createStackNavigator({
-  Links: HistoryScreen,
+  History: HistoryScreen,
 }, {
   defaultNavigationOptions
 });
@@ -42,6 +44,7 @@ HistoryStack.navigationOptions = {
 
 const MCTtack = createStackNavigator({
   MCT: MCTScreen,
+  Worry: WorryScreen,
 }, {
   defaultNavigationOptions
 });
@@ -68,6 +71,7 @@ export default createBottomTabNavigator({
   MCTtack,
   InfoStack,
 }, {
+  // initialRouteName: 'MCTtack',
   tabBarOptions: {
     activeTintColor: Colors.active,
     inactiveTintColor: Colors.inactive,
