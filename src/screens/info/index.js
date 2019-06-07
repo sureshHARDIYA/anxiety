@@ -1,20 +1,44 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import { Container } from '@src/components/themes';
+import PropTypes from 'prop-types';
+import { Text, TouchableOpacity, ScrollView } from 'react-native';
 import { strings } from '@src/i18n';
+import Style from './style';
 
 class Info extends Component {
   static navigationOptions = {
     title: strings('tabs.info'),
   };
 
+  list = [
+    { title: 'Message from the developer', route: 'InfoMessage' },
+    { title: 'About the app', route: 'InfoAbout' },
+    { title: 'How to use this app?', route: 'InfoHowToUse' },
+    { title: 'Privacy Policy', route: 'InfoPrivacy' },
+    { title: 'App Credits', route: 'InfoCredit' },
+    { title: 'Depression sources', route: 'InfoSource' }
+  ];
+
+  renderItem = item => (
+    <TouchableOpacity
+      key={item.title}
+      style={Style.item}
+      onPress={() => this.props.navigation.navigate(item.route)}
+    >
+      <Text style={Style.txtItem}>{item.title}</Text>
+    </TouchableOpacity>
+  )
+
   render() {
     return (
-      <Container transparent>
-        <Text>Info Screen</Text>
-      </Container>
+      <ScrollView contentContainerStyle={Style.container}>
+        {this.list.map(this.renderItem)}
+      </ScrollView>
     );
   }
 }
+
+Info.propTypes = {
+  navigation: PropTypes.object,
+};
 
 export default Info;

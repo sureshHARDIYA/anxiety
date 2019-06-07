@@ -10,6 +10,13 @@ import HomeScreen from '@src/screens/home';
 import InfoScreen from '@src/screens/info';
 import HistoryScreen from '@src/screens/history';
 
+import InfoAboutScreen from '@src/screens/info/about';
+import InfoCreditScreen from '@src/screens/info/credit';
+import InfoHowToUseScreen from '@src/screens/info/HowToUse';
+import InfoSourceScreen from '@src/screens/info/source';
+import InfoPrivacyScreen from '@src/screens/info/privacy';
+import InfoMessageScreen from '@src/screens/info/message';
+
 const defaultNavigationOptions = {
   headerTitleStyle: {
     color: Colors.white,
@@ -56,6 +63,12 @@ MCTtack.navigationOptions = {
 
 const InfoStack = createStackNavigator({
   Info: InfoScreen,
+  InfoAbout: InfoAboutScreen,
+  InfoCredit: InfoCreditScreen,
+  InfoHowToUse: InfoHowToUseScreen,
+  InfoSource: InfoSourceScreen,
+  InfoPrivacy: InfoPrivacyScreen,
+  InfoMessage: InfoMessageScreen,
 }, {
   defaultNavigationOptions
 });

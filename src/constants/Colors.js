@@ -5,7 +5,7 @@ export default {
   active: primary,
   inactive: '#a2a2a2',
   white: '#FFFFFF',
-  black: '#000000',
+  black: '#31334f',
   error: 'red',
   border: '#d4d5d8',
   transparent: 'transparent',
