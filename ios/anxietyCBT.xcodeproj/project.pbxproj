@@ -1872,7 +1872,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.helsebot.anxietycbt;
+				PRODUCT_BUNDLE_IDENTIFIER = org.native.anxietycbt;
 				PRODUCT_NAME = anxietyCBT;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1903,7 +1903,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.helsebot.anxietycbt;
+				PRODUCT_BUNDLE_IDENTIFIER = org.native.anxietycbt;
 				PRODUCT_NAME = anxietyCBT;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

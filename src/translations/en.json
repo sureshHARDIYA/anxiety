@@ -23,7 +23,8 @@
     "sync_server": "Sync to Server",
     "language": "Language",
     "skip": "SKIP",
-    "submit": "Submit"
+    "submit": "Submit",
+    "confirm": "Confirm"
   },
   "tabs": {
     "home": "Home",
@@ -56,7 +57,8 @@
     "agreement": "I agree to the terms and condition and provide full consent to the health provider to use that for research and diagnosis purpose only.",
     "exit": "Are you sure you want to exit the app?",
     "back": "Are you sure you want to go back?",
-    "score_display": "{{score}} Score Indicates {{result}}"
+    "score_display": "{{score}} Score Indicates {{result}}",
+    "confirm": "Confirm"
   },
   "toast": {
     "no_data": "No data to sync",
@@ -124,6 +126,13 @@
     "cancel": "Cancel",
     "worry_updated_success": "{{title}} is updated successfully",
     "worry_created_success": "{{title}} is created successfully"
+  },
+  "quiz": {
+    "back": "Back",
+    "start": "Start",
+    "landing": {
+      "caption": "alo"
+    }
   },
   "errors": {
     "blank": "Can't blank"

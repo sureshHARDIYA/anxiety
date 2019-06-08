@@ -7,9 +7,13 @@ import MCTScreen from '@src/screens/mct';
 import WorryScreen from '@src/screens/worry';
 
 import HomeScreen from '@src/screens/home';
-import InfoScreen from '@src/screens/info';
+import QuizScreen from '@src/screens/quiz';
+import QuizResultScreen from '@src/screens/quiz/result';
+import QuizLandingScreen from '@src/screens/quiz/landing';
+
 import HistoryScreen from '@src/screens/history';
 
+import InfoScreen from '@src/screens/info';
 import InfoAboutScreen from '@src/screens/info/about';
 import InfoCreditScreen from '@src/screens/info/credit';
 import InfoHowToUseScreen from '@src/screens/info/HowToUse';
@@ -31,6 +35,11 @@ const tabBarIcon = name => ({ focused }) => <Icon color={focused ? Colors.active
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
+  Quiz: QuizScreen,
+  QuizResult: QuizResultScreen,
+  QuizLanding: QuizLandingScreen,
+}, {
+  // initialRouteName: 'QuizResult'
 });
 
 HomeStack.navigationOptions = {

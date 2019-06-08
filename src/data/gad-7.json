@@ -1,0 +1,171 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "anxiety-gad_7",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generalized Anxiety Disorder 7 Item Scale (GAD-7)</div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "value": "anxiety-gad_7"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-calculated-value",
+      "valueExpression": {
+        "description": "TODO: Fill score evaluation here .Eg: Score (0-4: healthy; 5-8: Moderate; 9-12: Serious)",
+        "language": "text/fhirpath",
+        "name": "score",
+        "expression": "QuestionnaireResponse.item.repeat(answer.valueCoding.extension.valueDecimal)"
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "title": "Generalized Anxiety Disorder 7 Item Scale (GAD-7)",
+  "code": [
+    {
+      "system": "http://purl.bioontology.org/ontology/SNOMEDCT/704501007",
+      "code": "704501007",
+      "display": "Generalized anxiety disorder 7 item scale"
+    }
+  ],
+  "subjectType": [
+    "Patient"
+  ],
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "MHOFVS004",
+      "meta": {
+        "versionId": "1",
+        "lastUpdated": "2018-07-16T00:50:35.165+00:00"
+      },
+      "url": "http://mhof.ml/ValueSet/MHOFVS004",
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:oid:1.3.6.1.4.1.12009.10.1.158"
+        }
+      ],
+      "version": "Beta.1",
+      "name": "GAD-7",
+      "title": "Generalized Anxiety Disorder 7 Item Scale (GAD-7)",
+      "description": "Generalized anxiety disorder (GAD) is one of the most common mental disorders; however, there is no brief clinical measure for assessing GAD. The objective of this study was to develop a brief self-report scale to identify probable cases of GAD and evaluate its reliability and validity.Over the last 2 weeks, how often have you been bothered by the following problems?",
+      "status": "active",
+      "publisher": "INTROMAT",
+      "contact": [
+        {
+          "name": "HVL",
+          "telecom": [
+            {
+              "system": "url",
+              "value": "http://mhof.ml"
+            }
+          ]
+        }
+      ],
+      "compose": {
+        "include": [
+          {
+            "system": "http://mhof.ml",
+            "concept": [
+              {
+                "code": "MHOFVS004-1",
+                "display": "Not At All Sure",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
+                    "valueDecimal": 0
+                  }
+                ]
+              },
+              {
+                "code": "MHOFVS004-2",
+                "display": "Several Days",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
+                    "valueDecimal": 1
+                  }
+                ]
+              },
+              {
+                "code": "MHOFVS004-3",
+                "display": "Over Half The Days",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
+                    "valueDecimal": 2
+                  }
+                ]
+              },
+              {
+                "code": "MHOFVS004-4",
+                "display": "Nearly Everyday",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
+                    "valueDecimal": 3
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "anxiety-gad_701",
+      "text": "Feeling nervous, anxious, or on edge",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_702",
+      "text": "Not being able to stop or control worrying",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_703",
+      "text": "Worrying too much about different things",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_704",
+      "text": "Trouble relaxing",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_705",
+      "text": "Being so restless that it’s hard to sit still",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_706",
+      "text": "Becoming easily annoyed or irritable",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    },
+    {
+      "linkId": "anxiety-gad_707",
+      "text": "Feeling afraid as if something awful might happen",
+      "type": "choice",
+      "required": true,
+      "answerValueSet": "http://mhof.ml/ValueSet/MHOFVS004"
+    }
+  ]
+}

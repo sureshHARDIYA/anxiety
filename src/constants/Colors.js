@@ -8,5 +8,6 @@ export default {
   black: '#31334f',
   error: 'red',
   border: '#d4d5d8',
+  gray: 'gray',
   transparent: 'transparent',
 };

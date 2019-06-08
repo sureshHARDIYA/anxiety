@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
-import { Icon, Button } from '@ant-design/react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Button } from '@ant-design/react-native';
 
 const Back = ({ navigation }) => (
   <Button
@@ -9,7 +10,7 @@ const Back = ({ navigation }) => (
     style={{ borderWidth: 0 }}
     onPress={() => navigation.goBack()}
   >
-    <Icon name="left" color="#FFF" />
+    <Icon name="chevron-left" color="#FFF" />
   </Button>
 );
 
