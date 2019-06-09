@@ -97,7 +97,7 @@ export default createBottomTabNavigator({
   MCTtack,
   InfoStack,
 }, {
-  // initialRouteName: 'MCTtack',
+  initialRouteName: 'HistoryStack',
   tabBarOptions: {
     activeTintColor: Colors.active,
     inactiveTintColor: Colors.inactive,

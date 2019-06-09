@@ -9,6 +9,8 @@ import { strings } from '@src/i18n';
 import * as QuizAction from '@src/actions/quiz';
 import * as QuizSelect from '@src/selectors/quiz';
 import { LineChart } from 'react-native-chart-kit';
+import Swipeout from 'react-native-swipeout';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Style from './style';
 
 class History extends Component {
@@ -21,16 +23,32 @@ class History extends Component {
     props.onSearch();
   }
 
-  renderItem = (item) => {
-    console.log('item:', item);
-
-    return (
+  renderItem = item => (
+    <Swipeout
+      key={item.id}
+      autoClose
+      buttonWidth={30}
+      style={Style.swipeout}
+      backgroundColor="transparent"
+      right={[
+        {
+          backgroundColor: 'transparent',
+          text: <FontAwesome name="eye" />,
+          onPress: () => console.log('more'),
+        },
+        {
+          backgroundColor: 'transparent',
+          text: <FontAwesome name="trash" color="red" />,
+          onPress: () => console.log('delete'),
+        },
+      ]}
+    >
       <View style={Style.item} key={item.id}>
-        <Text style={Style.title}>{item.questionnaire}</Text>
-        <Text style={Style.date}>{moment(item.authored).calendar()}</Text>
+        <Text style={Style.title}>{moment(item.authored).format('MMM. DD, YYYY [at] h:mm A z')}</Text>
+        <Text style={Style.score}>{item.score} / {item.fullScore}</Text>
       </View>
-    );
-  }
+    </Swipeout>
+  );
 
   render() {
     const { list } = this.props;
@@ -43,21 +61,24 @@ class History extends Component {
       backgroundColor: '#0097e7',
     };
 
+    const { labels, scores } = [...list].reverse().reduce((obj, item, index) => {
+      const { labels: objLabels, scores: objScores } = obj;
+
+      objScores.push(item.score || 0);
+
+      if (!index || index === list.length - 1) {
+        objLabels.push(moment(item.authored).calendar());
+      } else {
+        objLabels.push('');
+      }
+
+      return { labels: objLabels, scores: objScores };
+    }, { labels: [], scores: [] });
+
     const data = {
-      labels: ['1', '2', '3', '4'],
+      labels,
       datasets: [{
-        data: [
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21,
-          Math.random() * 21
-        ]
+        data: scores,
       }]
     };
 

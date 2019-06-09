@@ -53,6 +53,7 @@
   "alert": {
     "select_before_moving": "Please select an option before moving to next question",
     "login_to_sync": "Please login to sync data",
+    "remove": "Are you sure you want to delete \"{{item}}\"?",
     "delete": "Are you sure you want to delete the task from your hisotry?",
     "agreement": "I agree to the terms and condition and provide full consent to the health provider to use that for research and diagnosis purpose only.",
     "exit": "Are you sure you want to exit the app?",

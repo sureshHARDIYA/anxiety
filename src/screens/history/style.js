@@ -5,12 +5,15 @@ export default StyleSheet.create({
   container: {
     flex: 1,
   },
-  item: {
-    padding: 10,
+  swipeout: {
     borderTopWidth: 0,
     borderBottomWidth: 0.5,
-    flexDirection: 'row',
     borderBottomColor: Colors.inactive,
+  },
+  item: {
+    padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   title: {
     flex: 1,
@@ -18,7 +21,10 @@ export default StyleSheet.create({
   },
   date: {
     padding: 5,
-    width: 100,
-    textAlign: 'center'
+    width: 90,
+    textAlign: 'right'
+  },
+  score: {
+    padding: 5,
   }
 });

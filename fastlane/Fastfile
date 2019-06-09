@@ -21,7 +21,7 @@ platform :ios do
 
     crashlytics(
       notifications: true,
-      # groups:['internal-dev'],
+      groups:['internal-dev'],
       notes_path: "./fastlane/release-notes.beta.txt",
       crashlytics_path: "./ios/Pods/Crashlytics/submit",
       api_token: "45a03bb8659c090d2599b6cee63022c71a82c1c5",
