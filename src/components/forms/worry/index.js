@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import { Text } from 'react-native';
 import { Button } from '@ant-design/react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Input as TextInput, DateTime as DateInput, Switch as SwitchInput } from '@src/components/forms/fields';
-import { Container } from '@src/components/themes';
 import { strings } from '@src/i18n';
 import styles from './style';
 import validate from './validate';
@@ -14,7 +14,7 @@ class WorryForm extends Component {
     const { handleSubmit } = this.props;
 
     return (
-      <Container style={styles.container}>
+      <KeyboardAwareScrollView behavior="padding">
         <Field
           name="title"
           component={TextInput}
@@ -45,7 +45,7 @@ class WorryForm extends Component {
         >
           <Text style={styles.submitText}>{strings('mct.worry_schedule')}</Text>
         </Button>
-      </Container>
+      </KeyboardAwareScrollView>
     );
   }
 }
