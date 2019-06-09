@@ -29,7 +29,7 @@ const defaultNavigationOptions = {
     color: Colors.white,
     backgroundColor: Colors.primary,
   },
-  swipeEnabled: false,
+  gesturesEnabled: false,
 };
 
 const tabBarIcon = name => ({ focused }) => <Icon color={focused ? Colors.active : Colors.inactive} name={name} />; // eslint-disable-line
@@ -41,7 +41,9 @@ const HomeStack = createStackNavigator({
   QuizLanding: QuizLandingScreen,
 }, {
   // initialRouteName: 'QuizResult'
-  swipeEnabled: false,
+  defaultNavigationOptions: {
+    gesturesEnabled: false,
+  }
 });
 
 HomeStack.navigationOptions = {

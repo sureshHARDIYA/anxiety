@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View, ScrollView } from 'react-native';
 import { Sizes, Colors } from '@src/constants';
+import { connect } from 'react-redux';
 import Carousel from 'react-native-snap-carousel';
+import * as QuizAction from '@src/actions/quiz';
 import { Button, Modal } from '@ant-design/react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { strings } from '@src/i18n';
-import data from '@src/data/gad-7.json';
+import question from '@src/data/gad-7.json';
+import { randomIdGenerator } from '@src/utilities/randomId';
 import Style from './style';
 
 class Quiz extends Component {
@@ -16,13 +19,15 @@ class Quiz extends Component {
 
   constructor(props) {
     super(props);
-    const { concept } = data.contained[0].compose.include[0];
+    const { concept } = question.contained[0].compose.include[0];
 
     this.state = {
       concept,
       index: 0,
       items: {},
-      length: data.item.length,
+      length: question.item.length,
+      values: concept.reduce((obj, item) => ({ ...obj, [item.code]: item }), {}),
+      questions: question.item.reduce((obj, item) => ({ ...obj, [item.linkId]: item }), {}),
       options: concept.reduce((obj, item) => ({ ...obj, [item.code]: item.extension[0].valueDecimal }), {}),
     };
   }
@@ -33,9 +38,41 @@ class Quiz extends Component {
   ]);
 
   onSubmit = () => {
-    const { items, options } = this.state;
-    const score = Object.values(items).reduce((total, answer) => (total + options[answer]), 0);
-    this.props.navigation.navigate('QuizResult', { score });
+    const { items, values, options, questions } = this.state;
+
+    const item = Object.entries(items).map(([key, value]) => {
+      const current = questions[key];
+
+      return ({
+        linkId: key,
+        clicked: false,
+        text: current.text,
+        definition: current.code,
+        answer: [{ valueCoding: values[value] }]
+      });
+    });
+
+    const data = {
+      item,
+      authored: new Date(),
+      identifier: question.code,
+      author: question.subjectType,
+      subject: question.subjectType,
+      questionnaire: question.title,
+      id: randomIdGenerator(question.id),
+      fullScore: 21,
+      synced: false,
+      syncEnabled: true,
+      status: 'completed',
+      resourceType: 'QuestionnaireResponse'
+    };
+
+    this.props.onSubmit(data, (error, rs) => {
+      if (rs) {
+        const score = Object.values(items).reduce((total, answer) => (total + options[answer]), 0);
+        this.props.navigation.navigate('QuizResult', { score });
+      }
+    });
   }
 
   renderItem = ({ item }) => {
@@ -123,7 +160,7 @@ class Quiz extends Component {
       >
         <Carousel
           loop={false}
-          data={data.item}
+          data={question.item}
           initialNumToRender={0}
           itemWidth={itemWidth}
           scrollEnabled={canSwipe}
@@ -156,7 +193,12 @@ class Quiz extends Component {
 }
 
 Quiz.propTypes = {
+  onSubmit: PropTypes.func,
   navigation: PropTypes.object,
 };
 
-export default Quiz;
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (quiz, cb) => dispatch(QuizAction.onCreateRequest({ quiz, cb })),
+});
+
+export default connect(null, mapDispatchToProps)(Quiz);

@@ -52,7 +52,7 @@ const QuizResult = ({ navigation }) => {
       <Button
         type="ghost"
         style={Style.btnFooter}
-        onPress={() => navigation.goBack()}
+        onPress={() => navigation.navigate('Home')}
       >
         <Text style={Style.btnFooterText}>{strings('buttons.find_help')}</Text>
       </Button>

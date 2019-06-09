@@ -1,0 +1,102 @@
+{
+  "id": "anxiety-gad_755481211916344awfl1a",
+  "resourceType": "QuestionnaireResponse",
+  "identifier": [
+    {
+      "system": "http://purl.bioontology.org/ontology/SNOMEDCT/704501007",
+      "code": "704501007",
+      "display": "Generalized anxiety disorder 7 item scale"
+    }
+  ],
+  "questionnaire": "Generalized Anxiety Disorder 7 Item Scale (GAD-7)",
+  "status": "completed",
+  "subject": [
+    "Patient"
+  ],
+  "authored": "2019-01-16T15:17:35.392Z",
+  "author": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "linkId": "anxiety-gad_701",
+      "text": "Feeling nervous, anxious, or on edge",
+      "answer": [
+        {
+          "value": "Several Days",
+          "weight": 1
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_702",
+      "text": "Not being able to stop or control worrying",
+      "answer": [
+        {
+          "value": "Over Half The Days",
+          "weight": 2
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_703",
+      "text": "Worrying too much about different things",
+      "answer": [
+        {
+          "value": "Several Days",
+          "weight": 1
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_704",
+      "text": "Trouble relaxing",
+      "answer": [
+        {
+          "value": "Several Days",
+          "weight": 1
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_705",
+      "text": "Being so restless that it’s hard to sit still",
+      "answer": [
+        {
+          "value": "Several Days",
+          "weight": 1
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_706",
+      "text": "Becoming easily annoyed or irritable",
+      "answer": [
+        {
+          "value": "Several Days",
+          "weight": 1
+        }
+      ],
+      "clicked": false
+    },
+    {
+      "linkId": "anxiety-gad_707",
+      "text": "Feeling afraid as if something awful might happen",
+      "answer": [
+        {
+          "value": "Over Half The Days",
+          "weight": 2
+        }
+      ],
+      "clicked": false
+    }
+  ],
+  "fullScore": 21,
+  "synced": true,
+  "syncEnabled": true
+}

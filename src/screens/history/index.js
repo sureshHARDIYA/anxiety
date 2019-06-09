@@ -1,20 +1,46 @@
 import React, { Component } from 'react';
-import { Dimensions } from 'react-native';
-import { Container } from '@src/components/themes';
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import { Dimensions, ScrollView, View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
+import { createStructuredSelector } from 'reselect';
 import { strings } from '@src/i18n';
+import * as QuizAction from '@src/actions/quiz';
+import * as QuizSelect from '@src/selectors/quiz';
 import { LineChart } from 'react-native-chart-kit';
+import Style from './style';
 
 class History extends Component {
   static navigationOptions = {
     title: strings('tabs.history'),
   };
 
+  constructor(props) {
+    super(props);
+    props.onSearch();
+  }
+
+  renderItem = (item) => {
+    console.log('item:', item);
+
+    return (
+      <View style={Style.item} key={item.id}>
+        <Text style={Style.title}>{item.questionnaire}</Text>
+        <Text style={Style.date}>{moment(item.authored).calendar()}</Text>
+      </View>
+    );
+  }
+
   render() {
+    const { list } = this.props;
+
     const chartConfig = {
-      backgroundGradientFrom: '#ffffff',
-      backgroundGradientTo: '#ffffff',
-      color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
+      backgroundGradientFrom: '#0097e7',
+      backgroundGradientTo: '#0097e7',
+      color: () => '#FFFFFF',
       strokeWidth: 1, // optional, default 3
+      backgroundColor: '#0097e7',
     };
 
     const data = {
@@ -36,7 +62,7 @@ class History extends Component {
     };
 
     return (
-      <Container transparent>
+      <View style={Style.container}>
         <LineChart
           bezier
           data={data}
@@ -44,9 +70,25 @@ class History extends Component {
           chartConfig={chartConfig}
           width={Dimensions.get('window').width}
         />
-      </Container>
+        <ScrollView>
+          {list.map(this.renderItem)}
+        </ScrollView>
+      </View>
     );
   }
 }
 
-export default History;
+History.propTypes = {
+  list: PropTypes.array,
+  onSearch: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = createStructuredSelector({
+  list: QuizSelect.getList(),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSearch: () => dispatch(QuizAction.onSearchRequest()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(History));
