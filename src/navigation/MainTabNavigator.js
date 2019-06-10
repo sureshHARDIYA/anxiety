@@ -5,6 +5,7 @@ import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
 import MCTScreen from '@src/screens/mct';
 import WorryScreen from '@src/screens/worry';
+import AssociationScreen from '@src/screens/association';
 
 import HomeScreen from '@src/screens/home';
 
@@ -56,6 +57,7 @@ HistoryStack.navigationOptions = {
 const MCTtack = createStackNavigator({
   MCT: MCTScreen,
   Worry: WorryScreen,
+  Association: AssociationScreen,
 }, {
   defaultNavigationOptions
 });

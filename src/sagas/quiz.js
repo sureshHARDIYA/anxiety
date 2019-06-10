@@ -37,7 +37,6 @@ export function* onUpdateRequest({ quiz, id, cb }) {
 
 export function* onDeleteRequest({ id, cb }) {
   try {
-    console.log('id:', id);
     yield call(DB.removeData, id);
     yield put(QUIZ.onDeleteSuccess({ id }));
     cb && (yield call(cb, null, null));

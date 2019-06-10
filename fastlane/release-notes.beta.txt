@@ -1,1 +1,1 @@
-Show history in quiz
+Menu in left sidebar

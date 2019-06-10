@@ -34,3 +34,14 @@ export function* onUpdateRequest({ worry, id, cb }) {
     cb && (yield call(cb, error, null));
   }
 }
+
+export function* onDeleteRequest({ id, cb }) {
+  try {
+    yield call(DB.removeData, id);
+    yield put(WORRY.onDeleteSuccess({ id }));
+    cb && (yield call(cb, null, null));
+  } catch (error) {
+    yield put(WORRY.onDeleteFailure({ error }));
+    cb && (yield call(cb, error, null));
+  }
+}

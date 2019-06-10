@@ -16,12 +16,15 @@ export const onCreateSuccess = (state, { payload }) => ({ ...state, isLoading: f
 
 export const onUpdateSuccess = (state, { payload }) => ({ ...state, isLoading: false, list: [...state.list].map(item => (item.id === payload.id ? payload : item)) });
 
+export const onDeleteSuccess = (state, { id }) => ({ ...state, isLoading: false, list: [...state.list].filter(item => item.id !== id) });
+
 export const ACTION_HANDLERS = {
   [WORRY.SEARCH_REQUEST]: onSearchRequest,
   [WORRY.SEARCH_SUCCESS]: onSearchSuccess,
   [WORRY.SEARCH_FAILURE]: onSearchFailure,
   [WORRY.CREATE_SUCCESS]: onCreateSuccess,
   [WORRY.UPDATE_SUCCESS]: onUpdateSuccess,
+  [WORRY.DELETE_REQUEST]: onDeleteSuccess,
 };
 
 export default createReducer(INITIAL_STATE, ACTION_HANDLERS);

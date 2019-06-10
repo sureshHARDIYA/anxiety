@@ -1,19 +1,20 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { TouchableOpacity, Text, ScrollView } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import Style from './style';
 import items from './data';
 
 const colors = [['#a2a2a2', '#0097e7'], ['#0097e7', '#a2a2a2']];
 
-const MCTAssociation = () => (
+const MCTAssociation = ({ navigation }) => (
   <ScrollView contentContainerStyle={Style.content}>
     {items.map((item, index) => (
       <TouchableOpacity
         key={item.id}
         style={[Style.item, Style.shadow]}
-        // onPress={() => navigation.navigate('Association', { id: item.id })}
+        onPress={() => navigation.navigate('Association', { item, title: item.name })}
       >
         <LinearGradient
           key={item.id}
@@ -29,8 +30,8 @@ const MCTAssociation = () => (
   </ScrollView>
 );
 
-// MCTAssociation.propTypes = {
-//   navigation: PropTypes.object,
-// };
+MCTAssociation.propTypes = {
+  navigation: PropTypes.object,
+};
 
-export default MCTAssociation;
+export default withNavigation(MCTAssociation);

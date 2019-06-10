@@ -51,7 +51,7 @@ class MCTWorry extends Component {
             style={{ padding: 0, margin: 0 }}
             onPress={() => Modal.alert(strings('alert.confirm'), strings('alert.remove', { item: item.title }), [
               { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
-              { text: strings('buttons.ok'), onPress: () => {} },
+              { text: strings('buttons.ok'), onPress: () => this.props.onDelete(item.id) },
             ])}
           />
         ]}
@@ -102,6 +102,7 @@ class MCTWorry extends Component {
 MCTWorry.propTypes = {
   list: PropTypes.array,
   navigation: PropTypes.object,
+  onDelete: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
 };
 
@@ -111,6 +112,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   onSearch: () => dispatch(WorryAction.onSearchRequest()),
+  onDelete: id => dispatch(WorryAction.onDeleteRequest({ id })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(MCTWorry));

@@ -1,0 +1,61 @@
+[{
+  "id": 1,
+  "title": "Bread - Rosemary Focaccia",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Other adrenocortical insufficiency"
+}, {
+  "id": 2,
+  "title": "French Pastries",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Poisoning by other agents primarily affecting the cardiovascular system, intentional self-harm, initial encounter"
+}, {
+  "id": 3,
+  "title": "Pork - Butt, Boneless",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 1,
+  "description": "Corrosion of third degree of right ankle, initial encounter"
+}, {
+  "id": 4,
+  "title": "Lettuce - Lolla Rosa",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Unspecified open wound of unspecified back wall of thorax with penetration into thoracic cavity, initial encounter"
+}, {
+  "id": 5,
+  "title": "Pasta - Elbows, Macaroni, Dry",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 1,
+  "description": "Unspecified Zone III fracture of sacrum, sequela"
+}, {
+  "id": 6,
+  "title": "Cocktail Napkin Blue",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Other superficial bite of left thigh"
+}, {
+  "id": 7,
+  "title": "Limes",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 1,
+  "description": "Female infertility of tubal origin"
+}, {
+  "id": 8,
+  "title": "Bread - Ciabatta Buns",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Insect bite of other specified part of neck, initial encounter"
+}, {
+  "id": 9,
+  "title": "Oil - Peanut",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 1,
+  "description": "Hereditary nephropathy, not elsewhere classified with other morphologic lesions"
+}, {
+  "id": 10,
+  "title": "Mushroom - Shitake, Dry",
+  "image": "https://picsum.photos/150/200",
+  "favorite": 2,
+  "description": "Displaced Rolando's fracture, unspecified hand, subsequent encounter for fracture with nonunion"
+}]
