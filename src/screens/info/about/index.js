@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { strings } from '@src/i18n';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Back } from '@src/components/themes';
 import styles from './style';
 
 const About = () => (
@@ -53,8 +54,9 @@ const About = () => (
   </ScrollView>
 );
 
-About.navigationOptions = {
+About.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.about'),
-};
+  headerLeft: <Back navigation={navigation} route="Info" />,
+});
 
 export default About;

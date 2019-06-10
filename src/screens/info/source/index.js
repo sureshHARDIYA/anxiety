@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { strings } from '@src/i18n';
+import { Back } from '@src/components/themes';
 import styles from './style';
 
 const Source = () => (
@@ -33,8 +34,9 @@ const Source = () => (
   </ScrollView>
 );
 
-Source.navigationOptions = {
+Source.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.sources'),
-};
+  headerLeft: <Back navigation={navigation} route="Info" />,
+});
 
 export default Source;

@@ -3,6 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
+import { middleware } from '@src/navigation';
 
 import sagas from '@src/sagas';
 import reducers from '@src/reducers';
@@ -10,7 +11,7 @@ import reducers from '@src/reducers';
 const storeApp = () => {
   const persistConfig = {
     storage,
-    key: 'root-app',
+    key: 'root',
     blacklist: ['form']
   };
 
@@ -24,6 +25,7 @@ const storeApp = () => {
       {},
       compose(
         applyMiddleware(sagaMiddleware),
+        applyMiddleware(middleware),
         applyMiddleware(logger),
       )
     ) :
@@ -31,6 +33,7 @@ const storeApp = () => {
       persistedReducer,
       {},
       compose(
+        applyMiddleware(middleware),
         applyMiddleware(sagaMiddleware),
       )
     );

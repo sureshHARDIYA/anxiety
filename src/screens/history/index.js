@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { createStructuredSelector } from 'reselect';
 import { strings } from '@src/i18n';
+import { Menu } from '@src/components/themes';
+import { Modal, Button } from '@ant-design/react-native';
 import * as QuizAction from '@src/actions/quiz';
 import * as QuizSelect from '@src/selectors/quiz';
 import { LineChart } from 'react-native-chart-kit';
@@ -14,19 +16,36 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Style from './style';
 
 class History extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: strings('tabs.history'),
-  };
+    headerLeft: <Menu navigation={navigation} />,
+  });
 
   constructor(props) {
     super(props);
     props.onSearch();
   }
 
+  get renderNodata() {
+    return (
+      <View>
+        <Text style={Style.alert}>{strings('alert.no_data')}</Text>
+        <Button
+          type="ghost"
+          style={Style.btn}
+          onPress={() => this.props.navigation.navigate('QuizLanding')}
+        >
+          <Text style={Style.btnText}>
+            {strings('home.btn')}
+          </Text>
+        </Button>
+      </View>
+    );
+  }
+
   renderItem = item => (
     <Swipeout
       key={item.id}
-      autoClose
       buttonWidth={30}
       style={Style.swipeout}
       backgroundColor="transparent"
@@ -34,12 +53,15 @@ class History extends Component {
         {
           backgroundColor: 'transparent',
           text: <FontAwesome name="eye" />,
-          onPress: () => console.log('more'),
+          onPress: () => this.props.navigation.navigate('HistoryDetail', { item }),
         },
         {
           backgroundColor: 'transparent',
           text: <FontAwesome name="trash" color="red" />,
-          onPress: () => console.log('delete'),
+          onPress: () => Modal.alert(strings('alert.confirm'), strings('alert.remove', { item: 'history' }), [
+            { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
+            { text: strings('buttons.ok'), onPress: () => this.props.onDelete(item.id) },
+          ]),
         },
       ]}
     >
@@ -75,6 +97,11 @@ class History extends Component {
       return { labels: objLabels, scores: objScores };
     }, { labels: [], scores: [] });
 
+    if (!scores.length) {
+      scores.push(0);
+      labels.push('No data');
+    }
+
     const data = {
       labels,
       datasets: [{
@@ -92,7 +119,7 @@ class History extends Component {
           width={Dimensions.get('window').width}
         />
         <ScrollView>
-          {list.map(this.renderItem)}
+          {list.length ? list.map(this.renderItem) : this.renderNodata}
         </ScrollView>
       </View>
     );
@@ -101,6 +128,8 @@ class History extends Component {
 
 History.propTypes = {
   list: PropTypes.array,
+  navigation: PropTypes.object,
+  onDelete: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
 };
 
@@ -110,6 +139,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   onSearch: () => dispatch(QuizAction.onSearchRequest()),
+  onDelete: id => dispatch(QuizAction.onDeleteRequest({ id })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(History));

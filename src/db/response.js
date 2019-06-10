@@ -70,7 +70,7 @@ class Response {
     return new Promise((resolve, reject) => {
       try {
         realm.write(() => {
-          const item = realm.objects('Response').filtered(`id = ${id}`);
+          const item = realm.objects('Response').filtered(`id = '${id}'`);
           resolve(realm.delete(item));
         });
       } catch (e) {

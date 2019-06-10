@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, TouchableOpacity, ScrollView } from 'react-native';
 import { strings } from '@src/i18n';
+import { Menu } from '@src/components/themes';
 import Style from './style';
 
 class Info extends Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: strings('tabs.info'),
-  };
+    headerLeft: <Menu navigation={navigation} />,
+  });
+
 
   list = [
     { title: 'Message from the developer', route: 'InfoMessage' },

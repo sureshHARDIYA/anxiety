@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { strings } from '@src/i18n';
+import { Back } from '@src/components/themes';
 import styles from './style';
 
 const Message = () => (
@@ -58,8 +59,9 @@ const Message = () => (
   </ScrollView>
 );
 
-Message.navigationOptions = {
+Message.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.message'),
-};
+  headerLeft: <Back navigation={navigation} route="Info" />,
+});
 
 export default Message;

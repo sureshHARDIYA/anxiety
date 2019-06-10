@@ -7,19 +7,11 @@ import MCTScreen from '@src/screens/mct';
 import WorryScreen from '@src/screens/worry';
 
 import HomeScreen from '@src/screens/home';
-import QuizScreen from '@src/screens/quiz';
-import QuizResultScreen from '@src/screens/quiz/result';
-import QuizLandingScreen from '@src/screens/quiz/landing';
 
 import HistoryScreen from '@src/screens/history';
+import HistoryDetailScreen from '@src/screens/history/detail';
 
 import InfoScreen from '@src/screens/info';
-import InfoAboutScreen from '@src/screens/info/about';
-import InfoCreditScreen from '@src/screens/info/credit';
-import InfoHowToUseScreen from '@src/screens/info/HowToUse';
-import InfoSourceScreen from '@src/screens/info/source';
-import InfoPrivacyScreen from '@src/screens/info/privacy';
-import InfoMessageScreen from '@src/screens/info/message';
 
 const defaultNavigationOptions = {
   headerTitleStyle: {
@@ -29,6 +21,7 @@ const defaultNavigationOptions = {
     color: Colors.white,
     backgroundColor: Colors.primary,
   },
+  headerTintColor: Colors.white,
   gesturesEnabled: false,
 };
 
@@ -36,9 +29,6 @@ const tabBarIcon = name => ({ focused }) => <Icon color={focused ? Colors.active
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
-  Quiz: QuizScreen,
-  QuizResult: QuizResultScreen,
-  QuizLanding: QuizLandingScreen,
 }, {
   // initialRouteName: 'QuizResult'
   defaultNavigationOptions: {
@@ -53,6 +43,7 @@ HomeStack.navigationOptions = {
 
 const HistoryStack = createStackNavigator({
   History: HistoryScreen,
+  HistoryDetail: HistoryDetailScreen,
 }, {
   defaultNavigationOptions
 });
@@ -76,12 +67,6 @@ MCTtack.navigationOptions = {
 
 const InfoStack = createStackNavigator({
   Info: InfoScreen,
-  InfoAbout: InfoAboutScreen,
-  InfoCredit: InfoCreditScreen,
-  InfoHowToUse: InfoHowToUseScreen,
-  InfoSource: InfoSourceScreen,
-  InfoPrivacy: InfoPrivacyScreen,
-  InfoMessage: InfoMessageScreen,
 }, {
   defaultNavigationOptions
 });
@@ -97,7 +82,7 @@ export default createBottomTabNavigator({
   MCTtack,
   InfoStack,
 }, {
-  initialRouteName: 'HistoryStack',
+  initialRouteName: 'HomeStack',
   tabBarOptions: {
     activeTintColor: Colors.active,
     inactiveTintColor: Colors.inactive,

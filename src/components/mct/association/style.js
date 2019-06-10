@@ -3,6 +3,7 @@ import { Colors } from '@src/constants';
 
 export default StyleSheet.create({
   content: {
+    padding: 10,
     flexWrap: 'wrap',
     flexDirection: 'row',
   },
@@ -10,24 +11,33 @@ export default StyleSheet.create({
     padding: 10,
     width: '50%',
   },
+  shadow: {
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
   itemContent: {
-    borderWidth: 1,
+    flex: 1,
+    padding: 5,
+    minHeight: 80,
+    borderRadius: 5,
     position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: Colors.inactive,
   },
   itemTitle: {
-    bottom: 0,
     padding: 5,
     width: '100%',
     fontWeight: '600',
     color: Colors.white,
     textAlign: 'center',
-    position: 'absolute',
   },
   itemThumb: {
     width: '100%',
     height: 200,
-  }
+  },
 });

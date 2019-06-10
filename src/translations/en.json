@@ -51,6 +51,7 @@
     "swipe": "Swipe to Next Question"
   },
   "alert": {
+    "no_data": "No Data",
     "select_before_moving": "Please select an option before moving to next question",
     "login_to_sync": "Please login to sync data",
     "remove": "Are you sure you want to delete \"{{item}}\"?",

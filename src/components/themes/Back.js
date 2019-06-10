@@ -4,17 +4,18 @@ import { withNavigation } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Button } from '@ant-design/react-native';
 
-const Back = ({ navigation }) => (
+const Back = ({ navigation, route }) => (
   <Button
     type="ghost"
     style={{ borderWidth: 0 }}
-    onPress={() => navigation.goBack()}
+    onPress={() => (route ? navigation.navigate(route) : navigation.goBack())}
   >
     <Icon name="chevron-left" color="#FFF" />
   </Button>
 );
 
 Back.propTypes = {
+  route: PropTypes.string,
   navigation: PropTypes.object,
 };
 

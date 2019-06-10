@@ -1,5 +1,9 @@
 import { PREFIX_CONST_REQUEST } from './base';
 
+export const APP = {
+  ...PREFIX_CONST_REQUEST('DRAWER', 'APP'),
+};
+
 export const QUESTION = {
   ...PREFIX_CONST_REQUEST('SEARCH', 'QUESTION'),
 };

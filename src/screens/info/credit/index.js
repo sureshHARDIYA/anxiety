@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text, Image } from 'react-native';
 import { strings } from '@src/i18n';
+import { Back } from '@src/components/themes';
 import styles from './style';
 
 const Credit = () => (
@@ -28,8 +29,9 @@ const Credit = () => (
   </ScrollView>
 );
 
-Credit.navigationOptions = {
+Credit.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.credits'),
-};
+  headerLeft: <Back navigation={navigation} route="Info" />,
+});
 
 export default Credit;

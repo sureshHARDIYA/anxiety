@@ -26,5 +26,30 @@ export default StyleSheet.create({
   },
   score: {
     padding: 5,
-  }
+  },
+  alert: {
+    padding: 20,
+    textAlign: 'center',
+    color: Colors.border,
+  },
+  btn: {
+    minWidth: 250,
+    borderRadius: 20,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: Colors.white,
+
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  btnText: {
+    fontWeight: '600',
+    color: Colors.active
+  },
 });
