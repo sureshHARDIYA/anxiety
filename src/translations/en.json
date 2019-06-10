@@ -34,8 +34,10 @@
   },
   "menu": {
     "home": "Home",
+    "history": "History",
+    "mct": "MCT",
     "info": "Info",
-    "settings": "Settings"
+    "settings": "Setting"
   },
   "strings": {
     "search": "Search",
