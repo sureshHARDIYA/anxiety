@@ -49,6 +49,7 @@
     "react-native-linear-gradient": "^2.5.4",
     "react-native-modal-datetime-picker": "^7.4.2",
     "react-native-pdf": "^5.1.0",
+    "react-native-picker-select": "^6.1.1",
     "react-native-progress": "^3.6.0",
     "react-native-snap-carousel": "3.7.5",
     "react-native-svg": "^9.4.0",

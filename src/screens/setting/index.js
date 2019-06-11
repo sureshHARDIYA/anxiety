@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { reset } from 'redux-form';
 import { Toast } from '@ant-design/react-native';
 import { createStructuredSelector } from 'reselect';
-import { Container, Menu } from '@src/components/themes';
+import { Menu } from '@src/components/themes';
 import { strings } from '@src/i18n';
 import { connect } from 'react-redux';
 import Form from '@src/components/forms/setting';
@@ -28,12 +28,10 @@ class Setting extends Component {
 
   render() {
     return (
-      <Container transparent>
-        <Form
-          onSubmit={this.onSubmit}
-          initialValues={this.props.setting}
-        />
-      </Container>
+      <Form
+        onSubmit={this.onSubmit}
+        initialValues={this.props.setting}
+      />
     );
   }
 }

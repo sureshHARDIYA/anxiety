@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Text } from 'react-native';
 import { Button } from '@ant-design/react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Radio } from '@src/components/forms/fields';
+import { Picker } from '@src/components/forms/fields';
 import { strings } from '@src/i18n';
 import styles from './style';
 import validate from './validate';
@@ -19,7 +19,8 @@ class SettingForm extends Component {
       >
         <Field
           name="language"
-          component={Radio}
+          component={Picker}
+          defaultValue="en"
           options={[
             { value: 'en', label: strings('language.en') },
             { value: 'no', label: strings('language.no') },

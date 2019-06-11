@@ -3,7 +3,6 @@ import { Colors } from '@src/constants';
 
 export default StyleSheet.create({
   container: {
-    paddingTop: 20,
   },
   submit: {
     height: 42,
