@@ -11,14 +11,13 @@ class Info extends Component {
     headerLeft: <Menu navigation={navigation} />,
   });
 
-
   list = [
-    { title: 'Message from the developer', route: 'InfoMessage' },
-    { title: 'About the app', route: 'InfoAbout' },
-    { title: 'How to use this app?', route: 'InfoHowToUse' },
-    { title: 'Privacy Policy', route: 'InfoPrivacy' },
-    { title: 'App Credits', route: 'InfoCredit' },
-    { title: 'Depression sources', route: 'InfoSource' }
+    { title: strings('info_menu.items.message'), route: 'InfoMessage' },
+    { title: strings('info_menu.items.about'), route: 'InfoAbout' },
+    { title: strings('info_menu.items.how_to_use'), route: 'InfoHowToUse' },
+    { title: strings('info_menu.items.privacy_policy'), route: 'InfoPrivacy' },
+    { title: strings('info_menu.items.credits'), route: 'InfoCredit' },
+    { title: strings('info_menu.items.sources'), route: 'InfoSource' }
   ];
 
   renderItem = item => (

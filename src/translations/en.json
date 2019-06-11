@@ -24,6 +24,7 @@
     "language": "Language",
     "skip": "SKIP",
     "submit": "Submit",
+    "save": "Save",
     "confirm": "Confirm"
   },
   "tabs": {
@@ -100,6 +101,15 @@
       "message": "Message",
       "privacy_policy": "Privacy Policy",
       "sources": "Sources"
+    },
+    "items": {
+      "about": "About the app",
+      "credits": "App Credits",
+      "feedback": "FeedBack",
+      "how_to_use": "How to use this app?",
+      "message": "Message from the developer",
+      "privacy_policy": "Privacy Policy",
+      "sources": "Depression sources"
     }
   },
   "home": {
@@ -137,6 +147,14 @@
     "landing": {
       "caption": "alo"
     }
+  },
+  "setting": {
+    "language": "Language",
+    "saved_success": "Setting is saved successfully"
+  },
+  "language": {
+    "en": "English",
+    "no": "Norwegian"
   },
   "errors": {
     "blank": "Can't blank"

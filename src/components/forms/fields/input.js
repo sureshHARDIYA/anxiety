@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
   label: {
     paddingLeft: 15,
     paddingBottom: 8,
-    color: Colors.inactive,
+    fontWeight: 'bold',
+    color: Colors.black,
   },
   error: {
     left: 0,

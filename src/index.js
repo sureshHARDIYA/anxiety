@@ -3,9 +3,12 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider as ThemeProvider } from '@ant-design/react-native';
 import { Drawer } from '@src/components/themes';
+import * as SettingAction from '@src/actions/setting';
 import ThemeContext from './themes';
 import Navigation from './navigation';
 import { store, persistor } from './reducers/createStore';
+
+store.dispatch(SettingAction.onSearchRequest());
 
 export default () => (
   <Provider store={store}>

@@ -1,7 +1,8 @@
 import { takeLatest } from 'redux-saga/effects';
-import { QUESTION, WORRY, QUIZ } from '@src/actions/constants';
+import { QUESTION, WORRY, QUIZ, SETTING } from '@src/actions/constants';
 import * as QUIZWATCHER from './quiz';
 import * as WORRYWATCHER from './worry';
+import * as SETTINGWATCHER from './setting';
 import * as QUESTIONWATCHER from './question';
 
 export default function* root() {
@@ -16,4 +17,8 @@ export default function* root() {
   yield takeLatest(QUIZ.CREATE_REQUEST, QUIZWATCHER.onCreateRequest);
   yield takeLatest(QUIZ.UPDATE_REQUEST, QUIZWATCHER.onUpdateRequest);
   yield takeLatest(QUIZ.DELETE_REQUEST, QUIZWATCHER.onDeleteRequest);
+
+  yield takeLatest(SETTING.SEARCH_REQUEST, SETTINGWATCHER.onSearchRequest);
+  yield takeLatest(SETTING.CREATE_REQUEST, SETTINGWATCHER.onCreateRequest);
+  yield takeLatest(SETTING.UPDATE_REQUEST, SETTINGWATCHER.onUpdateRequest);
 }

@@ -67,7 +67,7 @@ class MCTWorry extends Component {
             </Text>
           </View>
           <View style={Style.itemContent}>
-            <Text style={Style.text}>
+            <Text style={Style.text} numberOfLines={1}>
               {item.title}
             </Text>
             <View style={Style.itemFooter}>

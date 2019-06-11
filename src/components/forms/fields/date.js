@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   label: {
     flex: 1,
     paddingBottom: 8,
-    color: Colors.inactive,
+    fontWeight: 'bold',
+    color: Colors.black,
   },
   error: {
     left: 0,
