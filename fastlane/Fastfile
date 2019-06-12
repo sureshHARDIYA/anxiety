@@ -24,9 +24,10 @@ platform :ios do
       groups:['internal-dev'],
       notes_path: "./fastlane/release-notes.beta.txt",
       crashlytics_path: "./ios/Pods/Crashlytics/submit",
-      api_token: "45a03bb8659c090d2599b6cee63022c71a82c1c5",
-      build_secret: "88c0ba8f6a115d773a8b692fc79033690849773bcfa530768715025841d29e49"
+      api_token: ENV['FABRIC_TOKEN'],
+      build_secret: ENV['FABRIC_SECRET']
     )
+    slack(message: "Release new version")
   end
 
   # after_all do |lane|
