@@ -34,7 +34,12 @@ const HomeStack = createStackNavigator({
   // initialRouteName: 'QuizResult'
   defaultNavigationOptions: {
     gesturesEnabled: false,
-  }
+    headerStyle: {
+      color: Colors.white,
+      borderBottomWidth: 0,
+      backgroundColor: Colors.primary,
+    },
+  },
 });
 
 HomeStack.navigationOptions = {

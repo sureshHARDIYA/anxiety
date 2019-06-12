@@ -24,6 +24,7 @@ class SettingForm extends Component {
           options={[
             { value: 'en', label: strings('language.en') },
             { value: 'no', label: strings('language.no') },
+            { value: 'vi', label: strings('language.vi') },
           ]}
           label={strings('setting.language')}
         />

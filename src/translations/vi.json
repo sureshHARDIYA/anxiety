@@ -1,0 +1,160 @@
+{
+  "login": {
+    "welcome": "Xin chào {{name}}"
+  },
+  "buttons": {
+    "ok": "Đồng ý",
+    "cancel": "Huỳ bỏ",
+    "yes": "Đồng ý",
+    "no": "Không",
+    "sync": "Đồng bồ",
+    "view": "Xem",
+    "delete": "Xoá",
+    "disable_sync": "Tắt đồng bộ",
+    "enable_sync": "Bật đồng bộ",
+    "back": "Trờ lại",
+    "start": "Bắt đầu",
+    "find_help": "Tìm giúp đỡ",
+    "sign_in": "Đăng nhập",
+    "facebook": "Đăng nhập qua Facebook",
+    "sign_up": "Đăng ký",
+    "autosync": "Tự động đồng bộ",
+    "sync_frequency": "Đồng bộ tuần tự",
+    "sync_server": "Đồng bộ lên server",
+    "language": "Ngôn ngữ",
+    "skip": "Bỏ qua",
+    "submit": "Lưu",
+    "save": "Lưu",
+    "confirm": "Xác nhận"
+  },
+  "tabs": {
+    "home": "Trang chủ",
+    "history": "Lịch sử",
+    "mct": "MCT",
+    "info": "Thông tin"
+  },
+  "menu": {
+    "home": "Trang chủ",
+    "history": "Lịch sử",
+    "mct": "MCT",
+    "info": "Thông tin",
+    "settings": "Cài đặt"
+  },
+  "strings": {
+    "search": "Tìm kiếm",
+    "username": "Tài khoản",
+    "password": "Mật khẩu",
+    "forgot_password": "Quên mật khẩu",
+    "no_account": "Chưa có tài khoản?",
+    "question": "Câu hỏi",
+    "benchmark": "Đánh giá",
+    "sync": "Đồng bộ",
+    "language": "Ngôn ngữ",
+    "task_description": "Bài kiểm tra sẽ bao gồm một vài câu hỏi. Mỗi câu hỏi sẽ có một vài lựa chọn. Mỗi tùy chọn bạn chọn sẽ mang một số điểm sẽ được cộng lại để cung cấp cho bạn điểm số cuối cùng của bạn.",
+    "swipe": "Vuốt để đến câu tiếp"
+  },
+  "alert": {
+    "no_data": "Không dữ liệu",
+    "select_before_moving": "Vui lòng chọn một tùy chọn trước khi chuyển sang câu hỏi tiếp theo",
+    "login_to_sync": "Vui lòng đăng nhập để đồng bộ hóa dữ liệu",
+    "remove": "Bạn có chắc chắn muốn xóa \"{{item}}\"?",
+    "delete": "Bạn có chắc chắn muốn xóa task khỏi lịch sử?",
+    "agreement": "Tôi đồng ý với các điều khoản và điều kiện và cung cấp sự đồng ý hoàn toàn cho nhà cung cấp dịch vụ y tế chỉ sử dụng cho mục đích nghiên cứu và chẩn đoán.",
+    "exit": "Bạn có chắc chắn muốn thoát khỏi ứng dụng?",
+    "back": "Bạn có chắc chắn muốn quay lại?",
+    "score_display": "{{score}} chỉ số điểm {{result}}",
+    "confirm": "Xác nhận"
+  },
+  "toast": {
+    "no_data": "Không có dữ liệu để đồng bộ hóa",
+    "sync_data": "Đang đồ bộ",
+    "enable_sync": "Vui lòng bật đồng bộ hóa",
+    "sync_success": "Đã đồng bộ hóa thành công",
+    "sync_fail": "Đã đồng bộ hóa thất bại"
+  },
+  "splash": {
+    "slide1_title": "Chọn ngôn ngữ",
+    "slide2_title": "Đây là gì?",
+    "slide2_description": "Đây là một công cụ mạnh mẽ để hỗ trợ các bác sĩ lâm sàng chăm sóc chính trong chẩn đoán trầm cảm cũng như lựa chọn và theo dõi điều trị.",
+    "slide3_title": "Bạn đã cảm thấy lo lắng hay lo lắng quá nhiều về điều gì?",
+    "slide4_title": "Bạn có thường xuyên ngắt lời mọi người trong khi nói chuyện không?",
+    "slide5_title": "Bạn có gặp khó khăn khi chờ đến lượt mình không?",
+    "slide6_title": "Bạn có khó khăn để nhớ các cuộc hẹn, cuộc họp hoặc bất kỳ nghĩa vụ?",
+    "slide7_title": "Bạn có cảm thấy hụt hẫng không?"
+  },
+  "settings": {
+    "frequency_option1": "1 giờ",
+    "frequency_option2": "1 ngày",
+    "frequency_option3": "1 tuần",
+    "frequency_option4": "1 Tháng",
+    "language_option1": "Tiếng Anh",
+    "language_option2": "Tiếng Nepal",
+    "language_option3": "Tiếng Nauy",
+    "language_option4": "Swahili"
+  },
+  "info_menu": {
+    "title": {
+      "about": "Thông tin",
+      "credits": "Tín dụng",
+      "feedback": "Phản hồi",
+      "how_to_use": "Cách sử dụng",
+      "message": "Thông điệp",
+      "privacy_policy": "Chính sách",
+      "sources": "Tài nguyên"
+    },
+    "items": {
+      "about": "Thông tin ứng dụng",
+      "credits": "Tín dụng ứng dụng",
+      "feedback": "Phản hồi",
+      "how_to_use": "Cách sử dụng ứng dụng này?",
+      "message": "Thông điệp từ nhà phát triển",
+      "privacy_policy": "Chính sách",
+      "sources": "Depression sources"
+    }
+  },
+  "home": {
+    "header": "Tự đánh giá",
+    "title": "GAD 7",
+    "caption": "Bảng câu hỏi bệnh nhân tự sử dụng dễ sử dụng này được sử dụng như một công cụ sàng lọc và đo lường mức độ nghiêm trọng cho chứng rối loạn lo âu tổng quát (GAD)",
+    "btn": "Bắt đầu"
+  },
+  "benchmarks": {
+    "healthy": "0-4: Khoẻ mạnh",
+    "mild-anxiety": "5-9: Lo lắng nhẹ",
+    "moderate-anxiety": "10-14: Lo lắng vừa phải",
+    "severe-anxiety": "15-21: Lo lắng nặng nề"
+  },
+  "mct": {
+    "worry": "Lo lắng",
+    "worry_postponement": "Lo lắng",
+    "association": "Nhóm",
+    "associations": "Nhóm",
+    "worry_title": "Tiêu đề",
+    "worry_title_placeholder": "Viết những gì bạn đang lo lắng...",
+    "worry_date": "Ngày đặt lịch trình",
+    "worry_completed": "Hooàn thành",
+    "worry_describe": "Mô tả những gì bạn đang lo lắng",
+    "worry_describe_placeholder": "Viết những gì bạn đang lo lắng...",
+    "worry_schedule": "Lên lịch",
+    "confirm": "Xác nhận",
+    "cancel": "Huỷ bỏ",
+    "worry_updated_success": "{{title}} đã được cập nhật",
+    "worry_created_success": "{{title}} đã được tạo"
+  },
+  "quiz": {
+    "back": "Trờ lại",
+    "start": "Bắt đầu",
+  },
+  "setting": {
+    "language": "Ngôn ngữ",
+    "saved_success": "Cài đặt đã được lưu thành công"
+  },
+  "language": {
+    "en": "English",
+    "vi": "Tiếng việt",
+    "no": "Norwegian"
+  },
+  "errors": {
+    "blank": "Không được để trống"
+  }
+}

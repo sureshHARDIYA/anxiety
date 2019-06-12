@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, Image, View, ScrollView } from 'react-native';
 import { Button } from '@ant-design/react-native';
 import { strings } from '@src/i18n';
+import { Menu } from '@src/components/themes';
 import Style from './style';
 
 const Home = ({ navigation: { navigate } }) => (
@@ -27,9 +28,10 @@ const Home = ({ navigation: { navigate } }) => (
   </ScrollView>
 );
 
-Home.navigationOptions = {
-  header: null,
-};
+Home.navigationOptions = ({ navigation }) => ({
+  title: null,
+  headerLeft: <Menu navigation={navigation} />,
+});
 
 Home.propTypes = {
   navigation: PropTypes.object,
