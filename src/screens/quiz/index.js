@@ -70,7 +70,7 @@ class Quiz extends Component {
     this.props.onSubmit(data, (error, rs) => {
       if (rs) {
         const score = Object.values(items).reduce((total, answer) => (total + options[answer]), 0);
-        this.props.navigation.navigate('QuizResult', { score });
+        this.props.navigation.navigate('QuizResult', { score, authored: data.authored });
       }
     });
   }

@@ -3,6 +3,7 @@ import { Colors } from '@src/constants';
 import SettingScreen from '@src/screens/setting';
 import QuizScreen from '@src/screens/quiz';
 import QuizResultScreen from '@src/screens/quiz/result';
+import QuizDoctorscreen from '@src/screens/quiz/doctors';
 import QuizLandingScreen from '@src/screens/quiz/landing';
 
 import InfoAboutScreen from '@src/screens/info/about';
@@ -16,8 +17,9 @@ export default createStackNavigator({
   Setting: SettingScreen,
 
   Quiz: QuizScreen,
-  QuizResult: QuizResultScreen,
   QuizLanding: QuizLandingScreen,
+  QuizResult: QuizResultScreen,
+  QuizDoctors: QuizDoctorscreen,
 
   InfoAbout: InfoAboutScreen,
   InfoCredit: InfoCreditScreen,
@@ -26,6 +28,7 @@ export default createStackNavigator({
   InfoPrivacy: InfoPrivacyScreen,
   InfoMessage: InfoMessageScreen,
 }, {
+  // initialRouteName: 'QuizDoctors',
   defaultNavigationOptions: {
     headerTitleStyle: {
       color: Colors.white,

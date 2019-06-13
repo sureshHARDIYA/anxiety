@@ -7,6 +7,7 @@ export default {
   label: 14,
   large: 24,
   medium: 18,
+  huge: 32,
 
   width,
   height,

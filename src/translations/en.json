@@ -157,6 +157,12 @@
     "vi": "Tiếng việt",
     "no": "Norwegian"
   },
+  "results": {
+    "title": "Your results"
+  },
+  "doctors": {
+    "title": "Find a doctor"
+  },
   "errors": {
     "blank": "Can't blank"
   }

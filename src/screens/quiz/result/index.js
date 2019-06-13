@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import { Text, View, ScrollView } from 'react-native';
-import { Button } from '@ant-design/react-native';
+import { Button, Icon } from '@ant-design/react-native';
 import { strings } from '@src/i18n';
 import * as Progress from 'react-native-progress';
+import { Sizes } from '@src/constants';
 import Style from './style';
 
 const QuizResult = ({ navigation }) => {
-  const score = (navigation.state.params || {}).score || 0;
+  const score = (navigation.state.params || {}).score || 10;
+  const authored = moment((navigation.state.params || {}).authored || new Date());
+
   const fullScore = 21;
 
   const benchMarks = [
@@ -32,12 +36,26 @@ const QuizResult = ({ navigation }) => {
   }, { bench: null, description: null });
 
   return (
-    <ScrollView contentContainerStyle={Style.container}>
+    <ScrollView style={Style.container}>
+      <Text style={Style.headerBar}>
+        {strings('results.title')}
+      </Text>
+      <View style={Style.headerTop}>
+        <Icon name="clock-circle" size={30} color="#FFF" />
+        <View style={Style.headerTopRight}>
+          <Text style={Style.headerTime}>{authored.format('MMM DD, YYYY')}</Text>
+          <Text style={Style.headerTime}>{authored.format('hh:mm a')}</Text>
+        </View>
+      </View>
       <View style={Style.header}>
-        <Text style={Style.headerText}>{score} / {fullScore}</Text>
+        <Text style={Style.headerText}><Text style={Style.bold}>{score}</Text> / {fullScore}</Text>
         <View style={Style.progressView}>
           <Progress.Bar
-            width={200}
+            width={Sizes.width - 60}
+            height={25}
+            color="#FFF"
+            borderRadius={30}
+            // unfilledColor="red"
             progress={score / fullScore}
           />
         </View>
@@ -52,7 +70,7 @@ const QuizResult = ({ navigation }) => {
       <Button
         type="ghost"
         style={Style.btnFooter}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('QuizDoctors')}
       >
         <Text style={Style.btnFooterText}>{strings('buttons.find_help')}</Text>
       </Button>

@@ -12,6 +12,7 @@ const storeApp = () => {
   const persistConfig = {
     storage,
     key: 'root',
+    whitelist: [''],
     blacklist: ['form']
   };
 
