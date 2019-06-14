@@ -7,31 +7,39 @@ import styles from './style';
 const Credit = () => (
   <ScrollView contentContainerStyle={styles.container}>
     <View style={styles.content}>
-      <Image style={styles.image} source={require('@src/assets/images/icons/profile.png')} />
+      <Image
+        style={styles.image}
+        source={require('@src/assets/images/icons/profile.png')}
+      />
       <Text style={styles.name}>Suresh Kumar Mukhiya</Text>
     </View>
     <View style={styles.content}>
-      <Image style={styles.image} source={require('@src/assets/images/icons/profile.png')} />
+      <Image
+        style={styles.image}
+        source={require('@src/assets/images/icons/profile.png')}
+      />
       <Text style={styles.name}>Fazle Rabbi</Text>
     </View>
     <View style={styles.content}>
-      <Image style={styles.image} source={require('@src/assets/images/icons/profile.png')} />
+      <Image
+        style={styles.image}
+        source={require('@src/assets/images/icons/profile.png')}
+      />
       <Text style={styles.name}>Violet Ka I Pun</Text>
     </View>
     <View style={styles.content}>
-      <Image style={styles.image} source={require('@src/assets/images/icons/profile.png')} />
+      <Image
+        style={styles.image}
+        source={require('@src/assets/images/icons/profile.png')}
+      />
       <Text style={styles.name}>Yngva Lamo</Text>
-    </View>
-    <View style={styles.content}>
-      <Image style={styles.image} source={require('@src/assets/images/icons/profile.png')} />
-      <Text style={styles.name}>Tine Nordgreen</Text>
     </View>
   </ScrollView>
 );
 
 Credit.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.credits'),
-  headerLeft: <Back navigation={navigation} route="Info" />,
+  headerLeft: <Back navigation={navigation} route="Info" />
 });
 
 export default Credit;

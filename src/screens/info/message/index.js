@@ -19,35 +19,34 @@ const Message = () => (
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Depression is a pervasive, global illness. According WHO’s 2012
-        Depression Fact Sheet, an estimated 350 million people of all
-        ages suffer from depression worldwide. Depression is different
-        from occasional mood swings and emotional responses to everyday
-        life challenges. It is a serious health condition and a
-        long-lasting, severe episode’s effects on an individual can be
-        devastating.
+        Social anxiety is the fear of being judged and evaluated negatively by
+        other people, leading to feelings of inadequacy, inferiority,
+        self-consciousness, embarrassment, humiliation, and depression. If a
+        person usually becomes (irrationally) anxious in social situations, but
+        seems better when they are alone, then social anxiety may be the
+        problem.
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Although depression can be effectively treated, only a small
-        minority of affected people actually receive such treatments.
-        More often than not, the social stigma associated with mental
-        disorders would keep an affected person from seeking
-        professional help.
+        Social anxiety disorder (formerly termed social phobia) is a much more
+        common problem than past estimates have led us to believe. Millions of
+        people all over the world suffer from this devastating and traumatic
+        condition every day, either from a specific social anxiety or from a
+        more generalized social anxiety.
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        We developed this application to help those who may be suffering
-        from depression to assess their conditions in privacy and
-        hopefully feel empowered to take whatever action necessary.
+        We developed this application to help those who may be suffering from
+        social anxiety to assess their conditions in privacy and hopefully feel
+        empowered to take whatever action necessary.
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Please feel free to reach out to us to let us know how you like
-        the app and what we can do to make it help you better.
+        Please feel free to reach out to us to let us know how you like the app
+        and what we can do to make it help you better.
       </Text>
     </View>
     <View style={styles.paragraph}>
@@ -61,7 +60,7 @@ const Message = () => (
 
 Message.navigationOptions = ({ navigation }) => ({
   title: strings('info_menu.title.message'),
-  headerLeft: <Back navigation={navigation} route="Info" />,
+  headerLeft: <Back navigation={navigation} route="Info" />
 });
 
 export default Message;
