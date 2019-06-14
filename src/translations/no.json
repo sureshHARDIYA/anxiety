@@ -21,9 +21,9 @@
     "autosync": "Automatisk synkronisering",
     "sync_frequency": "Sync Frequency",
     "sync_server": "Sync to Server",
-    "language": "Language",
+    "language": "Språk",
     "skip": "SKIP",
-    "submit": "Submit"
+    "submit": "Sende inn"
   },
   "tabs": {
     "home": "Alle",
@@ -46,9 +46,9 @@
     "question": "Spørsmål",
     "benchmark": "Benchmark",
     "sync": "Sync",
-    "language": "Language",
-    "task_description": "The test will consist of few questions. Each question will have a few options. Every option you choose will carry a score which will be added up to give you your final score.",
-    "swipe": "Swipe to Next Question"
+    "language": "Språk",
+    "task_description": "Testen vil bestå av noen få spørsmål. Hvert spørsmål vil ha noen alternativer. Hvert valg du velger vil bære en poeng som vil bli lagt opp for å gi deg din endelige poengsum.",
+    "swipe": "Sveip til neste spørsmål"
   },
   "alert": {
     "select_before_moving": "Vennligst velg et alternativ før du går videre til neste spørsmål",
@@ -82,9 +82,7 @@
     "frequency_option3": "1 uke",
     "frequency_option4": "1 måned",
     "language_option1": "Engelsk",
-    "language_option2": "Nepali",
-    "language_option3": "norsk",
-    "language_option4": "Swahili"
+    "language_option3": "norsk"
   },
   "info_menu": {
     "title": {
