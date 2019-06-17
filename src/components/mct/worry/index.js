@@ -11,7 +11,6 @@ import { Button, Icon, Modal } from '@ant-design/react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { Container, TouchableItem } from '@src/components/themes';
 import { Colors } from '@src/constants';
-import { FORMAT_DATE } from '@src/constants/Variables';
 import { strings } from '@src/i18n';
 import Style from './style';
 
@@ -72,7 +71,7 @@ class MCTWorry extends Component {
             </Text>
             <View style={Style.itemFooter}>
               <Icon name="calendar" />
-              <Text style={Style.itemFooterText}> {scheduled.format(FORMAT_DATE)}</Text>
+              <Text style={Style.itemFooterText}> {scheduled.format('DD MMM [at] hh:mm a')}</Text>
             </View>
           </View>
         </View>

@@ -30,6 +30,7 @@ class WorryForm extends Component {
           placeholder={strings('mct.worry_describe_placeholder')}
         />
         <Field
+          mode="datetime"
           name="scheduled"
           component={DateInput}
           label={strings('mct.worry_schedule')}

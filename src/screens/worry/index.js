@@ -8,7 +8,6 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import Form from '@src/components/forms/worry';
 import * as WorryAction from '@src/actions/worry';
-import { FORMAT_DATE } from '@src/constants/Variables';
 
 class Worry extends Component {
   static navigationOptions = {
@@ -16,12 +15,7 @@ class Worry extends Component {
     headerLeft: <Back />
   };
 
-  onSubmit = (params) => {
-    const worry = {
-      ...params,
-      scheduled: moment(params.scheduled, FORMAT_DATE).toDate(),
-    };
-
+  onSubmit = (worry) => {
     this.props.onSubmit(worry, (error, data) => {
       if (!error) {
         this.props.onReset();
@@ -35,7 +29,7 @@ class Worry extends Component {
 
   render() {
     const item = { ...((this.props.navigation.state.params || {}).item || {}) };
-    item.scheduled = moment(item.scheduled || new Date()).format(FORMAT_DATE);
+    item.scheduled = moment(item.scheduled || new Date()).toString();
 
     return (
       <Container transparent>

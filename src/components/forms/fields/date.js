@@ -6,7 +6,7 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 import { Button, Icon } from '@ant-design/react-native';
 import { Colors } from '@src/constants';
 
-const DateTime = ({ label, input, format = 'DD / MM / YYYY', meta: { touched, error }, ...others }) => {
+const DateTime = ({ label, input, format = 'DD / MM / YYYY, HH:MM', meta: { touched, error }, ...others }) => {
   const [visible, onChange] = useState(false);
   const hasError = touched && !!error;
   const hasLabel = !!label;
@@ -16,12 +16,19 @@ const DateTime = ({ label, input, format = 'DD / MM / YYYY', meta: { touched, er
     value && input.onChange(value);
   };
 
+  let date = new Date();
+  if (!!input.value && input.value.length === format.length && moment(input.value, format).isValid()) {
+    date = moment(input.value, format).toDate();
+  } else if (!!input.value && moment(input.value).isValid()) {
+    date = moment(input.value).toDate();
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <View style={styles.left}>
           {hasLabel && <Text style={styles.label}>{label}</Text>}
-          {<Text style={styles.value}>{input.value || format}</Text>}
+          {<Text style={styles.value}>{moment(input.value).format('DD MMM [at] hh:mm a') || format}</Text>}
         </View>
         <Button
           type="ghost"
@@ -40,8 +47,9 @@ const DateTime = ({ label, input, format = 'DD / MM / YYYY', meta: { touched, er
         isVisible={visible}
         {...input}
         {...others}
+        date={date}
         onCancel={() => onClose(null)}
-        onConfirm={date => onClose(moment(date).format(format))}
+        onConfirm={time => onClose(moment(time).toString())}
       />
     </View>
   );
