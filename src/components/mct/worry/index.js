@@ -82,11 +82,18 @@ class MCTWorry extends Component {
 
   render() {
     const { navigation, list } = this.props;
+    const { unscheduled, scheduled } = list.reduce((obj, item) => {
+      if (item.status) {
+        return ({ ...obj, scheduled: [...obj.scheduled, item] });
+      }
+
+      return ({ ...obj, unscheduled: [...obj.unscheduled, item] });
+    }, { unscheduled: [], scheduled: [] });
 
     return (
       <Container>
         <ScrollView>
-          {list.map(this.renderItem)}
+          {[...unscheduled, ...scheduled].map(this.renderItem)}
         </ScrollView>
         <Button
           style={Style.btnFloat}
