@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
-import { Text } from 'react-native';
-import { Button } from '@ant-design/react-native';
+// import { Text } from 'react-native';
+// import { Button } from '@ant-design/react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Picker } from '@src/components/forms/fields';
 import { strings } from '@src/i18n';
@@ -27,13 +27,8 @@ class SettingForm extends Component {
             { value: 'vi', label: strings('language.vi') },
           ]}
           label={strings('setting.language')}
+          onClose={handleSubmit}
         />
-        <Button
-          style={styles.submit}
-          onPress={handleSubmit}
-        >
-          <Text style={styles.submitText}>{strings('buttons.submit')}</Text>
-        </Button>
       </KeyboardAwareScrollView>
     );
   }

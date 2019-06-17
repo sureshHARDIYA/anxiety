@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Colors } from '@src/constants';
 
-const RadioInput = ({ label, options = [], defaultValue, input, meta: { touched, error } }) => {
+const RadioInput = ({ label, options = [], defaultValue, input, meta: { touched, error }, ...others }) => {
   const hasError = touched && !!error;
   const hasLabel = !!label;
 
@@ -19,6 +19,7 @@ const RadioInput = ({ label, options = [], defaultValue, input, meta: { touched,
           <View style={styles.right}>
             <RNPickerSelect
               {...input}
+              {...others}
               placeholder={{}}
               items={options}
               value={input.value}
