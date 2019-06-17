@@ -8,7 +8,7 @@ import Style from './style';
 class Info extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: strings('tabs.info'),
-    headerLeft: <Menu navigation={navigation} />,
+    headerLeft: <Menu navigation={navigation} />
   });
 
   list = [
@@ -16,8 +16,7 @@ class Info extends Component {
     { title: strings('info_menu.items.about'), route: 'InfoAbout' },
     { title: strings('info_menu.items.how_to_use'), route: 'InfoHowToUse' },
     { title: strings('info_menu.items.privacy_policy'), route: 'InfoPrivacy' },
-    { title: strings('info_menu.items.credits'), route: 'InfoCredit' },
-    { title: strings('info_menu.items.sources'), route: 'InfoSource' }
+    { title: strings('info_menu.items.credits'), route: 'InfoCredit' }
   ];
 
   renderItem = item => (
@@ -28,7 +27,7 @@ class Info extends Component {
     >
       <Text style={Style.txtItem}>{item.title}</Text>
     </TouchableOpacity>
-  )
+  );
 
   render() {
     return (
@@ -40,7 +39,7 @@ class Info extends Component {
 }
 
 Info.propTypes = {
-  navigation: PropTypes.object,
+  navigation: PropTypes.object
 };
 
 export default Info;
