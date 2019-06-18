@@ -10,20 +10,16 @@
   ],
   "questionnaire": "Generalized Anxiety Disorder 7 Item Scale (GAD-7)",
   "status": "completed",
-  "subject": [
-    "Patient"
-  ],
+  "subject": ["Patient"],
   "authored": "2019-01-16T15:17:35.392Z",
-  "author": [
-    "Patient"
-  ],
+  "author": ["Patient"],
   "item": [
     {
       "linkId": "anxiety-gad_701",
       "text": "Feeling nervous, anxious, or on edge",
       "answer": [
         {
-          "value": "Several Days",
+          "value": "Several days",
           "weight": 1
         }
       ],

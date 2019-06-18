@@ -31,9 +31,7 @@
       "display": "Generalized anxiety disorder 7 item scale"
     }
   ],
-  "subjectType": [
-    "Patient"
-  ],
+  "subjectType": ["Patient"],
   "contained": [
     {
       "resourceType": "ValueSet",
@@ -73,7 +71,7 @@
             "concept": [
               {
                 "code": "MHOFVS004-1",
-                "display": "Not At All Sure",
+                "display": "Not at all sure",
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
@@ -83,7 +81,7 @@
               },
               {
                 "code": "MHOFVS004-2",
-                "display": "Several Days",
+                "display": "Several days",
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
@@ -93,7 +91,7 @@
               },
               {
                 "code": "MHOFVS004-3",
-                "display": "Over Half The Days",
+                "display": "Over half the days",
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
@@ -103,7 +101,7 @@
               },
               {
                 "code": "MHOFVS004-4",
-                "display": "Nearly Everyday",
+                "display": "Nearly everyday",
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",
