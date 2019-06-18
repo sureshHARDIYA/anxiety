@@ -7,14 +7,11 @@ import styles from './style';
 const PrivacyPolicy = () => (
   <ScrollView contentContainerStyle={styles.container}>
     <View style={styles.title}>
-      <Text style={styles.titleText}>Privacy Policy</Text>
+      <Text style={styles.titleText}>{strings('info_menu.contents.privacy.title')}</Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        We do not collect any personal data through this application.
-        Your test results are locally stored on your phone and are NOT
-        accessible to the developers of this application or any 3rd
-        party.
+        {strings('info_menu.contents.privacy.content')}
       </Text>
     </View>
   </ScrollView>

@@ -7,53 +7,41 @@ import styles from './style';
 const Message = () => (
   <ScrollView contentContainerStyle={styles.container}>
     <View style={styles.title}>
-      <Text style={styles.titleText}>Message from the Team</Text>
+      <Text style={styles.titleText}>{strings('info_menu.contents.message.title')}</Text>
     </View>
     <View style={styles.paragraph}>
-      <Text style={styles.whiteText}>Hello there,</Text>
+      <Text style={styles.whiteText}>{strings('info_menu.contents.message.paragraph1')}</Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Thanks for downloading Anxiety CBT app.
+        {strings('info_menu.contents.message.paragraph2')}
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Social anxiety is the fear of being judged and evaluated negatively by
-        other people, leading to feelings of inadequacy, inferiority,
-        self-consciousness, embarrassment, humiliation, and depression. If a
-        person usually becomes (irrationally) anxious in social situations, but
-        seems better when they are alone, then social anxiety may be the
-        problem.
+        {strings('info_menu.contents.message.paragraph3')}
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Social anxiety disorder (formerly termed social phobia) is a much more
-        common problem than past estimates have led us to believe. Millions of
-        people all over the world suffer from this devastating and traumatic
-        condition every day, either from a specific social anxiety or from a
-        more generalized social anxiety.
+        {strings('info_menu.contents.message.paragraph4')}
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        We developed this application to help those who may be suffering from
-        social anxiety to assess their conditions in privacy and hopefully feel
-        empowered to take whatever action necessary.
+        {strings('info_menu.contents.message.paragraph5')}
       </Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        Please feel free to reach out to us to let us know how you like the app
-        and what we can do to make it help you better.
+        {strings('info_menu.contents.message.paragraph6')}
       </Text>
     </View>
     <View style={styles.paragraph}>
-      <Text style={styles.whiteText}>Take care,</Text>
+      <Text style={styles.whiteText}>{strings('info_menu.contents.message.paragraph7')}</Text>
     </View>
     <View style={styles.paragraph}>
-      <Text style={styles.whiteText}>INTROMAT Team</Text>
+      <Text style={styles.whiteText}>{strings('info_menu.contents.message.paragraph8')}</Text>
     </View>
   </ScrollView>
 );

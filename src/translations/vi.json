@@ -99,7 +99,7 @@
       "feedback": "Phản hồi",
       "how_to_use": "Cách sử dụng",
       "message": "Thông điệp",
-      "privacy_policy": "Chính sách",
+      "privacy_policy": "Chính sách bảo mật",
       "sources": "Tài nguyên"
     },
     "items": {
@@ -108,8 +108,48 @@
       "feedback": "Phản hồi",
       "how_to_use": "Cách sử dụng ứng dụng này?",
       "message": "Thông điệp từ nhà phát triển",
-      "privacy_policy": "Chính sách",
+      "privacy_policy": "Chính sách bảo mật",
       "sources": "Depression sources"
+    },
+    "contents": {
+      "about": {
+        "title1": "Thông tin ứng dụng",
+        "title2": "Ưu điểm của ứng dụng",
+        "content": "Thang đo Rối loạn lo âu tổng quát (GAD-7) là một trong những thang đo tự báo cáo chẩn đoán được sử dụng thường xuyên nhất để sàng lọc, chẩn đoán và đánh giá mức độ nghiêm trọng của rối loạn lo âu. Các thuộc tính tâm lý của nó theo quan điểm của mô hình lý thuyết đáp ứng vật phẩm hiếm khi được nghiên cứu. Với tỷ lệ phổ biến khoảng 8% Rối loạn lo âu tổng quát (GAD) là rối loạn lo âu thường gặp nhất trong chăm sóc chính. GAD được thống kê liên quan đến tuổi và giới tính và cho thấy độ hấp thụ cao với trầm cảm và somatization. Bệnh nhân bị ảnh hưởng với GAD bị suy yếu trong cuộc sống hàng ngày và cuộc sống công việc. Điều này dẫn đến số ngày tàn tật nghiêm trọng và chi phí kinh tế tăng lên tương ứng. Từ quan điểm của bác sĩ chăm sóc chính, điều quan trọng là xác định GAD một cách đáng tin cậy và kinh tế để bắt đầu một phương pháp điều trị thích hợp, ví dụ. tâm lý trị liệu và để giảm chi phí kinh tế do sử dụng các dịch vụ y tế bổ sung do các triệu chứng soma. Trong trường hợp không có các biện pháp lo âu ngắn gọn và được kiểm chứng, GAD-7 đã được phát triển để cung cấp một biện pháp tự báo cáo ngắn gọn để xác định sự lo lắng tổng quát trong chăm sóc chính. Có liên quan, các bác sĩ chăm sóc chính thường đấu tranh để nhận ra các dấu hiệu đau khổ tâm lý, đặc biệt là lo lắng, mặc dù là đầu tiên, nếu không phải là điểm tiếp xúc duy nhất với hệ thống chăm sóc sức khỏe. Do đó, một biện pháp hợp lệ dễ dàng áp dụng và đối mặt với GAD có khả năng cải thiện sự công nhận của GAD và giải quyết nhu cầu sức khỏe cộng đồng cấp bách.",
+        "advantage1": "Có thể được quản lý trực tiếp bởi bác sĩ lâm sàng, qua điện thoại hoặc tự quản lý",
+        "advantage2": "Tạo thuận lợi cho chẩn đoán trầm cảm chính",
+        "advantage3": "Cung cấp đánh giá mức độ nghiêm trọng của triệu chứng",
+        "advantage4": "Được xác nhận tốt và được ghi nhận trong nhiều quần thể",
+        "advantage5": "Có thể được sử dụng ở thanh thiếu niên từ 12 tuổi"
+      },
+      "how_to_use": {
+        "title": "Làm thế nào để sử dụng ứng dụng này?",
+        "subtitle1": "Câu hỏi",
+        "subtitle2": "Bắt đầu",
+        "subtitle3": "Câu hỏi",
+        "subtitle4": "Kết quả",
+        "question1": "Trả lời các câu hỏi một cách trung thực và trả lời tất cả chúng trong một lần ngồi.",
+        "question2": "Trả lời các câu hỏi một cách trung thực và trả lời tất cả chúng trong một lần ngồi.",
+        "answer1": "Nhấp vào nút Nút Nút thử nghiệm để bắt đầu làm bài kiểm tra. Sau khi bắt đầu, bạn phải trả lời tất cả các câu hỏi để hoàn thành bài kiểm tra.",
+        "answer2": "Kết quả kiểm tra mới nhất của bạn và phân tích tóm tắt các kết quả sẽ hiển thị trên màn hình Lịch sử trực tuyến. GAD-7 Mức độ lo âu: Điều này được tính bằng cách gán điểm 0, 1, 2 và 3 cho phản hồi Không có gì thuộc về chủng loại, một trong số những ngày, Triệu, hơn một nửa ngày, Mạnh và hơn gần một ngày, lần lượt là GAD-7 cho bảy mục trong khoảng từ 0 đến 21.",
+        "answer3": "Điểm 5, 10 và 15 tương ứng với các điểm cắt cho sự lo lắng nhẹ, trung bình và nghiêm trọng. Mặc dù được thiết kế chủ yếu như một biện pháp sàng lọc và mức độ nghiêm trọng cho chứng rối loạn lo âu tổng quát, GAD-7 cũng hoạt động khá tốt đặc điểm của ba rối loạn lo âu phổ biến khác - rối loạn hoảng sợ, rối loạn lo âu xã hội và rối loạn căng thẳng sau chấn thương. Khi sàng lọc cho từng cá nhân hoặc bất kỳ rối loạn lo âu nào, một điểm cắt được đề nghị để đánh giá thêm là điểm 10 hoặc cao hơn.",
+        "answer4": "Sử dụng điểm ngưỡng 10, GAD-7 có độ nhạy 89% và độ đặc hiệu 82% đối với rối loạn lo âu tổng quát. Nó khá tốt trong việc sàng lọc ba rối loạn lo âu phổ biến khác - rối loạn hoảng sợ (độ nhạy 74 %, độ đặc hiệu 81%), rối loạn lo âu xã hội (độ nhạy 72%, độ đặc hiệu 80%) và rối loạn căng thẳng sau chấn thương (độ nhạy 66%, độ đặc hiệu 81%).",
+      },
+      "privacy": {
+        "title": "Chính sách bảo mật",
+        "content": "Chúng tôi không thu thập bất kỳ dữ liệu cá nhân thông qua ứng dụng này. Kết quả kiểm tra của bạn được lưu trữ cục bộ trên điện thoại của bạn và KHÔNG thể truy cập được đối với các nhà phát triển ứng dụng này hoặc bất kỳ bên thứ 3 nào."
+      },
+      "message": {
+        "title": "Tin nhắn từ nhóm",
+        "paragraph1": "Xin chào,",
+        "paragraph2": "Cảm ơn bạn đã tải xuống ứng dụng Anxiety CBT.",
+        "paragraph3": "Lo lắng xã hội là nỗi sợ bị người khác đánh giá và đánh giá tiêu cực, dẫn đến cảm giác không thỏa đáng, mặc cảm, tự ý thức, bối rối, sỉ nhục và trầm cảm. Nếu một người thường trở nên lo lắng (phi lý) trong xã hội tình huống, nhưng có vẻ tốt hơn khi họ ở một mình, sau đó lo lắng xã hội có thể là vấn đề. ",
+        "paragraph4": "Rối loạn lo âu xã hội (trước đây gọi là ám ảnh sợ xã hội) là một vấn đề phổ biến hơn nhiều so với ước tính trước đây khiến chúng ta tin tưởng. Hàng triệu người trên khắp thế giới phải chịu đựng tình trạng tàn khốc và đau thương này mỗi ngày lo lắng xã hội hoặc từ một lo lắng xã hội tổng quát hơn. ",
+        "paragraph5": "Chúng tôi đã phát triển ứng dụng này để giúp những người có thể bị lo lắng xã hội đánh giá tình trạng của họ trong quyền riêng tư và hy vọng cảm thấy được trao quyền để thực hiện bất kỳ hành động nào cần thiết.",
+        "paragraph6": "Xin vui lòng liên hệ với chúng tôi để cho chúng tôi biết bạn thích ứng dụng này như thế nào và chúng tôi có thể làm gì để giúp ứng dụng giúp bạn tốt hơn.",
+        "paragraph7": "Bảo trọng",
+        "paragraph8": "INTROMAT Team"
+      }
     }
   },
   "home": {

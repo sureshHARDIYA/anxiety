@@ -8,46 +8,45 @@ import styles from './style';
 const About = () => (
   <ScrollView contentContainerStyle={styles.container}>
     <View style={styles.title}>
-      <Text style={styles.titleText}>About the app</Text>
+      <Text style={styles.titleText}>{strings('info_menu.contents.about.title1')}</Text>
     </View>
     <View style={styles.paragraph}>
       <Text style={styles.whiteText}>
-        The Generalized Anxiety Disorder scale (GAD-7) is one of the most frequently used diagnostic self-report scales for screening, diagnosis and severity assessment of anxiety disorder. Its psychometric properties from the view of the Item Response Theory paradigm have rarely been investigated.With a point prevalence of about 8% Generalized Anxiety Disorder (GAD) is the most frequent anxiety disorder in primary care. GAD is statistically associated with age and gender and shows high comorbidity with depression and somatization. Patients affected with GAD are impaired in their daily life and work life. The latter results in severe numbers of disability days and correspondingly increased economic costs. From the perspective of the primary care physician it is important to identify GAD in a reliable and yet economic way in order to initiate a proper treatment–e.g. psychotherapy—and in order to decrease the economic cost resulting from the usage of additional health services due to somatic symptoms. In the absence of brief and validated measures of anxiety, the GAD-7 was developed to provide a brief self-report measure to identify generalized anxiety in primary care. Relevantly, primary care physicians often struggle to recognize signs of psychological distress, particularly anxiety, despite being the first, if not the only point of contact with the healthcare system. Therefore, an easily applicable and face valid measure for GAD has the potential to improve recognition of GAD and address a pressing public health need.
+        {strings('info_menu.contents.about.content')}
       </Text>
     </View>
     <View style={styles.title}>
-      <Text style={styles.titleText}>Advantages of the app</Text>
+      <Text style={styles.titleText}>{strings('info_menu.contents.about.title2')}</Text>
     </View>
     <View style={styles.paragraph}>
       <View style={styles.listItem}>
         <Icon size={10} name="circle" style={styles.icon} />
         <Text style={styles.whiteText}>
-          Can be administered in person by a clinician, by telephone, or
-          self-administered
+          {strings('info_menu.contents.about.advantage1')}
         </Text>
       </View>
       <View style={styles.listItem}>
         <Icon size={10} name="circle" style={styles.icon} />
         <Text style={styles.whiteText}>
-          Facilitates diagnosis of major depression
+          {strings('info_menu.contents.about.advantage2')}
         </Text>
       </View>
       <View style={styles.listItem}>
         <Icon size={10} name="circle" style={styles.icon} />
         <Text style={styles.whiteText}>
-          Provides assessment of symptom severity
+          {strings('info_menu.contents.about.advantage3')}
         </Text>
       </View>
       <View style={styles.listItem}>
         <Icon size={10} name="circle" style={styles.icon} />
         <Text style={styles.whiteText}>
-          Is well validated and documented in a variety of populations
+          {strings('info_menu.contents.about.advantage4')}
         </Text>
       </View>
       <View style={styles.listItem}>
         <Icon size={10} name="circle" style={styles.icon} />
         <Text style={styles.whiteText}>
-          Can be used in adolescents as young as 12 years of age
+          {strings('info_menu.contents.about.advantage5')}
         </Text>
       </View>
     </View>

@@ -7,6 +7,22 @@ import { strings } from '@src/i18n';
 import styles from './style';
 
 class SettingForm extends Component {
+  state = {
+    language: 'en',
+    initialValues: {},
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.initialValues.language !== state.language && state.initialValues.language !== props.initialValues.language) {
+      return ({
+        initialValues: props.initialValues,
+        language: props.initialValues.language,
+      });
+    }
+
+    return null;
+  }
+
   get options() {
     return [
       { value: 'en', label: strings('language.en') },
@@ -35,7 +51,7 @@ class SettingForm extends Component {
               <RNPickerSelect
                 placeholder={{}}
                 items={this.options}
-                value={initialValues.value}
+                value={this.state.language}
                 style={{
                   inputIOS: {
                     textAlign: 'right',
@@ -44,7 +60,8 @@ class SettingForm extends Component {
                     textAlign: 'right',
                   }
                 }}
-                onValueChange={value => onSubmit({ ...initialValues, language: value || 'en' })}
+                onValueChange={value => this.setState({ language: value || 'en' })}
+                onClose={() => onSubmit({ ...initialValues, language: this.state.language })}
               />
             </View>
           </View>
@@ -56,7 +73,7 @@ class SettingForm extends Component {
 
 SettingForm.propTypes = {
   onSubmit: PropTypes.func,
-  initialValues: PropTypes.func,
+  initialValues: PropTypes.object,
 };
 
 export default SettingForm;

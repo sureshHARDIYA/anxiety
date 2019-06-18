@@ -27,6 +27,7 @@ export default StyleSheet.create({
     color: Colors.black,
   },
   listItem: {
+    marginTop: 5,
     flexDirection: 'row',
     justifyContent: 'flex-start'
   },

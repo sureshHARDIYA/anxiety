@@ -110,6 +110,46 @@
       "message": "Message from the developer",
       "privacy_policy": "Privacy Policy",
       "sources": "Depression sources"
+    },
+    "contents": {
+      "about": {
+        "title1": "About the app",
+        "title2": "Advantages of the app",
+        "content": "The Generalized Anxiety Disorder scale (GAD-7) is one of the most frequently used diagnostic self-report scales for screening, diagnosis and severity assessment of anxiety disorder. Its psychometric properties from the view of the Item Response Theory paradigm have rarely been investigated.With a point prevalence of about 8% Generalized Anxiety Disorder (GAD) is the most frequent anxiety disorder in primary care. GAD is statistically associated with age and gender and shows high comorbidity with depression and somatization. Patients affected with GAD are impaired in their daily life and work life. The latter results in severe numbers of disability days and correspondingly increased economic costs. From the perspective of the primary care physician it is important to identify GAD in a reliable and yet economic way in order to initiate a proper treatment–e.g. psychotherapy—and in order to decrease the economic cost resulting from the usage of additional health services due to somatic symptoms. In the absence of brief and validated measures of anxiety, the GAD-7 was developed to provide a brief self-report measure to identify generalized anxiety in primary care. Relevantly, primary care physicians often struggle to recognize signs of psychological distress, particularly anxiety, despite being the first, if not the only point of contact with the healthcare system. Therefore, an easily applicable and face valid measure for GAD has the potential to improve recognition of GAD and address a pressing public health need.",
+        "advantage1": "Can be administered in person by a clinician, by telephone, or self-administered",
+        "advantage2": "Facilitates diagnosis of major depression",
+        "advantage3": "Provides assessment of symptom severity",
+        "advantage4": "Is well validated and documented in a variety of populations",
+        "advantage5": "Can be used in adolescents as young as 12 years of age",
+      },
+      "how_to_use": {
+        "title": "How to use this app?",
+        "subtitle1": "Questions",
+        "subtitle2": "Start",
+        "subtitle3": "Questions",
+        "subtitle4": "Results",
+        "question1": "Answer the questions honestly and answer them all in one sitting.",
+        "question2": "Answer the questions honestly and answer them all in one sitting.",
+        "answer1": "Click “The Test” button to start taking the test. Once started, you have to answer all of the questions to complete the test.",
+        "answer2": "Your latest test result and the summary analysis of the results will show on the “History” screen. GAD-7 Anxiety Severity: This is calculated by assigning scores of 0, 1, 2, and 3, to the response categories of “not at all,” “several days,” “more than half the days,” and “nearly every day,” respectively. GAD-7 total score for the seven items ranges from 0 to 21.",
+        "answer3": "Scores of 5, 10, and 15 represent cut points for mild, moderate, and severe anxiety, respectively. Though designed primarily as a screening and severity measure for generalized anxiety disorder, the GAD-7 also has moderately good operating characteristics for three other common anxiety disorders – panic disorder, social anxiety disorder, and post-traumatic stress disorder. When screening for individual or any anxiety disorder, a recommended cut point for further evaluation is a score of 10 or greater.",
+        "answer4": "Using the threshold score of 10, the GAD-7 has a sensitivity of 89% and a specificity of 82% for generalized anxiety disorder. It is moderately good at screening three other common anxiety disorders – panic disorder (sensitivity 74%, specificity 81%), social anxiety disorder (sensitivity 72%, specificity 80%), and post-traumatic stress disorder (sensitivity 66%, specificity 81%).",
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "content": "We do not collect any personal data through this application. Your test results are locally stored on your phone and are NOT accessible to the developers of this application or any 3rd party."
+      },
+      "message": {
+        "title": "Message from the Team",
+        "paragraph1": "Hello there,",
+        "paragraph2": "Thanks for downloading Anxiety CBT app.",
+        "paragraph3": "Social anxiety is the fear of being judged and evaluated negatively by other people, leading to feelings of inadequacy, inferiority, self-consciousness, embarrassment, humiliation, and depression. If a person usually becomes (irrationally) anxious in social situations, but seems better when they are alone, then social anxiety may be the problem.",
+        "paragraph4": "Social anxiety disorder (formerly termed social phobia) is a much more common problem than past estimates have led us to believe. Millions of people all over the world suffer from this devastating and traumatic condition every day, either from a specific social anxiety or from a more generalized social anxiety.",
+        "paragraph5": "We developed this application to help those who may be suffering from social anxiety to assess their conditions in privacy and hopefully feel empowered to take whatever action necessary.",
+        "paragraph6": "Please feel free to reach out to us to let us know how you like the app and what we can do to make it help you better.",
+        "paragraph7": "Bảo trọng,",
+        "paragraph8": "INTROMAT Team"
+      }
     }
   },
   "home": {
