@@ -26,15 +26,16 @@
     "submit": "Sende inn"
   },
   "tabs": {
-    "home": "Alle",
+    "home": "Hjem",
     "history": "Historie",
-    "recent": "Nylig",
     "info": "'Info",
     "chat": "Chat"
   },
   "menu": {
     "home": "Hjem",
-    "info": "'Info",
+    "history": "Historie",
+    "mct": "MCT",
+    "info": "Info",
     "settings": "innstillinger"
   },
   "strings": {

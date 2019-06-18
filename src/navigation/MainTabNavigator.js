@@ -1,5 +1,8 @@
 import React from 'react';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import {
+  createStackNavigator,
+  createBottomTabNavigator
+} from 'react-navigation';
 import { Icon } from '@ant-design/react-native';
 import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
@@ -16,82 +19,99 @@ import InfoScreen from '@src/screens/info';
 
 const defaultNavigationOptions = {
   headerTitleStyle: {
-    color: Colors.white,
+    color: Colors.white
   },
   headerStyle: {
     color: Colors.white,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.primary
   },
   headerTintColor: Colors.white,
-  gesturesEnabled: false,
+  gesturesEnabled: false
 };
 
-const tabBarIcon = name => ({ focused }) => <Icon color={focused ? Colors.active : Colors.inactive} name={name} />; // eslint-disable-line
+// eslint-disable-next-line
+const tabBarIcon = name => ({ focused }) => (
+  <Icon color={focused ? Colors.active : Colors.inactive} name={name} />
+); // eslint-disable-line
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-}, {
-  // initialRouteName: 'QuizResult'
-  defaultNavigationOptions: {
-    gesturesEnabled: false,
-    headerStyle: {
-      color: Colors.white,
-      borderBottomWidth: 0,
-      backgroundColor: Colors.primary,
-    },
+const HomeStack = createStackNavigator(
+  {
+    Home: HomeScreen
   },
-});
+  {
+    defaultNavigationOptions: {
+      gesturesEnabled: false,
+      headerStyle: {
+        color: Colors.white,
+        borderBottomWidth: 0,
+        backgroundColor: Colors.primary
+      }
+    }
+  }
+);
 
 HomeStack.navigationOptions = {
   tabBarLabel: strings('tabs.home'),
-  tabBarIcon: tabBarIcon('home'),
+  tabBarIcon: tabBarIcon('home')
 };
 
-const HistoryStack = createStackNavigator({
-  History: HistoryScreen,
-  HistoryDetail: HistoryDetailScreen,
-}, {
-  defaultNavigationOptions
-});
+const HistoryStack = createStackNavigator(
+  {
+    History: HistoryScreen,
+    HistoryDetail: HistoryDetailScreen
+  },
+  {
+    defaultNavigationOptions
+  }
+);
 
 HistoryStack.navigationOptions = {
   tabBarLabel: strings('tabs.history'),
-  tabBarIcon: tabBarIcon('clock-circle'),
+  tabBarIcon: tabBarIcon('clock-circle')
 };
 
-const MCTtack = createStackNavigator({
-  MCT: MCTScreen,
-  Worry: WorryScreen,
-  Association: AssociationScreen,
-}, {
-  defaultNavigationOptions
-});
+const MCTtack = createStackNavigator(
+  {
+    MCT: MCTScreen,
+    Worry: WorryScreen,
+    Association: AssociationScreen
+  },
+  {
+    defaultNavigationOptions
+  }
+);
 
 MCTtack.navigationOptions = {
   tabBarLabel: strings('tabs.mct'),
-  tabBarIcon: tabBarIcon('star'),
+  tabBarIcon: tabBarIcon('star')
 };
 
-const InfoStack = createStackNavigator({
-  Info: InfoScreen,
-}, {
-  defaultNavigationOptions
-});
+const InfoStack = createStackNavigator(
+  {
+    Info: InfoScreen
+  },
+  {
+    defaultNavigationOptions
+  }
+);
 
 InfoStack.navigationOptions = {
   tabBarLabel: strings('tabs.info'),
-  tabBarIcon: tabBarIcon('container'),
+  tabBarIcon: tabBarIcon('container')
 };
 
-export default createBottomTabNavigator({
-  HomeStack,
-  HistoryStack,
-  MCTtack,
-  InfoStack,
-}, {
-  initialRouteName: 'HomeStack',
-  tabBarOptions: {
-    activeTintColor: Colors.active,
-    inactiveTintColor: Colors.inactive,
+export default createBottomTabNavigator(
+  {
+    HomeStack,
+    HistoryStack,
+    MCTtack,
+    InfoStack
   },
-});
+  {
+    initialRouteName: 'HomeStack',
+    tabBarOptions: {
+      activeTintColor: Colors.active,
+      inactiveTintColor: Colors.inactive
+    }
+  }
+);
