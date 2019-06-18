@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
+import { strings } from '@src/i18n';
 import { Colors } from '@src/constants';
 
 const RadioInput = ({ label, options = [], defaultValue, input, meta: { touched, error }, ...others }) => {
@@ -11,7 +12,7 @@ const RadioInput = ({ label, options = [], defaultValue, input, meta: { touched,
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {hasLabel && <View style={{ backgroundColor: 'rgba(52,52,52, 0.2)' }}><Text style={styles.label}>{label}</Text></View>}
+        {hasLabel && <View style={{ backgroundColor: 'rgba(52,52,52, 0.2)' }}><Text style={styles.label}>{strings(label)}</Text></View>}
         <View style={styles.options}>
           <View style={styles.left}>
             <Text>{label}</Text>

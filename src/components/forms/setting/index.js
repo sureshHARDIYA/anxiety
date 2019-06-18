@@ -1,44 +1,62 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Field, reduxForm } from 'redux-form';
-// import { Text } from 'react-native';
-// import { Button } from '@ant-design/react-native';
+import { Text, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Picker } from '@src/components/forms/fields';
+import RNPickerSelect from 'react-native-picker-select';
 import { strings } from '@src/i18n';
 import styles from './style';
-import validate from './validate';
 
 class SettingForm extends Component {
+  get options() {
+    return [
+      { value: 'en', label: strings('language.en') },
+      { value: 'no', label: strings('language.no') },
+      { value: 'vi', label: strings('language.vi') },
+    ];
+  }
+
   render() {
-    const { handleSubmit } = this.props;
+    const { onSubmit, initialValues } = this.props;
+
     return (
       <KeyboardAwareScrollView
         behavior="padding"
         style={styles.container}
       >
-        <Field
-          name="language"
-          component={Picker}
-          defaultValue="en"
-          options={[
-            { value: 'en', label: strings('language.en') },
-            { value: 'no', label: strings('language.no') },
-            { value: 'vi', label: strings('language.vi') },
-          ]}
-          label={strings('setting.language')}
-          onClose={handleSubmit}
-        />
+        <View style={styles.content}>
+          <View style={styles.group}>
+            <Text style={styles.label}>{strings('setting.language')}</Text>
+          </View>
+          <View style={styles.options}>
+            <View style={styles.left}>
+              <Text>{strings('setting.language')}</Text>
+            </View>
+            <View style={styles.right}>
+              <RNPickerSelect
+                placeholder={{}}
+                items={this.options}
+                value={initialValues.value}
+                style={{
+                  inputIOS: {
+                    textAlign: 'right',
+                  },
+                  inputAndroid: {
+                    textAlign: 'right',
+                  }
+                }}
+                onValueChange={value => onSubmit({ ...initialValues, language: value || 'en' })}
+              />
+            </View>
+          </View>
+        </View>
       </KeyboardAwareScrollView>
     );
   }
 }
 
 SettingForm.propTypes = {
-  handleSubmit: PropTypes.func,
+  onSubmit: PropTypes.func,
+  initialValues: PropTypes.func,
 };
 
-export default reduxForm({
-  form: 'setting-form',
-  validate
-})(SettingForm);
+export default SettingForm;

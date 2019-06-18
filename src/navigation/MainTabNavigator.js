@@ -3,6 +3,7 @@ import {
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation';
+import { Text, StyleSheet } from 'react-native';
 import { Icon } from '@ant-design/react-native';
 import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
@@ -29,10 +30,8 @@ const defaultNavigationOptions = {
   gesturesEnabled: false
 };
 
-// eslint-disable-next-line
-const tabBarIcon = name => ({ focused }) => (
-  <Icon color={focused ? Colors.active : Colors.inactive} name={name} />
-); // eslint-disable-line
+const tabBarIcon = name => ({ focused }) => <Icon color={focused ? Colors.active : Colors.inactive} name={name} />; // eslint-disable-line
+const tabBarLabel = label => ({ focused }) => <Text style={[Style.label, focused && Style.active]}>{strings(label)}</Text>; // eslint-disable-line
 
 const HomeStack = createStackNavigator(
   {
@@ -51,8 +50,8 @@ const HomeStack = createStackNavigator(
 );
 
 HomeStack.navigationOptions = {
-  tabBarLabel: strings('tabs.home'),
-  tabBarIcon: tabBarIcon('home')
+  tabBarIcon: tabBarIcon('home'),
+  tabBarLabel: tabBarLabel('tabs.home')
 };
 
 const HistoryStack = createStackNavigator(
@@ -66,8 +65,8 @@ const HistoryStack = createStackNavigator(
 );
 
 HistoryStack.navigationOptions = {
-  tabBarLabel: strings('tabs.history'),
-  tabBarIcon: tabBarIcon('clock-circle')
+  tabBarIcon: tabBarIcon('clock-circle'),
+  tabBarLabel: tabBarLabel('tabs.history')
 };
 
 const MCTtack = createStackNavigator(
@@ -82,8 +81,8 @@ const MCTtack = createStackNavigator(
 );
 
 MCTtack.navigationOptions = {
-  tabBarLabel: strings('tabs.mct'),
-  tabBarIcon: tabBarIcon('star')
+  tabBarIcon: tabBarIcon('star'),
+  tabBarLabel: tabBarLabel('tabs.mct')
 };
 
 const InfoStack = createStackNavigator(
@@ -96,22 +95,29 @@ const InfoStack = createStackNavigator(
 );
 
 InfoStack.navigationOptions = {
-  tabBarLabel: strings('tabs.info'),
-  tabBarIcon: tabBarIcon('container')
+  tabBarIcon: tabBarIcon('container'),
+  tabBarLabel: tabBarLabel('tabs.info')
 };
 
-export default createBottomTabNavigator(
-  {
-    HomeStack,
-    HistoryStack,
-    MCTtack,
-    InfoStack
+const Style = StyleSheet.create({
+  label: {
+    fontSize: 12,
+    color: Colors.inactive,
   },
-  {
-    initialRouteName: 'HomeStack',
-    tabBarOptions: {
-      activeTintColor: Colors.active,
-      inactiveTintColor: Colors.inactive
-    }
+  active: {
+    color: Colors.active,
   }
-);
+});
+
+export default createBottomTabNavigator({
+  HomeStack,
+  HistoryStack,
+  MCTtack,
+  InfoStack,
+}, {
+  initialRouteName: 'HomeStack',
+  tabBarOptions: {
+    activeTintColor: Colors.active,
+    inactiveTintColor: Colors.inactive
+  }
+});

@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -61,7 +62,6 @@
 		A684CFFB06394C16BC059B9B /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D63D6FEF7ED49538492E8AE /* libRNVectorIcons.a */; };
 		AB77D02DF7694CC4B24A186C /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AABC043DE864A5BAF3598C2 /* AntDesign.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
-		AEC3082CA9B7B49A95E7807C /* Pods_anxietyCBTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C86E2C892AFE0524279635 /* Pods_anxietyCBTTests.framework */; };
 		B5D12BFF49204F06B2DBB8AE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 562FBA3C92F94908B49BF010 /* FontAwesome.ttf */; };
 		B692A7EE9315482D9031741B /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C8E5A91ADBBC4BB69D5A5711 /* Octicons.ttf */; };
 		C06D3B62B0E945A09984D373 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC4ACC33A23441A09D8DE1BE /* libRNSVG-tvOS.a */; };
@@ -535,7 +535,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				AEC3082CA9B7B49A95E7807C /* Pods_anxietyCBTTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

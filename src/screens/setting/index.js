@@ -11,15 +11,16 @@ import * as SettingAction from '@src/actions/setting';
 import * as SettingSelect from '@src/selectors/setting';
 
 class Setting extends Component {
-  static navigationOptions = {
+  static navigationOptions = () => ({
     title: strings('menu.settings'),
     headerLeft: <Menu />
-  };
+  });
 
   onSubmit = (params) => {
     this.props.onSubmit(params, (error) => {
       if (!error) {
-        Toast.success(strings('setting.saved_success'));
+        // Toast.success(strings('setting.saved_success'));
+        this.props.navigation.setParams({ title: strings('menu.settings') });
       } else {
         Toast.fail(error.toString());
       }
@@ -39,6 +40,7 @@ class Setting extends Component {
 Setting.propTypes = {
   setting: PropTypes.object,
   onSubmit: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
