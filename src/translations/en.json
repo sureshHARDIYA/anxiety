@@ -203,6 +203,12 @@
   "doctors": {
     "title": "Find a doctor"
   },
+  "notifications": {
+    "worry": {
+      "title": "Worry completed",
+      "completed": "{{title}} completed"
+    }
+  },
   "errors": {
     "blank": "Can't blank"
   }
