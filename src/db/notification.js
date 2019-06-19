@@ -2,8 +2,8 @@
 import NotificationService from '@src/services/notification';
 import realm from './schema';
 
-const requireFields = ['resourceId', 'resourceType', 'title', 'body'];
-const permitFields = [...requireFields, 'createdAt', 'updatedAt'];
+const requireFields = ['id', 'resourceId', 'resourceType', 'title', 'body', 'scheduled'];
+const permitFields = [...requireFields, 'status', 'createdAt', 'updatedAt'];
 
 class Notification {
   constructor() {
@@ -24,8 +24,14 @@ class Notification {
     });
   }
 
-  updateBadge() {
-    this.notif.setBadge(realm.objects('Notification').filtered('status = true').length);
+  updateBadge(transaction = true) {
+    if (transaction) {
+      this.notif.setBadge(realm.objects('Notification').filtered('status = false').length);
+    } else {
+      realm.write(() => {
+        this.notif.setBadge(realm.objects('Notification').filtered('status = false').length);
+      });
+    }
   }
 
   getId(args = '') {
@@ -55,14 +61,12 @@ class Notification {
         }
 
         const transaction = () => {
-          const last = (realm.objects('Notification').sorted('id', true) || [])[0] || {};
-          permitParams.id = (last.id || 0) + 1;
-
           permitParams.createdAt = new Date();
           permitParams.updatedAt = new Date();
-          const item = realm.create('Notification', permitParams);
+          const item = realm.create('Notification', permitParams, true);
+          this.notif.cancelNotif(item.id);
+          this.notif.scheduleNotif(item);
           this.updateBadge();
-          this.notif.localNotif(item);
           return item;
         };
 
@@ -84,7 +88,11 @@ class Notification {
       try {
         const permitParams = permitFields.reduce((obj, key) => ([undefined, null].includes(params[key]) ? obj : ({ ...obj, [key]: params[key] })), { id });
         permitParams.updatedAt = new Date();
-        realm.write(() => resolve(realm.create('Notification', permitParams, true)));
+        realm.write(() => {
+          const item = realm.create('Notification', permitParams, true);
+          this.updateBadge();
+          resolve(item);
+        });
       } catch (e) {
         reject(e);
       }

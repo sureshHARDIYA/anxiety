@@ -15,3 +15,7 @@ export const onUpdateSuccess = (params = {}) => ({ ...params, type: WORRY.UPDATE
 export const onDeleteRequest = (params = {}) => ({ ...params, type: WORRY.DELETE_REQUEST });
 export const onDeleteFailure = (params = {}) => ({ ...params, type: WORRY.DELETE_FAILURE });
 export const onDeleteSuccess = (params = {}) => ({ ...params, type: WORRY.DELETE_SUCCESS });
+
+export const onDetailRequest = (params = {}) => ({ ...params, type: WORRY.DETAIL_REQUEST });
+export const onDetailFailure = (params = {}) => ({ ...params, type: WORRY.DETAIL_FAILURE });
+export const onDetailSuccess = (params = {}) => ({ ...params, type: WORRY.DETAIL_SUCCESS });

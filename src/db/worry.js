@@ -3,7 +3,7 @@ import { strings } from '@src/i18n';
 import realm from './schema';
 import Notification from './notification';
 
-const requireFields = ['title', 'content'];
+const requireFields = ['title', 'content', 'scheduled'];
 const permitFields = ['title', 'status', 'content', 'scheduled', 'createdAt', 'updatedAt'];
 
 class Worry {
@@ -54,8 +54,10 @@ class Worry {
             Notification.createData({
               resourceId: item.id,
               resourceType: 'Worry',
-              title: strings('notifications.worry.title'),
-              body: strings('notifications.worry.completed', { title: item.title })
+              scheduled: item.scheduled,
+              body: item.title,
+              id: `Worry_Scheduled_${item.id}`,
+              title: strings('notifications.worry.scheduled0')
             });
           }
 
@@ -75,12 +77,14 @@ class Worry {
         realm.write(() => {
           const oldItem = realm.objects('Worry').filtered(`id = ${id}`)[0];
 
-          if (oldItem && !oldItem.status && params.status) {
+          if (oldItem && params.status && params.scheduled !== oldItem.scheduled) {
             Notification.createData({
               resourceId: id,
               resourceType: 'Worry',
-              title: strings('notifications.worry.title'),
-              body: strings('notifications.worry.completed', { title: permitParams.title })
+              id: `Worry_Scheduled_${id}`,
+              scheduled: permitParams.scheduled || oldItem.scheduled,
+              body: permitParams.title || oldItem.title,
+              title: strings('notifications.worry.scheduled0')
             });
           }
 

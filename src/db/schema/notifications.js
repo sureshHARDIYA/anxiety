@@ -1,5 +1,5 @@
 export const properties = {
-  id: 'int',
+  id: 'string',
   resourceId: 'int',
   resourceType: 'string',
   title: 'string',
@@ -10,6 +10,10 @@ export const properties = {
   status: {
     type: 'bool',
     default: false,
+  },
+  scheduled: {
+    type: 'date',
+    default: new Date(),
   },
   createdAt: 'date',
   updatedAt: 'date',

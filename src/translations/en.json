@@ -205,8 +205,8 @@
   },
   "notifications": {
     "worry": {
-      "title": "Worry completed",
-      "completed": "{{title}} completed"
+      "scheduled0": "You have scheduled a worry at moment",
+      "scheduled": "You have scheduled a worry after {{time}} minutes",
     }
   },
   "errors": {

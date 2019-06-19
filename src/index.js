@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider as ThemeProvider } from '@ant-design/react-native';
+import { NavigationActions } from 'react-navigation';
 import { Drawer } from '@src/components/themes';
+// import DBNoti from '@src/db/notification';
+import * as WorryAction from '@src/actions/worry';
 import * as SettingAction from '@src/actions/setting';
 import Notification from '@src/services/notification';
 import ThemeContext from './themes';
@@ -25,8 +28,17 @@ class Root extends Component {
     // this.setState({ registerToken: token.token, gcmRegistered: true });
   }
 
-  onNotif = (notif) => {
-    console.log('notif:', notif);
+  onNotif = ({ data }) => {
+    if ((data || {}).resourceType === 'Worry') {
+      store.dispatch(WorryAction.onDetailRequest({
+        id: data.resourceId,
+        notificationId: data.id,
+        cb: (_, item) => store.dispatch(NavigationActions.navigate({
+          routeName: 'Worry',
+          params: { item },
+        })),
+      }));
+    }
   }
 
   render() {
