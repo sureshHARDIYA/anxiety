@@ -190,7 +190,15 @@
   },
   "setting": {
     "language": "Language",
-    "saved_success": "Setting is saved successfully"
+    "schedule": "Schedule",
+    "saved_success": "Setting is saved successfully",
+    "schedules": {
+      "0": "0 minute",
+      "10": "10 minutes",
+      "20": "20 minutes",
+      "30": "30 minutes",
+      "60": "1 hour"
+    }
   },
   "language": {
     "en": "English",
@@ -202,6 +210,13 @@
   },
   "doctors": {
     "title": "Find a doctor"
+  },
+  "notifications": {
+    "worry": {
+      "scheduled0": "You have scheduled a worry at moment",
+      "scheduled": "You have scheduled a worry after {{time}} minutes",
+      "scheduled_before": "You have scheduled a worry before {{time}} minutes",
+    }
   },
   "errors": {
     "blank": "Can't blank"

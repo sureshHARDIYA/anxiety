@@ -1,6 +1,8 @@
 import * as WORRY from '@src/actions/worry';
+import * as SETTING from '@src/actions/setting';
 import { put, call } from 'redux-saga/effects';
 import DB from '@src/db/worry';
+import DBNoti from '@src/db/notification';
 
 export function* onSearchRequest({ cb }) {
   try {
@@ -42,6 +44,29 @@ export function* onDeleteRequest({ id, cb }) {
     cb && (yield call(cb, null, null));
   } catch (error) {
     yield put(WORRY.onDeleteFailure({ error }));
+    cb && (yield call(cb, error, null));
+  }
+}
+
+export function* onDetailRequest({ id, notificationId, cb }) {
+  try {
+    const item = yield call(DB.getId, `id = '${id}'`);
+    yield put(WORRY.onDetailSuccess({ item }));
+    cb && (yield call(cb, null, item));
+    yield call(DBNoti.updateData, notificationId, { status: true });
+  } catch (error) {
+    yield put(WORRY.onDetailFailure({ error }));
+    cb && (yield call(cb, error, null));
+  }
+}
+
+export function* onRescheduleRequest({ cb }) {
+  try {
+    const items = yield call(DB.reSchedule);
+    yield put(SETTING.onRescheduleSuccess({ items }));
+    cb && (yield call(cb, null, items));
+  } catch (error) {
+    yield put(SETTING.onRescheduleFailure({ error }));
     cb && (yield call(cb, error, null));
   }
 }

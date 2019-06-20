@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { reset } from 'redux-form';
-import { Toast } from '@ant-design/react-native';
 import { createStructuredSelector } from 'reselect';
 import { Menu } from '@src/components/themes';
 import { strings } from '@src/i18n';
@@ -10,37 +8,16 @@ import Form from '@src/components/forms/setting';
 import * as SettingAction from '@src/actions/setting';
 import * as SettingSelect from '@src/selectors/setting';
 
-class Setting extends Component {
-  static navigationOptions = () => ({
-    title: strings('menu.settings'),
-    headerLeft: <Menu />
-  });
+const Setting = ({ onReload, setting, ...others }) => <Form setting={setting} onReload={onReload} {...others} />;
 
-  onSubmit = (params) => {
-    this.props.onSubmit(params, (error) => {
-      if (!error) {
-        // Toast.success(strings('setting.saved_success'));
-        this.props.navigation.setParams({ title: strings('menu.settings') });
-      } else {
-        Toast.fail(error.toString());
-      }
-    });
-  }
-
-  render() {
-    return (
-      <Form
-        onSubmit={this.onSubmit}
-        initialValues={this.props.setting}
-      />
-    );
-  }
-}
+Setting.navigationOptions = ({ navigation }) => ({
+  title: strings('menu.settings'),
+  headerLeft: <Menu navigation={navigation} />
+});
 
 Setting.propTypes = {
-  setting: PropTypes.object,
-  onSubmit: PropTypes.func.isRequired,
-  navigation: PropTypes.object.isRequired,
+  onReload: PropTypes.func.isRequired,
+  setting: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -48,14 +25,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onReset: () => dispatch(reset('setting-form')),
-  onSubmit: (setting, cb) => {
-    if (setting.id) {
-      dispatch(SettingAction.onUpdateRequest({ setting, id: setting.id, cb }));
-    } else {
-      dispatch(SettingAction.onCreateRequest({ setting, cb }));
-    }
-  }
+  onReload: cb => dispatch(SettingAction.onSearchRequest({ cb })),
+  onReschedule: () => dispatch(SettingAction.onRescheduleRequest()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Setting);

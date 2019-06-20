@@ -187,7 +187,15 @@
   },
   "setting": {
     "language": "Ngôn ngữ",
-    "saved_success": "Cài đặt đã được lưu thành công"
+    "schedule": "Đặt lịch",
+    "saved_success": "Cài đặt đã được lưu thành công",
+    "schedules": {
+      "0": "0 phút",
+      "10": "10 phút",
+      "20": "20 phút",
+      "30": "30 phút",
+      "60": "1 giờ"
+    }
   },
   "language": {
     "en": "English",

@@ -11,3 +11,7 @@ export const onCreateSuccess = (params = {}) => ({ ...params, type: SETTING.CREA
 export const onUpdateRequest = (params = {}) => ({ ...params, type: SETTING.UPDATE_REQUEST });
 export const onUpdateFailure = (params = {}) => ({ ...params, type: SETTING.UPDATE_FAILURE });
 export const onUpdateSuccess = (params = {}) => ({ ...params, type: SETTING.UPDATE_SUCCESS });
+
+export const onRescheduleRequest = (params = {}) => ({ ...params, type: SETTING.RESCHEDULE_REQUEST });
+export const onRescheduleFailure = (params = {}) => ({ ...params, type: SETTING.RESCHEDULE_FAILURE });
+export const onRescheduleSuccess = (params = {}) => ({ ...params, type: SETTING.RESCHEDULE_SUCCESS });
