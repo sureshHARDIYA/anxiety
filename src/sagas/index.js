@@ -20,6 +20,5 @@ export default function* root() {
   yield takeLatest(QUIZ.DELETE_REQUEST, QUIZWATCHER.onDeleteRequest);
 
   yield takeLatest(SETTING.SEARCH_REQUEST, SETTINGWATCHER.onSearchRequest);
-  yield takeLatest(SETTING.CREATE_REQUEST, SETTINGWATCHER.onCreateRequest);
-  yield takeLatest(SETTING.UPDATE_REQUEST, SETTINGWATCHER.onUpdateRequest);
+  yield takeLatest(SETTING.RESCHEDULE_REQUEST, WORRYWATCHER.onRescheduleRequest);
 }

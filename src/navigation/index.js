@@ -13,7 +13,7 @@ export const AppNavigator = createAppContainer(createSwitchNavigator({
   MainTab: MainTabNavigator,
   Main: MainNavigator,
 }, {
-  initialRouteName: 'MainTab',
+  initialRouteName: 'Main',
 }));
 
 export const middleware = createReactNavigationReduxMiddleware(state => state.navigation);

@@ -4,6 +4,7 @@ import { SETTING } from '@src/actions/constants';
 
 export const INITIAL_STATE = {
   info: {
+    schedule: '0',
     language: 'en',
   },
   isLoading: false,

@@ -1,4 +1,4 @@
-// import moment from 'moment';
+import moment from 'moment';
 import { strings } from '@src/i18n';
 import realm from './schema';
 import Notification from './notification';
@@ -50,7 +50,7 @@ class Worry {
           permitParams.updatedAt = new Date();
           const item = realm.create('Worry', permitParams);
 
-          if (item && item.status) {
+          if (item && !item.status) {
             Notification.createData({
               resourceId: item.id,
               resourceType: 'Worry',
@@ -77,7 +77,7 @@ class Worry {
         realm.write(() => {
           const oldItem = realm.objects('Worry').filtered(`id = ${id}`)[0];
 
-          if (oldItem && params.status && params.scheduled !== oldItem.scheduled) {
+          if (oldItem && !params.status && params.scheduled !== oldItem.scheduled) {
             Notification.createData({
               resourceId: id,
               resourceType: 'Worry',
@@ -102,6 +102,27 @@ class Worry {
         realm.write(() => {
           const item = realm.objects('Worry').filtered(`id = ${id}`);
           resolve(realm.delete(item));
+        });
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
+  reSchedule() {
+    return new Promise((resolve, reject) => {
+      try {
+        realm.write(() => {
+          const items = realm.objects('Worry').filtered('status = $0 AND scheduled > $1', false, moment().format());
+
+          resolve(items.map(item => Notification.createData({
+            resourceId: item.id,
+            resourceType: 'Worry',
+            id: `Worry_Scheduled_${item.id}`,
+            scheduled: item.scheduled,
+            body: item.title,
+            title: strings('notifications.worry.scheduled0')
+          }, true)));
         });
       } catch (e) {
         reject(e);

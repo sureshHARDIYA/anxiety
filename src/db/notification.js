@@ -1,4 +1,6 @@
-// import moment from 'moment';
+import moment from 'moment';
+import { AsyncStorage } from 'react-native';
+import { strings } from '@src/i18n';
 import NotificationService from '@src/services/notification';
 import realm from './schema';
 
@@ -47,8 +49,8 @@ class Notification {
     });
   }
 
-  createData(params, write = true) {
-    return new Promise((resolve, reject) => {
+  createData(params) {
+    return new Promise(async (resolve, reject) => {
       try {
         const permitParams = permitFields.reduce((obj, key) => ([undefined, null].includes(params[key]) ? obj : ({ ...obj, [key]: params[key] })), {});
 
@@ -60,23 +62,30 @@ class Notification {
           throw invalid;
         }
 
-        const transaction = () => {
+        const scheduled = JSON.parse((await AsyncStorage.getItem('setting')) || '{}').scheduled || '0';
+        permitParams.scheduled = moment(params.scheduled).clone().add(-scheduled, 'minutes').toDate();
+
+        const duration = Math.trunc(moment.duration(moment(permitParams.scheduled).diff(moment())).asMinutes()) || 0;
+
+        realm.write(() => {
           permitParams.createdAt = new Date();
           permitParams.updatedAt = new Date();
+
+          if (`${scheduled}` !== '0') {
+            const time = duration < 0 ? (duration + +scheduled) : scheduled;
+            if (time < 0) {
+              permitParams.title = strings('notifications.worry.scheduled_before', { time: Math.abs(time) });
+            } else if (time > 0) {
+              permitParams.title = strings('notifications.worry.scheduled', { time });
+            }
+          }
+
           const item = realm.create('Notification', permitParams, true);
           this.notif.cancelNotif(item.id);
           this.notif.scheduleNotif(item);
           this.updateBadge();
-          return item;
-        };
-
-        if (write) {
-          resolve(transaction());
-        } else {
-          realm.write(() => {
-            resolve(transaction());
-          });
-        }
+          resolve(item);
+        });
       } catch (e) {
         reject(e);
       }
