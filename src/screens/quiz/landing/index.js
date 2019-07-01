@@ -27,7 +27,7 @@ const QuizLanding = ({ navigation }) => {
       <Button
         type="ghost"
         style={Style.btnFlat}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('QuizStart')}
       >
         <Text style={Style.btnFlatText}>
           {strings('quiz.back')}

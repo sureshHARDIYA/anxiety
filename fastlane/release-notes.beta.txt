@@ -1,1 +1,1 @@
-Push notification
+Push notification in schedule

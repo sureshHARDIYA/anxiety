@@ -71,7 +71,7 @@
             "concept": [
               {
                 "code": "MHOFVS004-1",
-                "display": "Not at all sure",
+                "display": "Not at all",
                 "extension": [
                   {
                     "url": "http://hl7.org/fhir/StructureDefinition/valueset-ordinalValue",

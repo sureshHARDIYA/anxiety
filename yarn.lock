@@ -5512,6 +5512,13 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-card-stack-swiper@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-card-stack-swiper/-/react-native-card-stack-swiper-1.1.0.tgz#5713afc3f4506f68cd90fe6102287aab7766e4ad"
+  integrity sha512-+xMXOYU2aS4CfTWqtL7vPnS9SdFCCD88CyciDDHyY5QP2SgxMpk4tge4b8mIiTBNrXPY0vwI6nGTyAgCjNncaw==
+  dependencies:
+    prop-types "15.5.10"
+
 react-native-chart-kit@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/react-native-chart-kit/-/react-native-chart-kit-2.6.1.tgz#a0b6a7a5978b90798b1d89a0a609f19c2681bad4"

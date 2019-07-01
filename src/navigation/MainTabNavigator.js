@@ -7,16 +7,14 @@ import { Text, StyleSheet } from 'react-native';
 import { Icon } from '@ant-design/react-native';
 import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
-import MCTScreen from '@src/screens/mct';
-import WorryScreen from '@src/screens/worry';
-import AssociationScreen from '@src/screens/association';
 
 import HomeScreen from '@src/screens/home';
+import ExerciseScreen from '@src/screens/exercise';
+
+import QuizStartScreen from '@src/screens/quiz/start';
 
 import HistoryScreen from '@src/screens/history';
 import HistoryDetailScreen from '@src/screens/history/detail';
-
-import InfoScreen from '@src/screens/info';
 
 const defaultNavigationOptions = {
   headerTitleStyle: {
@@ -40,9 +38,11 @@ const HomeStack = createStackNavigator(
   {
     defaultNavigationOptions: {
       gesturesEnabled: false,
+      headerTitleStyle: {
+        color: Colors.white
+      },
       headerStyle: {
         color: Colors.white,
-        borderBottomWidth: 0,
         backgroundColor: Colors.primary
       }
     }
@@ -51,7 +51,7 @@ const HomeStack = createStackNavigator(
 
 HomeStack.navigationOptions = {
   tabBarIcon: tabBarIcon('home'),
-  tabBarLabel: tabBarLabel('tabs.home')
+  tabBarLabel: tabBarLabel('tabs.worries')
 };
 
 const HistoryStack = createStackNavigator(
@@ -69,34 +69,32 @@ HistoryStack.navigationOptions = {
   tabBarLabel: tabBarLabel('tabs.history')
 };
 
-const MCTtack = createStackNavigator(
+const Exercisetack = createStackNavigator(
   {
-    MCT: MCTScreen,
-    Worry: WorryScreen,
-    Association: AssociationScreen
+    Exercise: ExerciseScreen,
   },
   {
     defaultNavigationOptions
   }
 );
 
-MCTtack.navigationOptions = {
+Exercisetack.navigationOptions = {
   tabBarIcon: tabBarIcon('star'),
-  tabBarLabel: tabBarLabel('tabs.mct')
+  tabBarLabel: tabBarLabel('tabs.exercise')
 };
 
-const InfoStack = createStackNavigator(
+const StartStack = createStackNavigator(
   {
-    Info: InfoScreen
+    QuizStart: QuizStartScreen
   },
   {
     defaultNavigationOptions
   }
 );
 
-InfoStack.navigationOptions = {
+StartStack.navigationOptions = {
   tabBarIcon: tabBarIcon('container'),
-  tabBarLabel: tabBarLabel('tabs.info')
+  tabBarLabel: tabBarLabel('tabs.start')
 };
 
 const Style = StyleSheet.create({
@@ -111,11 +109,11 @@ const Style = StyleSheet.create({
 
 export default createBottomTabNavigator({
   HomeStack,
+  StartStack,
+  Exercisetack,
   HistoryStack,
-  MCTtack,
-  InfoStack,
 }, {
-  initialRouteName: 'HomeStack',
+  initialRouteName: 'Exercisetack',
   tabBarOptions: {
     activeTintColor: Colors.active,
     inactiveTintColor: Colors.inactive

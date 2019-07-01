@@ -12,6 +12,8 @@ import InfoHowToUseScreen from '@src/screens/info/HowToUse';
 import InfoPrivacyScreen from '@src/screens/info/privacy';
 import InfoMessageScreen from '@src/screens/info/message';
 
+import AssociationScreen from '@src/screens/association';
+
 export default createStackNavigator(
   {
     Setting: SettingScreen,
@@ -25,7 +27,9 @@ export default createStackNavigator(
     InfoCredit: InfoCreditScreen,
     InfoHowToUse: InfoHowToUseScreen,
     InfoPrivacy: InfoPrivacyScreen,
-    InfoMessage: InfoMessageScreen
+    InfoMessage: InfoMessageScreen,
+
+    Association: AssociationScreen,
   },
   {
     // initialRouteName: 'QuizDoctors',

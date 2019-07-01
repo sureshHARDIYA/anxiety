@@ -31,13 +31,17 @@
     "home": "Home",
     "history": "History",
     "mct": "MCT",
-    "info": "Info"
+    "info": "Info",
+    "exercise": "Exercise",
+    "worries": "My Worries",
+    "start": "Take Test"
   },
   "menu": {
     "home": "Home",
     "history": "History",
     "mct": "MCT",
     "info": "Info",
+    "worries": "My Worries",
     "settings": "Setting"
   },
   "strings": {
@@ -217,6 +221,10 @@
       "scheduled": "You have scheduled a worry after {{time}} minutes",
       "scheduled_before": "You have scheduled a worry before {{time}} minutes",
     }
+  },
+  "exercise": {
+    "start": "Start Association",
+    "howareyoufeeling": "How are you feeling?"
   },
   "errors": {
     "blank": "Can't blank"

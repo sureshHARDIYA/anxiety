@@ -34,7 +34,7 @@ class Quiz extends Component {
 
   onBack = () => Modal.alert(strings('alert.confirm'), strings('alert.back'), [
     { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
-    { text: strings('buttons.ok'), onPress: () => this.props.navigation.goBack() },
+    { text: strings('buttons.ok'), onPress: () => this.props.navigation.navigate('QuizLanding') },
   ]);
 
   onSubmit = () => {

@@ -1,64 +1,98 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
+import _ from 'lodash';
 import { Back } from '@src/components/themes';
-import Carousel from 'react-native-snap-carousel';
-import { Sizes } from '@src/constants';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import items from './data';
+import { Sizes, Colors } from '@src/constants';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+import CardStack, { Card } from 'react-native-card-stack-swiper';
+import { Icon } from '@ant-design/react-native';
+import { strings } from '@src/i18n';
+import status from './data';
 import Style from './style';
 
 class Association extends Component {
   static navigationOptions = ({ navigation }) => ({
-    title: navigation.getParam('title'),
-    headerLeft: <Back navigation={navigation} />,
+    headerLeft: <Back navigation={navigation} route="Exercise" />,
+    headerStyle: {
+      borderBottomWidth: 0,
+      backgroundColor: Colors.primary,
+    },
   });
 
-  state = {
-    favorites: items.reduce((obj, item) => ({ ...obj, [item.id]: item.favorite === 2 }), {}),
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: _.shuffle(status[_.shuffle(['relationship', 'emotions'])[0]]),
+    };
   }
 
-  renderItem = ({ item }) => {
-    const { favorites } = this.state;
+  order = () => {
+    this.setState(pre => ({ items: [...pre.items, ..._.shuffle(status[_.shuffle(['relationship', 'emotions'])[0]])] }));
+  }
+
+  renderItem = (item, index) => {
+    const width = Sizes.screenWidth - 60;
+    const height = Sizes.screenHeight - 100;
 
     return (
-      <View
-        key={item.id}
-        style={Style.slide}
+      <Card
+        key={index}
+        style={[Style.slide, { width, height }]}
       >
-        <Image
-          style={Style.image}
-          source={{ uri: item.image }}
-        />
         <View style={Style.header}>
-          <Text style={Style.title}>{item.title}</Text>
-          <TouchableOpacity
-            style={Style.btn}
-            onPress={() => this.setState({ favorites: { ...favorites, [item.id]: !item.love } })}
-          >
-            <Icon name={{ false: 'heart', true: 'heart-o' }[`${item.love}`]} style={Style.btnIcon} size={30} />
-          </TouchableOpacity>
+          <Text style={Style.title}>{item}</Text>
         </View>
-        <Text style={Style.caption}>{item.description}</Text>
-      </View>
+        <View style={Style.footer}>
+          <Text style={Style.footerTop}>{strings('exercise.howareyoufeeling')}</Text>
+          <View style={Style.footerBottom}>
+            <Icon
+              size={30}
+              name="frown"
+              style={Style.icon}
+              onPress={() => this.swiper.swipeLeft()}
+            />
+            <Icon
+              size={30}
+              name="meh"
+              color={Colors.primary}
+              style={Style.icon}
+              onPress={() => this.swiper.swipeBottom()}
+            />
+            <Icon
+              size={30}
+              name="smile"
+              color="green"
+              style={Style.icon}
+              onPress={() => this.swiper.swipeRight()}
+            />
+          </View>
+        </View>
+      </Card>
     );
   }
 
   render() {
-    const { favorites } = this.state;
-    const sliderWidth = Sizes.screenWidth - 30;
-    const itemWidth = sliderWidth - 50;
-
     return (
-      <ScrollView contentContainerStyle={Style.container}>
-        <Carousel
-          itemWidth={itemWidth}
-          sliderWidth={sliderWidth}
-          renderItem={this.renderItem}
-          containerCustomStyle={Style.content}
-          data={items.map(item => ({ ...item, love: favorites[item.id] }))}
-        />
-      </ScrollView>
+      <View style={Style.container}>
+        <CardStack
+          disableTopSwipe
+          style={Style.content}
+          renderNoMoreCards={() => (
+            <Icon
+              size={50}
+              name="reload"
+              style={Style.icon}
+              color={Colors.white}
+              onPress={this.order}
+            />
+          )}
+          ref={swiper => (this.swiper = swiper)}
+        >
+          {this.state.items.map(this.renderItem)}
+        </CardStack>
+      </View>
     );
   }
 }

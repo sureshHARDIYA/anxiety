@@ -31,14 +31,18 @@
     "home": "Trang chủ",
     "history": "Lịch sử",
     "mct": "MCT",
-    "info": "Thông tin"
+    "info": "Thông tin",
+    "exercise": "Luyện tập",
+    "worries": "Lo lắng",
+    "start": "Bắt đầu"
   },
   "menu": {
     "home": "Trang chủ",
     "history": "Lịch sử",
     "mct": "MCT",
     "info": "Thông tin",
-    "settings": "Cài đặt"
+    "settings": "Cài đặt",
+    "worries": "Lo lắng",
   },
   "strings": {
     "search": "Tìm kiếm",
