@@ -1,47 +1,89 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 import _ from 'lodash';
-import { Back } from '@src/components/themes';
+// import { Back } from '@src/components/themes';
+import { connect } from 'react-redux';
 import { Sizes, Colors } from '@src/constants';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/FontAwesome';
 import CardStack, { Card } from 'react-native-card-stack-swiper';
-import { Icon } from '@ant-design/react-native';
+import { Icon, Button, Modal, Toast } from '@ant-design/react-native';
+import * as AssociationAction from '@src/actions/association';
 import { strings } from '@src/i18n';
 import status from './data';
 import Style from './style';
 
 class Association extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    headerLeft: <Back navigation={navigation} route="Exercise" />,
-    headerStyle: {
-      borderBottomWidth: 0,
-      backgroundColor: Colors.primary,
-    },
+  static navigationOptions = ({
+    header: null
   });
 
   constructor(props) {
     super(props);
 
+    const subject = _.shuffle(['relationship', 'emotions'])[0];
+
     this.state = {
-      items: _.shuffle(status[_.shuffle(['relationship', 'emotions'])[0]]),
+      subject,
+      answers: {},
+      items: _.shuffle(status[subject]),
     };
   }
 
+  componentDidMount() {
+    this.setState({ subject: _.shuffle(['relationship', 'emotions'])[0] }, () => this.order());
+  }
+
   order = () => {
-    this.setState(pre => ({ items: [...pre.items, ..._.shuffle(status[_.shuffle(['relationship', 'emotions'])[0]])] }));
+    const { items, subject } = this.state;
+    this.setState({ items: [...items, ..._.shuffle(status[subject])] });
+  }
+
+  onBack = () => Modal.alert(strings('alert.confirm'), strings('alert.back'), [
+    { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
+    { text: strings('buttons.ok'), onPress: () => this.props.navigation.navigate('Exercise') },
+  ]);
+
+  onSubmit = () => Modal.alert(strings('alert.confirm'), strings('alert.submit'), [
+    { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
+    {
+      text: strings('buttons.ok'),
+      onPress: () => this.props.onSubmit({
+        items: this.state.answers,
+        subject: this.state.subject,
+      }, (error) => {
+        if (error) {
+          Toast.fail(error.toString());
+        } else {
+          Toast.success(strings('alert.submitsuccess'));
+          this.props.navigation.navigate('Exercise');
+        }
+      })
+    },
+  ]);
+
+  onSwipedLeft = index => this.onAnswer(index, -1);
+
+  onSwipedRight = index => this.onAnswer(index, 1);
+
+  onSwipedBottom = index => this.onAnswer(index, 0);
+
+  onAnswer = (index, answer) => {
+    const { answers, items } = this.state;
+    answers[items[index]] = answer;
+    this.setState({ answers });
   }
 
   renderItem = (item, index) => {
     const width = Sizes.screenWidth - 60;
-    const height = Sizes.screenHeight - 100;
+    const height = Sizes.screenHeight - 120;
 
     return (
       <Card
         key={index}
         style={[Style.slide, { width, height }]}
       >
-        <View style={Style.header}>
+        <View style={Style.cardHeader}>
           <Text style={Style.title}>{item}</Text>
         </View>
         <View style={Style.footer}>
@@ -76,9 +118,31 @@ class Association extends Component {
   render() {
     return (
       <View style={Style.container}>
+        <View style={Style.header}>
+          <Button
+            size="small"
+            type="ghost"
+            style={Style.btnBack}
+            onPress={this.onBack}
+          >
+            <Icons name="chevron-left" color="#FFF" />
+          </Button>
+          <View style={{ flex: 1 }} />
+          <Button
+            size="small"
+            type="ghost"
+            style={Style.btnSubmit}
+            onPress={this.onSubmit}
+          >
+            <Text style={Style.txtSubmit}>{strings('buttons.submit')}</Text>
+          </Button>
+        </View>
         <CardStack
           disableTopSwipe
           style={Style.content}
+          onSwipedLeft={this.onSwipedLeft}
+          onSwipedRight={this.onSwipedRight}
+          onSwipedBottom={this.onSwipedBottom}
           renderNoMoreCards={() => (
             <Icon
               size={50}
@@ -97,8 +161,13 @@ class Association extends Component {
   }
 }
 
-// Association.propTypes = {
-//   navigation: PropTypes.object,
-// };
+Association.propTypes = {
+  onSubmit: PropTypes.func,
+  navigation: PropTypes.object,
+};
 
-export default Association;
+const mapDispatchToProps = dispatch => ({
+  onSubmit: (association, cb) => dispatch(AssociationAction.onCreateRequest({ association, cb })),
+});
+
+export default connect(null, mapDispatchToProps)(Association);

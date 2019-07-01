@@ -66,7 +66,9 @@
     "agreement": "I agree to the terms and condition and provide full consent to the health provider to use that for research and diagnosis purpose only.",
     "exit": "Are you sure you want to exit the app?",
     "back": "Are you sure you want to go back?",
+    "submit": "Are you sure you want to submit?",
     "score_display": "{{score}} Score Indicates {{result}}",
+    "submitsuccess": "Submit successfully",
     "confirm": "Confirm"
   },
   "toast": {

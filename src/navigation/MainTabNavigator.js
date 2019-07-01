@@ -22,6 +22,7 @@ const defaultNavigationOptions = {
   },
   headerStyle: {
     color: Colors.white,
+    borderBottomWidth: 0,
     backgroundColor: Colors.primary
   },
   headerTintColor: Colors.white,
@@ -113,7 +114,7 @@ export default createBottomTabNavigator({
   Exercisetack,
   HistoryStack,
 }, {
-  initialRouteName: 'Exercisetack',
+  // initialRouteName: 'Exercisetack',
   tabBarOptions: {
     activeTintColor: Colors.active,
     inactiveTintColor: Colors.inactive

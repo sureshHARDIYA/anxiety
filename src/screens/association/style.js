@@ -4,12 +4,28 @@ import { Colors, Sizes } from '@src/constants';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    padding: 30,
-    paddingTop: 0,
     backgroundColor: Colors.primary,
+  },
+  header: {
+    padding: 10,
+    paddingTop: 20,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  txtSubmit: {
+    color: Colors.white,
+  },
+  btnBack: {
+    borderWidth: 0,
+  },
+  btnSubmit: {
+    borderWidth: 0,
+    marginRight: 15,
   },
   content: {
     flex: 1,
+    padding: 30,
+    paddingTop: 0,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -46,7 +62,7 @@ export default StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
   },
-  header: {
+  cardHeader: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
