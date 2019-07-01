@@ -7,7 +7,7 @@ import { withNavigation } from 'react-navigation';
 import { createStructuredSelector } from 'reselect';
 import { strings } from '@src/i18n';
 import { Menu } from '@src/components/themes';
-import { Modal, Button } from '@ant-design/react-native';
+import { Modal, Button, Tabs } from '@ant-design/react-native';
 import * as QuizAction from '@src/actions/quiz';
 import * as QuizSelect from '@src/selectors/quiz';
 import { LineChart } from 'react-native-chart-kit';
@@ -109,6 +109,12 @@ class History extends Component {
       }]
     };
 
+    const tabs = [
+      { title: strings('history.test') },
+      { title: strings('history.worries') },
+      { title: strings('history.associations') },
+    ];
+
     return (
       <View style={Style.container}>
         <LineChart
@@ -118,9 +124,17 @@ class History extends Component {
           chartConfig={chartConfig}
           width={Dimensions.get('window').width}
         />
-        <ScrollView>
-          {list.length ? list.map(this.renderItem) : this.renderNodata}
-        </ScrollView>
+        <Tabs tabs={tabs}>
+          <ScrollView>
+            {list.length ? list.map(this.renderItem) : this.renderNodata}
+          </ScrollView>
+          <ScrollView>
+            <Text>{strings('history.worries')}</Text>
+          </ScrollView>
+          <ScrollView>
+            <Text>{strings('history.associations')}</Text>
+          </ScrollView>
+        </Tabs>
       </View>
     );
   }

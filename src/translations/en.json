@@ -228,6 +228,11 @@
     "start": "Start Association",
     "howareyoufeeling": "How are you feeling?"
   },
+  "history": {
+    "test": "GAD-7",
+    "worries": "Worries",
+    "associations": "Associations",
+  },
   "errors": {
     "blank": "Can't blank"
   }
