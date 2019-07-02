@@ -12,6 +12,8 @@ target 'anxietyCBT' do
   target 'anxietyCBT-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   end
 
   target 'anxietyCBTTests' do

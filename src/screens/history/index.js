@@ -7,12 +7,13 @@ import { withNavigation } from 'react-navigation';
 import { createStructuredSelector } from 'reselect';
 import { strings } from '@src/i18n';
 import { Menu } from '@src/components/themes';
-import { Modal, Button, Tabs } from '@ant-design/react-native';
+import { Modal, Tabs } from '@ant-design/react-native';
 import * as QuizAction from '@src/actions/quiz';
 import * as QuizSelect from '@src/selectors/quiz';
 import { LineChart } from 'react-native-chart-kit';
 import Swipeout from 'react-native-swipeout';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Associations from '@src/components/associations';
 import Style from './style';
 
 class History extends Component {
@@ -30,15 +31,6 @@ class History extends Component {
     return (
       <View>
         <Text style={Style.alert}>{strings('alert.no_data')}</Text>
-        <Button
-          type="ghost"
-          style={Style.btn}
-          onPress={() => this.props.navigation.navigate('QuizLanding')}
-        >
-          <Text style={Style.btnText}>
-            {strings('home.btn')}
-          </Text>
-        </Button>
       </View>
     );
   }
@@ -73,7 +65,7 @@ class History extends Component {
   );
 
   render() {
-    const { list } = this.props;
+    const { list, navigation } = this.props;
 
     const chartConfig = {
       backgroundGradientFrom: '#0097e7',
@@ -111,28 +103,27 @@ class History extends Component {
 
     const tabs = [
       { title: strings('history.test') },
-      { title: strings('history.worries') },
       { title: strings('history.associations') },
     ];
 
     return (
       <View style={Style.container}>
-        <LineChart
-          bezier
-          data={data}
-          height={220}
-          chartConfig={chartConfig}
-          width={Dimensions.get('window').width}
-        />
-        <Tabs tabs={tabs}>
+        <Tabs
+          tabs={tabs}
+          initialPage={navigation.dangerouslyGetParent().getParam('tab')}
+        >
           <ScrollView>
+            <LineChart
+              bezier
+              data={data}
+              height={220}
+              chartConfig={chartConfig}
+              width={Dimensions.get('window').width}
+            />
             {list.length ? list.map(this.renderItem) : this.renderNodata}
           </ScrollView>
           <ScrollView>
-            <Text>{strings('history.worries')}</Text>
-          </ScrollView>
-          <ScrollView>
-            <Text>{strings('history.associations')}</Text>
+            <Associations />
           </ScrollView>
         </Tabs>
       </View>

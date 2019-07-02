@@ -28,20 +28,29 @@ const DrawerMenu = ({ children, style, open, onDrawer, onNavigation }) => {
         </TouchableHighlight>
         <TouchableHighlight
           style={Style.item}
+          onPress={() => onNavigation('QuizStart')}
+        >
+          <View style={Style.center}>
+            <Icon color={Colors.white} name="container" />
+            <Text style={Style.itemText}> {strings('menu.start')}</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={Style.item}
+          onPress={() => onNavigation('Exercise')}
+        >
+          <View style={Style.center}>
+            <Icon color={Colors.white} name="star" />
+            <Text style={Style.itemText}> {strings('menu.exercise')}</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+          style={Style.item}
           onPress={() => onNavigation('History')}
         >
           <View style={Style.center}>
             <Icon color={Colors.white} name="clock-circle" />
             <Text style={Style.itemText}> {strings('menu.history')}</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={Style.item}
-          onPress={() => onNavigation('MCT')}
-        >
-          <View style={Style.center}>
-            <Icon color={Colors.white} name="star" />
-            <Text style={Style.itemText}> {strings('menu.mct')}</Text>
           </View>
         </TouchableHighlight>
         <TouchableHighlight

@@ -4,24 +4,24 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { createStructuredSelector } from 'reselect';
-import * as WorryAction from '@src/actions/worry';
-import * as WorrySelect from '@src/selectors/worry';
+import * as Actions from '@src/actions/association';
+import * as Selectors from '@src/selectors/association';
 import { ScrollView, View, Text } from 'react-native';
-import { Button, Icon, Modal } from '@ant-design/react-native';
+import { Icon, Modal } from '@ant-design/react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { Container, TouchableItem } from '@src/components/themes';
 import { Colors } from '@src/constants';
 import { strings } from '@src/i18n';
 import Style from './style';
 
-class MCTWorry extends Component {
+class Association extends Component {
   constructor(props) {
     super(props);
     props.onSearch();
   }
 
   renderItem = (item) => {
-    const scheduled = moment(item.scheduled);
+    const items = JSON.parse(item.items);
     const createdAt = moment(item.createdAt);
 
     return (
@@ -30,14 +30,14 @@ class MCTWorry extends Component {
         right={[
           <MaterialIcons.Button
             size={14}
-            key="edit"
-            name="edit"
+            key="visibility"
+            name="visibility"
             color={Colors.gray}
             iconStyle={Style.iconStyle}
             underlayColor="transparent"
             backgroundColor="transparent"
             style={{ padding: 0, margin: 0 }}
-            onPress={() => this.props.navigation.navigate('Worry', { item: { ...item } })}
+            onPress={() => this.props.navigation.navigate('AssociationDetail', { association: { ...item, items } })}
           />,
           <MaterialIcons.Button
             size={14}
@@ -48,7 +48,7 @@ class MCTWorry extends Component {
             underlayColor="transparent"
             backgroundColor="transparent"
             style={{ padding: 0, margin: 0 }}
-            onPress={() => Modal.alert(strings('alert.confirm'), strings('alert.remove', { item: item.title }), [
+            onPress={() => Modal.alert(strings('alert.confirm'), strings('alert.remove', { item: item.subject }), [
               { text: strings('buttons.cancel'), onPress: () => {}, style: 'cancel' },
               { text: strings('buttons.ok'), onPress: () => this.props.onDelete(item.id) },
             ])}
@@ -67,11 +67,11 @@ class MCTWorry extends Component {
           </View>
           <View style={Style.itemContent}>
             <Text style={Style.text} numberOfLines={1}>
-              {item.title}
+              {item.subject}
             </Text>
             <View style={Style.itemFooter}>
-              <Icon name="calendar" />
-              <Text style={Style.itemFooterText}> {scheduled.format('DD MMM [at] hh:mm a')}</Text>
+              <Icon name="audit" />
+              <Text style={Style.itemFooterText}> {Object.keys(items).length}</Text>
             </View>
           </View>
         </View>
@@ -80,32 +80,17 @@ class MCTWorry extends Component {
   }
 
   render() {
-    const { navigation, list } = this.props;
-    const { unscheduled, scheduled } = list.reduce((obj, item) => {
-      if (item.status) {
-        return ({ ...obj, scheduled: [...obj.scheduled, item] });
-      }
-
-      return ({ ...obj, unscheduled: [...obj.unscheduled, item] });
-    }, { unscheduled: [], scheduled: [] });
-
     return (
       <Container>
         <ScrollView>
-          {[...unscheduled, ...scheduled].map(this.renderItem)}
+          {this.props.list.length ? this.props.list.map(this.renderItem) : <Text style={Style.alert}>{strings('alert.no_data')}</Text>}
         </ScrollView>
-        <Button
-          style={Style.btnFloat}
-          onPress={() => navigation.navigate('Worry', { item: {} })}
-        >
-          <Icon name="plus" color={Colors.white} />
-        </Button>
       </Container>
     );
   }
 }
 
-MCTWorry.propTypes = {
+Association.propTypes = {
   list: PropTypes.array,
   navigation: PropTypes.object,
   onDelete: PropTypes.func.isRequired,
@@ -113,12 +98,12 @@ MCTWorry.propTypes = {
 };
 
 const mapStateToProps = createStructuredSelector({
-  list: WorrySelect.getList(),
+  list: Selectors.getList(),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSearch: () => dispatch(WorryAction.onSearchRequest()),
-  onDelete: id => dispatch(WorryAction.onDeleteRequest({ id })),
+  onSearch: () => dispatch(Actions.onSearchRequest()),
+  onDelete: id => dispatch(Actions.onDeleteRequest({ id })),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(MCTWorry));
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(Association));

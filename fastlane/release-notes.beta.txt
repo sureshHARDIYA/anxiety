@@ -1,1 +1,2 @@
-Push notification in schedule
+- Start Association
+- History Association

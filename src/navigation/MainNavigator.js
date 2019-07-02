@@ -6,6 +6,7 @@ import QuizResultScreen from '@src/screens/quiz/result';
 import QuizDoctorscreen from '@src/screens/quiz/doctors';
 import QuizLandingScreen from '@src/screens/quiz/landing';
 
+import InfoScreen from '@src/screens/info';
 import InfoAboutScreen from '@src/screens/info/about';
 import InfoCreditScreen from '@src/screens/info/credit';
 import InfoHowToUseScreen from '@src/screens/info/HowToUse';
@@ -13,6 +14,8 @@ import InfoPrivacyScreen from '@src/screens/info/privacy';
 import InfoMessageScreen from '@src/screens/info/message';
 
 import AssociationScreen from '@src/screens/association';
+
+import AssociationDetailScreen from '@src/screens/association/detail';
 
 export default createStackNavigator(
   {
@@ -23,6 +26,7 @@ export default createStackNavigator(
     QuizResult: QuizResultScreen,
     QuizDoctors: QuizDoctorscreen,
 
+    Info: InfoScreen,
     InfoAbout: InfoAboutScreen,
     InfoCredit: InfoCreditScreen,
     InfoHowToUse: InfoHowToUseScreen,
@@ -30,6 +34,7 @@ export default createStackNavigator(
     InfoMessage: InfoMessageScreen,
 
     Association: AssociationScreen,
+    AssociationDetail: AssociationDetailScreen,
   },
   {
     // initialRouteName: 'QuizDoctors',

@@ -4,6 +4,7 @@ import quiz from './quiz';
 import worry from './worry';
 import setting from './setting';
 import navigation from './navigation';
+import association from './association';
 
 export default {
   app,
@@ -11,5 +12,6 @@ export default {
   worry,
   setting,
   navigation,
+  association,
   form: formReducer,
 };

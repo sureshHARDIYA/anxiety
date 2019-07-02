@@ -41,8 +41,10 @@
     "history": "History",
     "mct": "MCT",
     "info": "Info",
+    "exercise": "Exercise",
     "worries": "My Worries",
-    "settings": "Setting"
+    "settings": "Setting",
+    "start": "Take Test"
   },
   "strings": {
     "search": "Search",

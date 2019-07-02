@@ -12,12 +12,12 @@ platform :ios do
   lane :beta do
     cert
 
-    # build_app(
-    #   scheme: "anxietyCBT",
-    #   export_method: 'ad-hoc',
-    #   project: "./ios/anxietyCBT.xcodeproj",
-    #   export_xcargs: "-allowProvisioningUpdates"
-    # )
+    build_app(
+      scheme: "anxietyCBT",
+      export_method: 'ad-hoc',
+      project: "./ios/anxietyCBT.xcodeproj",
+      export_xcargs: "-allowProvisioningUpdates"
+    )
 
     crashlytics(
       notifications: true,
