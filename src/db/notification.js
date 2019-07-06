@@ -73,6 +73,11 @@ class Notification {
 
           if (`${scheduled}` !== '0') {
             const time = duration < 0 ? (duration + +scheduled) : scheduled;
+
+            if (time < -60) {
+              throw new Error('Worry is too old');
+            }
+
             if (time < 0) {
               permitParams.title = strings('notifications.worry.scheduled_before', { time: Math.abs(time) });
             } else if (time > 0) {

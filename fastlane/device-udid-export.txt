@@ -1,2 +1,0 @@
-Device ID	Device Name
-5c1f4d64b968cc1d7229a38a35fce28352e8b610	jim - iPhone 7

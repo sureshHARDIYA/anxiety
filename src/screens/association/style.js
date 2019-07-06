@@ -52,7 +52,7 @@ export default StyleSheet.create({
     padding: 10,
     fontWeight: '600',
     color: Colors.black,
-    fontSize: Sizes.medium,
+    fontSize: Sizes.huge,
   },
   caption: {
     padding: 10,

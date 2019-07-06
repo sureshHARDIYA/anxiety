@@ -19,7 +19,7 @@ class Worry extends Component {
     this.props.onSubmit(worry, (error, data) => {
       if (!error) {
         this.props.onReset();
-        this.props.navigation.goBack();
+        this.props.navigation.navigate('Home');
         Toast.success(strings(worry.id ? 'mct.worry_updated_success' : 'mct.worry_created_success', { title: data.title }));
       } else {
         Toast.fail(error.toString());
