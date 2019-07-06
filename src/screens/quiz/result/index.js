@@ -5,6 +5,7 @@ import { Text, View, ScrollView } from 'react-native';
 import { Button, Icon } from '@ant-design/react-native';
 import { strings } from '@src/i18n';
 import * as Progress from 'react-native-progress';
+import { Menu } from '@src/components/themes';
 import { Sizes } from '@src/constants';
 import Style from './style';
 
@@ -37,9 +38,6 @@ const QuizResult = ({ navigation }) => {
 
   return (
     <ScrollView style={Style.container}>
-      <Text style={Style.headerBar}>
-        {strings('results.title')}
-      </Text>
       <View style={Style.headerTop}>
         <Icon name="clock-circle" size={30} color="#FFF" />
         <View style={Style.headerTopRight}>
@@ -78,9 +76,10 @@ const QuizResult = ({ navigation }) => {
   );
 };
 
-QuizResult.navigationOptions = {
-  header: null,
-};
+QuizResult.navigationOptions = ({ navigation }) => ({
+  title: strings('results.title'),
+  headerLeft: <Menu navigation={navigation} />,
+});
 
 QuizResult.propTypes = {
   navigation: PropTypes.object,

@@ -57,3 +57,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/release-notes.beta.txt
+fastlane/device-udid-export.txt
