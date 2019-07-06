@@ -12,7 +12,7 @@ import * as WorryAction from '@src/actions/worry';
 class Worry extends Component {
   static navigationOptions = {
     title: strings('mct.worry_postponement'),
-    headerLeft: <Back />
+    headerLeft: <Back route="Home" />
   };
 
   onSubmit = (worry) => {

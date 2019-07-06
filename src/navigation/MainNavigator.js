@@ -17,6 +17,8 @@ import AssociationScreen from '@src/screens/association';
 
 import AssociationDetailScreen from '@src/screens/association/detail';
 
+import WorryScreen from '@src/screens/worry';
+
 export default createStackNavigator(
   {
     Setting: SettingScreen,
@@ -32,6 +34,8 @@ export default createStackNavigator(
     InfoHowToUse: InfoHowToUseScreen,
     InfoPrivacy: InfoPrivacyScreen,
     InfoMessage: InfoMessageScreen,
+
+    Worry: WorryScreen,
 
     Association: AssociationScreen,
     AssociationDetail: AssociationDetailScreen,

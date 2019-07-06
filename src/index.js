@@ -8,6 +8,7 @@ import { Drawer } from '@src/components/themes';
 import * as WorryAction from '@src/actions/worry';
 import * as SettingAction from '@src/actions/setting';
 import Notification from '@src/services/notification';
+import './services/prototype';
 import ThemeContext from './themes';
 import Navigation from './navigation';
 import { store, persistor } from './reducers/createStore';
@@ -21,6 +22,7 @@ class Root extends Component {
 
     store.dispatch(SettingAction.onSearchRequest());
     this.notif = new Notification(this.onRegister, this.onNotif);
+    this.notif.setBadge(0);
   }
 
   onRegister = (token) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createAppContainer } from 'react-navigation';
-import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Transition } from 'react-native-reanimated';
 
 import {
@@ -12,7 +11,7 @@ import {
 import MainTabNavigator from './MainTabNavigator';
 import MainNavigator from './MainNavigator';
 
-export const AppNavigator = createAppContainer(createAnimatedSwitchNavigator({
+export const AppNavigator = createAppContainer(createStackNavigator({
   MainTab: MainTabNavigator,
   Main: MainNavigator,
 }, {
@@ -30,6 +29,9 @@ export const AppNavigator = createAppContainer(createAnimatedSwitchNavigator({
       />
     </Transition.Together>
   ),
+  defaultNavigationOptions: {
+    header: null
+  }
 }));
 
 export const middleware = createReactNavigationReduxMiddleware(state => state.navigation);

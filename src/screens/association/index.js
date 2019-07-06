@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
-import _ from 'lodash';
 // import { Back } from '@src/components/themes';
 import { connect } from 'react-redux';
 import { Sizes, Colors } from '@src/constants';
@@ -21,22 +20,22 @@ class Association extends Component {
   constructor(props) {
     super(props);
 
-    const subject = _.shuffle(['relationship', 'emotions'])[0];
+    const subject = ['relationship', 'emotions'].random()[0];
 
     this.state = {
       subject,
       answers: {},
-      items: _.shuffle(status[subject]),
+      items: [...status[subject]].random(),
     };
   }
 
   componentDidMount() {
-    this.setState({ subject: _.shuffle(['relationship', 'emotions'])[0] }, () => this.order());
+    this.setState({ subject: ['relationship', 'emotions'].random()[0] }, () => this.order());
   }
 
   order = () => {
-    const { items, subject } = this.state;
-    this.setState({ items: [...items, ..._.shuffle(status[subject])] });
+    const { subject } = this.state;
+    this.setState({ items: [...status[subject]].random() });
   }
 
   onBack = () => Modal.alert(strings('alert.confirm'), strings('alert.back'), [
@@ -144,13 +143,13 @@ class Association extends Component {
           onSwipedRight={this.onSwipedRight}
           onSwipedBottom={this.onSwipedBottom}
           renderNoMoreCards={() => (
-            <Icon
-              size={50}
-              name="reload"
-              style={Style.icon}
-              color={Colors.white}
-              onPress={this.order}
-            />
+            <Button
+              type="ghost"
+              style={Style.btn}
+              onPress={this.onSubmit}
+            >
+              <Text style={Style.txtSubmit}>  {strings('buttons.submit')}</Text>
+            </Button>
           )}
           ref={swiper => (this.swiper = swiper)}
         >

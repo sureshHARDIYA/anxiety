@@ -111,8 +111,9 @@ class Notification {
     });
   }
 
-  setBadge(number) {
-    PushNotification.setApplicationIconBadgeNumber(number);
+  // setBadge(nuber) {
+  setBadge() {
+    PushNotification.setApplicationIconBadgeNumber(0);
   }
 
   checkPermission(cbk) {
@@ -120,7 +121,6 @@ class Notification {
   }
 
   cancelNotif(id) {
-    console.log('cancelNotif:', id);
     PushNotification.cancelLocalNotifications({ id });
   }
 
