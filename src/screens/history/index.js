@@ -110,6 +110,7 @@ class History extends Component {
       <View style={Style.container}>
         <Tabs
           tabs={tabs}
+          swipeable={false}
           initialPage={navigation.dangerouslyGetParent().getParam('tab')}
         >
           <ScrollView>
