@@ -117,6 +117,10 @@ export default createBottomTabNavigator({
   // initialRouteName: 'Exercisetack',
   tabBarOptions: {
     activeTintColor: Colors.active,
-    inactiveTintColor: Colors.inactive
-  }
+    inactiveTintColor: Colors.inactive,
+    tabStyle: {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
 });

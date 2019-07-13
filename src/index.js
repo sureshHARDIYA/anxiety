@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { StatusBar } from 'react-native';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider as ThemeProvider } from '@ant-design/react-native';
 import { NavigationActions } from 'react-navigation';
@@ -46,6 +47,7 @@ class Root extends Component {
   render() {
     return (
       <Provider store={store}>
+        <StatusBar backgroundColor="#0097e7" />
         <PersistGate loading={null} persistor={persistor}>
           <ThemeContext>
             <ThemeProvider>

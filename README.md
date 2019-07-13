@@ -26,3 +26,31 @@ For iOS
   - Install fastlane: `sudo gem install fastlane -NV`
   - Create `./fastlane/release-notes.beta.txt` and put your message to release
   - Run deploy ios beta version: `fastlane ios beta`
+
+
+## Build Android version
+
+
+```
+
+keytool -genkey -v -keystore anxietyCBT.android.keystore -alias anxietyCBT-android -keyalg RSA -keysize 2048 -validity 10000
+
+=> Move anxietyCBT.android.keystore to ./android/app
+
+```
+
+
+Then edit the file `~/.gradle/gradle.properties` and add the following (replace **** with the correct keystore password, alias and key password)
+
+
+```
+ANXIETY_RELEASE_STORE_FILE=./anxietyCBT.android.keystore
+ANXIETY_RELEASE_KEY_ALIAS=manxietyCBT-android
+ANXIETY_RELEASE_STORE_PASSWORD=****
+ANXIETY_RELEASE_KEY_PASSWORD=****
+
+```
+
+```
+cd android && ./gradlew assembleRelease
+```
