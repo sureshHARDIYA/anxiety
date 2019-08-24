@@ -12,6 +12,7 @@ class SettingForm extends Component {
     this.state = {
       scheduled: '0',
       language: 'en',
+      selectedDay: 'monday',
     };
 
     AsyncStorage
@@ -37,6 +38,18 @@ class SettingForm extends Component {
     ];
   }
 
+  get testOptions() {
+    return [
+      { value: 'monday', label: strings('setting.testOption.monday') },
+      { value: 'tueday', label: strings('setting.testOption.tueday') },
+      { value: 'wednesday', label: strings('setting.testOption.wednesday') },
+      { value: 'thursday', label: strings('setting.testOption.thursday') },
+      { value: 'friday', label: strings('setting.testOption.friday') },
+      { value: 'saturday', label: strings('setting.testOption.saturday') },
+      { value: 'sunday', label: strings('setting.testOption.sunday') },
+    ];
+  }
+
   onSubmit = () => {
     AsyncStorage.setItem('setting', JSON.stringify(this.state), () => {
       if (this.props.setting.scheduled !== this.state.scheduled) {
@@ -55,7 +68,7 @@ class SettingForm extends Component {
       >
         <View style={styles.content}>
           <View style={styles.group}>
-            <Text style={styles.label}>{strings('setting.language')}</Text>
+            <Text style={styles.label}>{strings('setting.languageHeader')}</Text>
           </View>
           <View style={styles.options}>
             <View style={styles.left}>
@@ -80,7 +93,7 @@ class SettingForm extends Component {
             </View>
           </View>
           <View style={styles.group}>
-            <Text style={styles.label}>{strings('setting.schedule')}</Text>
+            <Text style={styles.label}>{strings('setting.scheduleHeader')}</Text>
           </View>
           <View style={styles.options}>
             <View style={styles.left}>
@@ -101,6 +114,31 @@ class SettingForm extends Component {
                 }}
                 onClose={this.onSubmit}
                 onValueChange={value => this.setState({ scheduled: value || '0' })}
+              />
+            </View>
+          </View>
+          <View style={styles.group}>
+            <Text style={styles.label}>{strings('setting.dayHeader')}</Text>
+          </View>
+          <View style={styles.options}>
+            <View style={styles.left}>
+              <Text>{strings('setting.selectDay')}</Text>
+            </View>
+            <View style={styles.right}>
+              <RNPickerSelect
+                placeholder={{}}
+                items={this.testOptions}
+                value={this.state.selectedDay}
+                style={{
+                  inputIOS: {
+                    textAlign: 'right',
+                  },
+                  inputAndroid: {
+                    textAlign: 'right',
+                  }
+                }}
+                onClose={this.onSubmit}
+                onValueChange={value => this.setState({ selectedDay: value || 'monday' })}
               />
             </View>
           </View>

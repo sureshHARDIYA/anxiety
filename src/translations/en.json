@@ -164,7 +164,9 @@
     "header": "Self-assessment",
     "title": "GAD 7",
     "caption": "This easy-to-use self-administered patient questionnaire is used as a screening tool and severity measure for generalised anxiety disorder (GAD)",
-    "btn": "Take a test"
+    "btn": "Take a test",
+    "limit0": "You can only take this test every {{weekday}}",
+    "limit1": "You can take this test next {{weekday}}",
   },
   "benchmarks": {
     "healthy": "0-4: Healthy",
@@ -199,6 +201,8 @@
   "setting": {
     "language": "Language",
     "schedule": "Schedule",
+    "languageHeader": "Select your preferred language?",
+    "scheduleHeader": "Select your preferred schedule?",
     "saved_success": "Setting is saved successfully",
     "schedules": {
       "0": "0 minute",
@@ -206,7 +210,18 @@
       "20": "20 minutes",
       "30": "30 minutes",
       "60": "1 hour"
-    }
+    },
+    "dayHeader": "When do you want to take test?",
+    "selectDay": "Select a day",
+    "testOption": {
+      "monday": "Monday",
+      "tueday": "Tueday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
   },
   "language": {
     "en": "English",

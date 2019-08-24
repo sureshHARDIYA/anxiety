@@ -6,6 +6,7 @@ import { Provider as ThemeProvider } from '@ant-design/react-native';
 import { NavigationActions } from 'react-navigation';
 import { Drawer } from '@src/components/themes';
 // import DBNoti from '@src/db/notification';
+import * as QuizAction from '@src/actions/quiz';
 import * as WorryAction from '@src/actions/worry';
 import * as SettingAction from '@src/actions/setting';
 import Notification from '@src/services/notification';
@@ -22,6 +23,7 @@ class Root extends Component {
     // };
 
     store.dispatch(SettingAction.onSearchRequest());
+    store.dispatch(QuizAction.onSearchRequest());
     this.notif = new Notification(this.onRegister, this.onNotif);
     this.notif.setBadge(0);
   }
