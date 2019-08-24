@@ -201,8 +201,8 @@
   "setting": {
     "language": "Language",
     "schedule": "Schedule",
-    "languageHeader": "Select your preferred language?",
-    "scheduleHeader": "Select your preferred schedule?",
+    "languageHeader": "Select your preferred language",
+    "scheduleHeader": "Select your preferred schedule",
     "saved_success": "Setting is saved successfully",
     "schedules": {
       "0": "0 minute",

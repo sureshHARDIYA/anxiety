@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { createStructuredSelector } from 'reselect';
-import { Text, Image, View, ScrollView, AsyncStorage } from 'react-native';
+import { Text, Image, View, ScrollView } from 'react-native';
 import moment from 'moment';
 import { Button } from '@ant-design/react-native';
 import { strings } from '@src/i18n';
 import * as QuizSelect from '@src/selectors/quiz';
+import * as SettingSelect from '@src/selectors/setting';
+
 import { Menu } from '@src/components/themes';
 import Style from './style';
 
-const QuizStart = ({ navigation: { navigate }, list }) => {
-  const [selectedDay, setSelectDate] = useState('monday');
-  const [isLoaded, setLoaded] = useState(false);
-
-  if (!isLoaded) {
-    setLoaded(true);
-
-    AsyncStorage
-      .getItem('setting')
-      .then((setting) => {
-        const parse = JSON.parse(setting || '{}');
-        setSelectDate(parse.selectedDay || 'monday');
-      });
-  }
-
+const QuizStart = ({ navigation: { navigate }, list, setting }) => {
   let message;
+  const selectedDay = setting.selectedDay || 'monday';
   let notDisabled = moment().format('d') === ['monday', 'tueday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].indexOf(selectedDay);
 
   if (notDisabled) {
@@ -73,11 +62,13 @@ QuizStart.navigationOptions = ({ navigation }) => ({
 
 QuizStart.propTypes = {
   list: PropTypes.array.isRequired,
+  setting: PropTypes.object.isRequired,
   navigation: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
   list: QuizSelect.getList(),
+  setting: SettingSelect.getInfo(),
 });
 
 export default connect(mapStateToProps)(withNavigation(QuizStart));
