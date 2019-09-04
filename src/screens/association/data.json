@@ -22,5 +22,17 @@
     "crazy",
     "mad",
     "sex"
-  ]
+  ],
+  "negative": [
+    "lonely",
+    "sad",
+    "unhappy",
+    "worried",
+    "I, me, myself",
+    "always",
+    "I am fine",
+    "I', tired",
+    "I want to be alone",
+    "It’s all my fault"
+  ],
 }

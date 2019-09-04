@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import { reset } from 'redux-form';
-import { Toast } from '@ant-design/react-native';
-import { Container, Back } from '@src/components/themes';
 import { strings } from '@src/i18n';
-import moment from 'moment';
 import { connect } from 'react-redux';
 import Form from '@src/components/forms/worry';
+import { Toast } from '@ant-design/react-native';
 import * as WorryAction from '@src/actions/worry';
+import { Container, Back } from '@src/components/themes';
 
 class Worry extends Component {
   static navigationOptions = {

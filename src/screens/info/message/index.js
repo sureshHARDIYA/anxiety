@@ -38,9 +38,6 @@ const Message = () => (
       </Text>
     </View>
     <View style={styles.paragraph}>
-      <Text style={styles.whiteText}>{strings('info_menu.contents.message.paragraph7')}</Text>
-    </View>
-    <View style={styles.paragraph}>
       <Text style={styles.whiteText}>{strings('info_menu.contents.message.paragraph8')}</Text>
     </View>
   </ScrollView>

@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import React, { Component } from 'react';
+import { Drawer } from '@src/components/themes';
+import * as WorryAction from '@src/actions/worry';
+import { NavigationActions } from 'react-navigation';
+import Notification from '@src/services/notification';
+import * as SettingAction from '@src/actions/setting';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider as ThemeProvider } from '@ant-design/react-native';
-import { NavigationActions } from 'react-navigation';
-import { Drawer } from '@src/components/themes';
+
 // import DBNoti from '@src/db/notification';
-import * as WorryAction from '@src/actions/worry';
-import * as SettingAction from '@src/actions/setting';
-import Notification from '@src/services/notification';
 import './services/prototype';
 import ThemeContext from './themes';
 import Navigation from './navigation';
