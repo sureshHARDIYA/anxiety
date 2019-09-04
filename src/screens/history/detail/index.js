@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 import { Colors } from '@src/constants';
 import { ScrollView, View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import Style from './style';
 
 const HistoryDetail = ({ navigation }) => {

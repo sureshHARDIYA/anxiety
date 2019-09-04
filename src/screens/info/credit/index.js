@@ -30,9 +30,9 @@ const Credit = () => (
     <View style={styles.content}>
       <Image
         style={styles.image}
-        source={require('@src/assets/images/icons/profile.png')}
+        source={require('@src/assets/images/icons/intromat.png')}
       />
-      <Text style={styles.name}>Yngva Lamo</Text>
+      <Text style={styles.name}>INTROMAT Team</Text>
     </View>
   </ScrollView>
 );
