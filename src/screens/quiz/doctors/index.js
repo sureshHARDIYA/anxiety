@@ -4,7 +4,7 @@ import { Text, Image, View } from 'react-native';
 import { Button, Icon } from '@ant-design/react-native';
 import { strings } from '@src/i18n';
 import { Colors } from '@src/constants';
-import { Menu, Back } from '@src/components/themes';
+import { Menu } from '@src/components/themes';
 import Swiper from 'react-native-deck-swiper';
 import doctors from '@src/data/doctors.json';
 import Style from './style';
@@ -67,8 +67,7 @@ const QuizDoctors = () => {
 
 QuizDoctors.navigationOptions = ({ navigation }) => ({
   title: strings('doctors.title'),
-  headerLeft: <Back />,
-  headerRight: <Menu navigation={navigation} />,
+  headerLeft: <Menu navigation={navigation} />,
 });
 
 QuizDoctors.propTypes = {

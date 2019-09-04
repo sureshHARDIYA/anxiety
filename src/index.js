@@ -1,4 +1,11 @@
 import { Provider } from 'react-redux';
+import { StatusBar } from 'react-native';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider as ThemeProvider } from '@ant-design/react-native';
+import { NavigationActions } from 'react-navigation';
+import { Drawer } from '@src/components/themes';
+// import DBNoti from '@src/db/notification';
+import * as QuizAction from '@src/actions/quiz';
 import React, { Component } from 'react';
 import { Drawer } from '@src/components/themes';
 import * as WorryAction from '@src/actions/worry';
@@ -22,6 +29,7 @@ class Root extends Component {
     // };
 
     store.dispatch(SettingAction.onSearchRequest());
+    store.dispatch(QuizAction.onSearchRequest());
     this.notif = new Notification(this.onRegister, this.onNotif);
     this.notif.setBadge(0);
   }
@@ -47,6 +55,7 @@ class Root extends Component {
   render() {
     return (
       <Provider store={store}>
+        <StatusBar backgroundColor="#0097e7" />
         <PersistGate loading={null} persistor={persistor}>
           <ThemeContext>
             <ThemeProvider>

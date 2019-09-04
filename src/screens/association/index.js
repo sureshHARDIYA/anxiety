@@ -9,7 +9,7 @@ import CardStack, { Card } from 'react-native-card-stack-swiper';
 import { Icon, Button, Modal, Toast } from '@ant-design/react-native';
 import * as AssociationAction from '@src/actions/association';
 import { strings } from '@src/i18n';
-import status from './data';
+import status from './data.json';
 import Style from './style';
 
 class Association extends Component {

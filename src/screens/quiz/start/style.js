@@ -25,6 +25,12 @@ export default StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
+  disabled: {
+    opacity: 0.5,
+    shadowColor: Colors.white,
+    borderColor: Colors.white,
+    backgroundColor: Colors.transparent,
+  },
   caption: {
     padding: 30,
     alignItems: 'center',
@@ -46,5 +52,9 @@ export default StyleSheet.create({
     width: 150,
     height: 150,
     resizeMode: 'contain',
+  },
+  disabledText: {
+    marginTop: 5,
+    color: Colors.white,
   }
 });
