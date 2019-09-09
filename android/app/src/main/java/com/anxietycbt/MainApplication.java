@@ -3,6 +3,7 @@ package com.anxietycbt;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.smixx.fabric.FabricPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import io.realm.react.RealmReactPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -35,8 +36,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new FabricPackage(),
             new RNFetchBlobPackage(),
-          new RealmReactPackage(),
+            new RealmReactPackage(),
             new VectorIconsPackage(),
             new SvgPackage(),
             new ReanimatedPackage(),

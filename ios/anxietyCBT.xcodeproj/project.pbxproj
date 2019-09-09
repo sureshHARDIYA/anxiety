@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -46,6 +47,7 @@
 		33C0C4314FE4457392A4D381 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E75E27D3EAB940D7AA6CB5D4 /* Ionicons.ttf */; };
 		3822A48F22B9B9EE0093F18E /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3822A46822B9B9E80093F18E /* libRCTPushNotification.a */; };
 		383750D2AAE24A6D99BD45EA /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A24B8D085C1453B9E06975B /* libRNVectorIcons-tvOS.a */; };
+		384E8BB423267DDA0041363C /* libSMXCrashlytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 384E8BB123267DD00041363C /* libSMXCrashlytics.a */; };
 		38B052D222CB544D005073C7 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B052CB22CB5444005073C7 /* libRNReanimated.a */; };
 		38F835AD22A6599500A60AD4 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F835AA22A658D500A60AD4 /* libRNGestureHandler.a */; };
 		3D421EBC7BBC4D7B9552344F /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2179802840F40A3B14A17FE /* EvilIcons.ttf */; };
@@ -223,6 +225,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
 			remoteInfo = "RCTPushNotification-tvOS";
+		};
+		384E8BB023267DD00041363C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384E8BAB23267DD00041363C /* SMXCrashlytics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8D9DB831C6D03DB009FBC0E;
+			remoteInfo = SMXCrashlytics;
+		};
+		384E8BB223267DD00041363C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 384E8BAB23267DD00041363C /* SMXCrashlytics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6463C84C1EBA12A60095B8CD;
+			remoteInfo = "SMXCrashlytics-tvOS";
 		};
 		38B052CA22CB5444005073C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -512,6 +528,8 @@
 		331772D1F1D342A0A768814A /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		36DE1E61DCD33FA8CDBF8B0E /* Pods-anxietyCBT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anxietyCBT.debug.xcconfig"; path = "Target Support Files/Pods-anxietyCBT/Pods-anxietyCBT.debug.xcconfig"; sourceTree = "<group>"; };
 		3822A45322B9B9E70093F18E /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		384E8B7223267DA70041363C /* react-native-fabric */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-fabric"; path = "../node_modules/react-native-fabric"; sourceTree = "<group>"; };
+		384E8BAB23267DD00041363C /* SMXCrashlytics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMXCrashlytics.xcodeproj; path = "../node_modules/react-native-fabric/ios/SMXCrashlytics.xcodeproj"; sourceTree = "<group>"; };
 		38B0529422CB5444005073C7 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
 		3FFAB1F8A8204D2CA54BC8B8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		4421E15E1CA640F39E0489FD /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
@@ -573,6 +591,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384E8BB423267DDA0041363C /* libSMXCrashlytics.a in Frameworks */,
 				38B052D222CB544D005073C7 /* libRNReanimated.a in Frameworks */,
 				3822A48F22B9B9EE0093F18E /* libRCTPushNotification.a in Frameworks */,
 				38F835AD22A6599500A60AD4 /* libRNGestureHandler.a in Frameworks */,
@@ -753,6 +772,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				384E8BAB23267DD00041363C /* SMXCrashlytics.xcodeproj */,
+				384E8B7223267DA70041363C /* react-native-fabric */,
 				38B0529422CB5444005073C7 /* RNReanimated.xcodeproj */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
@@ -771,6 +792,15 @@
 			children = (
 				3822A46822B9B9E80093F18E /* libRCTPushNotification.a */,
 				3822A46A22B9B9E80093F18E /* libRCTPushNotification-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		384E8BAC23267DD00041363C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				384E8BB123267DD00041363C /* libSMXCrashlytics.a */,
+				384E8BB323267DD00041363C /* libSMXCrashlytics.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1210,6 +1240,10 @@
 					ProductGroup = 38F8353D22A656FD00A60AD4 /* Products */;
 					ProjectRef = 331772D1F1D342A0A768814A /* RNVectorIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = 384E8BAC23267DD00041363C /* Products */;
+					ProjectRef = 384E8BAB23267DD00041363C /* SMXCrashlytics.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1353,6 +1387,20 @@
 			fileType = archive.ar;
 			path = "libRCTPushNotification-tvOS.a";
 			remoteRef = 3822A46922B9B9E80093F18E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		384E8BB123267DD00041363C /* libSMXCrashlytics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSMXCrashlytics.a;
+			remoteRef = 384E8BB023267DD00041363C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		384E8BB323267DD00041363C /* libSMXCrashlytics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSMXCrashlytics.a;
+			remoteRef = 384E8BB223267DD00041363C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		38B052CB22CB5444005073C7 /* libRNReanimated.a */ = {
