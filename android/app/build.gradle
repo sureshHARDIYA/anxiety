@@ -110,8 +110,8 @@ android {
         applicationId "com.anxietycbt"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode.toInteger()
+        versionName appVersionName
     }
     splits {
         abi {

@@ -16,16 +16,17 @@ import Style from './style';
 const QuizStart = ({ navigation: { navigate }, list, setting }) => {
   let message;
   const selectedDay = setting.selectedDay || 'monday';
-  let notDisabled = moment().format('d') === ['monday', 'tueday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].indexOf(selectedDay);
+  const currentDay = parseInt(moment().format('e'), 10);
+  let notDisabled = currentDay === ['sunday', 'monday', 'tueday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(selectedDay);
 
   if (notDisabled) {
     notDisabled = !list.find(item => moment(item.createdAt).isSame(moment(), 'day'));
 
-    if (notDisabled) {
-      message = strings('home.limit0', { weekday: strings(`setting.testOption.${selectedDay}`) });
+    if (!notDisabled) {
+      message = strings('home.limit1', { weekday: strings(`setting.testOption.${selectedDay}`) });
     }
   } else {
-    message = strings('home.limit1', { weekday: strings(`setting.testOption.${selectedDay}`) });
+    message = strings('home.limit0', { weekday: strings(`setting.testOption.${selectedDay}`) });
   }
 
   const disabled = !notDisabled;
