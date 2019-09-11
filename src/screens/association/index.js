@@ -25,7 +25,14 @@ class Association extends Component {
     this.state = {
       subject,
       answers: {},
+      moving: null,
       items: [...status[subject]].random(),
+    };
+
+    this.options = {
+      left: 'Negative',
+      right: 'Positive',
+      bottom: 'Neutral',
     };
   }
 
@@ -61,6 +68,21 @@ class Association extends Component {
     },
   ]);
 
+  onSwiping = (x, y) => {
+    const { moving } = this.state;
+    if (x < -30 && moving !== 'left') {
+      this.setState({ moving: 'left' });
+    } else if (x > 30 && moving !== 'right') {
+      this.setState({ moving: 'right' });
+    } else if (x > -30 && x < 30 && y > 30 && moving !== 'bottom') {
+      this.setState({ moving: 'bottom' });
+    } if (!x && !y) {
+      this.setState({ moving: null });
+    }
+  };
+
+  goBack = () => this.setState({ moving: null });
+
   onSwipedLeft = index => this.onAnswer(index, -1);
 
   onSwipedRight = index => this.onAnswer(index, 1);
@@ -70,20 +92,23 @@ class Association extends Component {
   onAnswer = (index, answer) => {
     const { answers, items } = this.state;
     answers[items[index]] = answer;
-    this.setState({ answers });
+    this.setState({ answers, moving: null });
   }
 
   renderItem = (item, index) => {
+    const { moving } = this.state;
     const width = Sizes.screenWidth - 60;
     const height = Sizes.screenHeight - 120;
+    const current = this.swiper ? this.swiper.state.sindex - 2 : -1;
 
     return (
       <Card
         key={index}
         style={[Style.slide, { width, height }]}
       >
-        <View style={Style.cardHeader}>
+        <View style={[Style.cardHeader, !!moving && Style[`${moving}Moving`]]}>
           <Text style={Style.title}>{item}</Text>
+          {!!moving && index === current && <Text style={[Style.headerText, Style[`${moving}Text`]]}>{this.options[moving]}</Text> }
         </View>
         <View style={Style.footer}>
           <Text style={Style.footerTop}>{strings('exercise.howareyoufeeling')}</Text>
@@ -139,9 +164,12 @@ class Association extends Component {
         <CardStack
           disableTopSwipe
           style={Style.content}
+          onSwiping={this.onSwiping}
+          onSwipeEnd={this.goBack}
           onSwipedLeft={this.onSwipedLeft}
           onSwipedRight={this.onSwipedRight}
           onSwipedBottom={this.onSwipedBottom}
+
           renderNoMoreCards={() => (
             <Button
               type="ghost"

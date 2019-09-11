@@ -7125,10 +7125,9 @@ react-native-animatable@^1.2.4:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-card-stack-swiper@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-card-stack-swiper/-/react-native-card-stack-swiper-1.1.0.tgz#5713afc3f4506f68cd90fe6102287aab7766e4ad"
-  integrity sha512-+xMXOYU2aS4CfTWqtL7vPnS9SdFCCD88CyciDDHyY5QP2SgxMpk4tge4b8mIiTBNrXPY0vwI6nGTyAgCjNncaw==
+"react-native-card-stack-swiper@https://github.com/hunghkit/react-native-card-stack-swiper.git":
+  version "1.1.11"
+  resolved "https://github.com/hunghkit/react-native-card-stack-swiper.git#8c4dc673ec5f097b983422e34f28ead740c13450"
   dependencies:
     prop-types "15.5.10"
 
@@ -7159,6 +7158,7 @@ react-native-datepicker@^1.7.2:
 react-native-deck-swiper@1.5.25:
   version "1.5.25"
   resolved "https://registry.yarnpkg.com/react-native-deck-swiper/-/react-native-deck-swiper-1.5.25.tgz#1188339cc33bb87f629cb963e8ef5f6a9a9305d7"
+  integrity sha512-s3QiAV6/u5Vu1zc/8xH/zAKlCzlryilI+Z9gAteg7TntSMa/pMP3/5owsBw6qTRoEmAI5hYsIUs0A494NA50Zg==
   dependencies:
     prop-types "15.5.10"
 
