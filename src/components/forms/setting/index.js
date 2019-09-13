@@ -93,8 +93,7 @@ class SettingForm extends Component {
                 items={this.options}
                 value={this.state.language}
                 style={style}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ language: value || 'en' })}
+                onValueChange={value => this.setState({ language: value || 'en' }, this.onSubmit)}
               />
             </View>
           </View>
@@ -111,8 +110,7 @@ class SettingForm extends Component {
                 items={this.schedules}
                 value={this.state.scheduled}
                 style={style}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ scheduled: value || '0' })}
+                onValueChange={value => this.setState({ scheduled: value || '0' }, this.onSubmit)}
               />
             </View>
           </View>
@@ -129,8 +127,7 @@ class SettingForm extends Component {
                 items={this.testOptions}
                 value={this.state.selectedDay}
                 style={style}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ selectedDay: value || 'monday' })}
+                onValueChange={value => this.setState({ selectedDay: value || 'monday' }, this.onSubmit)}
               />
             </View>
           </View>
