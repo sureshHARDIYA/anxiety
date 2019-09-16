@@ -68,6 +68,7 @@ export default StyleSheet.create({
   cardHeader: {
     flex: 1,
     alignItems: 'center',
+    position: 'relative',
     justifyContent: 'center',
   },
   footer: {
@@ -83,4 +84,38 @@ export default StyleSheet.create({
   btnIcon: {
     color: 'red',
   },
+  leftMoving: {
+  },
+  rightMoving: {
+  },
+  bottomMoving: {
+  },
+  headerText: {
+    padding: 5,
+    opacity: 0,
+    fontSize: 20,
+    fontWeight: '600',
+    paddingLeft: 20,
+    paddingRight: 20,
+    position: 'absolute',
+    color: Colors.gray,
+  },
+  leftText: {
+    top: 30,
+    right: -15,
+    opacity: 1,
+    transform: [{ rotate: '45deg' }],
+  },
+  rightText: {
+    top: 30,
+    left: 0,
+    opacity: 1,
+    transform: [{ rotate: '-45deg' }],
+  },
+  bottomText: {
+    top: 30,
+    left: '50%',
+    opacity: 1,
+    marginLeft: -50,
+  }
 });

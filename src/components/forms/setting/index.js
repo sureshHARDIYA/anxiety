@@ -61,6 +61,19 @@ class SettingForm extends Component {
   }
 
   render() {
+    const style = {
+      inputIOS: {
+        textAlign: 'right',
+      },
+      inputAndroid: {
+        paddingTop: 0,
+        paddingbottom: 0,
+        minWidth: 150,
+        height: 30,
+        textAlign: 'right',
+      },
+    };
+
     return (
       <KeyboardAwareScrollView
         behavior="padding"
@@ -79,16 +92,8 @@ class SettingForm extends Component {
                 placeholder={{}}
                 items={this.options}
                 value={this.state.language}
-                style={{
-                  inputIOS: {
-                    textAlign: 'right',
-                  },
-                  inputAndroid: {
-                    textAlign: 'right',
-                  }
-                }}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ language: value || 'en' })}
+                style={style}
+                onValueChange={value => this.setState({ language: value || 'en' }, this.onSubmit)}
               />
             </View>
           </View>
@@ -104,16 +109,8 @@ class SettingForm extends Component {
                 placeholder={{}}
                 items={this.schedules}
                 value={this.state.scheduled}
-                style={{
-                  inputIOS: {
-                    textAlign: 'right',
-                  },
-                  inputAndroid: {
-                    textAlign: 'right',
-                  }
-                }}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ scheduled: value || '0' })}
+                style={style}
+                onValueChange={value => this.setState({ scheduled: value || '0' }, this.onSubmit)}
               />
             </View>
           </View>
@@ -129,16 +126,8 @@ class SettingForm extends Component {
                 placeholder={{}}
                 items={this.testOptions}
                 value={this.state.selectedDay}
-                style={{
-                  inputIOS: {
-                    textAlign: 'right',
-                  },
-                  inputAndroid: {
-                    textAlign: 'right',
-                  }
-                }}
-                onClose={this.onSubmit}
-                onValueChange={value => this.setState({ selectedDay: value || 'monday' })}
+                style={style}
+                onValueChange={value => this.setState({ selectedDay: value || 'monday' }, this.onSubmit)}
               />
             </View>
           </View>
