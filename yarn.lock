@@ -7127,7 +7127,7 @@ react-native-animatable@^1.2.4:
 
 "react-native-card-stack-swiper@https://github.com/hunghkit/react-native-card-stack-swiper.git":
   version "1.1.11"
-  resolved "https://github.com/hunghkit/react-native-card-stack-swiper.git#8c4dc673ec5f097b983422e34f28ead740c13450"
+  resolved "https://github.com/hunghkit/react-native-card-stack-swiper.git#19f72be8fbc4597c7b3a8365641f912196ee5781"
   dependencies:
     prop-types "15.5.10"
 

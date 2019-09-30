@@ -20,7 +20,7 @@ class Association extends Component {
   constructor(props) {
     super(props);
 
-    const subject = ['relationship', 'emotions'].random()[0];
+    const subject = status && Object.keys(status).random()[0];
 
     this.state = {
       subject,
@@ -37,7 +37,7 @@ class Association extends Component {
   }
 
   componentDidMount() {
-    this.setState({ subject: ['relationship', 'emotions'].random()[0] }, () => this.order());
+    this.setState({ subject: status && Object.keys(status).random()[0] }, () => this.order());
   }
 
   order = () => {
