@@ -56,7 +56,7 @@ class Worry {
               resourceType: 'Worry',
               scheduled: item.scheduled,
               body: item.title,
-              id: `Worry_Scheduled_${item.id}`,
+              id: `${item.id}`,
               title: strings('notifications.worry.scheduled0')
             });
           }
@@ -81,7 +81,7 @@ class Worry {
             Notification.createData({
               resourceId: id,
               resourceType: 'Worry',
-              id: `Worry_Scheduled_${id}`,
+              id: `${id}`,
               scheduled: permitParams.scheduled || oldItem.scheduled,
               body: permitParams.title || oldItem.title,
               title: strings('notifications.worry.scheduled0')
@@ -118,7 +118,7 @@ class Worry {
           resolve(items.map(item => Notification.createData({
             resourceId: item.id,
             resourceType: 'Worry',
-            id: `Worry_Scheduled_${item.id}`,
+            id: `${item.id}`,
             scheduled: item.scheduled,
             body: item.title,
             title: strings('notifications.worry.scheduled0')
