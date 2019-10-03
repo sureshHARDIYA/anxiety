@@ -2,20 +2,26 @@ fastlane_version "1.86.1"
 
 default_platform :ios
 
-
 platform :ios do
   # before_all do
   #   ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
   # end
 
-  desc "Build and submit to Fabric"
-  lane :beta do
-    cert
+  def bump_build_version_ios
+    branch_name = git_branch.sub("/","-")
+    short_hash = get_build_number_repository
 
     increment_version_number(
-      version_number: "0.0.3",      # specify specific version number (optional, omitting it increments patch version number)
-      xcodeproj: "./ios/anxietyCBT.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+      xcodeproj: "./ios/anxietyCBT.xcodeproj",
+      version_number: "#{short_hash}.#{branch_name}"
     )
+  end
+
+  desc "Build and submit to Fabric"
+  lane :beta do
+    bump_build_version_ios
+
+    cert
 
     build_app(
       scheme: "anxietyCBT",
@@ -32,7 +38,6 @@ platform :ios do
       api_token: ENV['FABRIC_TOKEN'],
       build_secret: ENV['FABRIC_SECRET']
     )
-    slack(message: "Release new version")
   end
 
   # after_all do |lane|
@@ -45,8 +50,25 @@ platform :android do
   #   ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
   # end
 
+  def bump_build_version_android
+    branch_name = git_branch.sub("/","-")
+    short_hash = get_build_number_repository
+
+    path = '../android/gradle.properties'
+    re = /appVersionName=(.*)/
+
+    s = File.read(path)
+    s[re, 1] = "#{short_hash}.#{branch_name}.1.0.0"
+
+    f = File.new(path, 'w')
+    f.write(s)
+    f.close
+  end
+
   desc "Submit a new Alpha Build to Play Store"
   lane :beta do
+    bump_build_version_android
+
     gradle(task: 'clean', project_dir: "./android") # Clean the Gradle project
     gradle(task: "assemble", build_type: "Release", project_dir: "./android") # Build the Release APK
     # supply(track: "alpha", apk: "android/app/build/outputs/apk/app-release.apk") # Upload the APK to the Play Store (alpha)
